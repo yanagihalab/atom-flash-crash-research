@@ -1,0 +1,161 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "event_time_utc": "2025-10-10T21:20:37.689043Z",
+  "event_time_jst": "2025-10-11T06:20:37.689043+09:00",
+  "primary_daily_summary": {
+    "trade_count": 420107,
+    "open": "4.05700000",
+    "high": "4.18800000",
+    "low": "0.00100000",
+    "close": "2.94600000"
+  },
+  "minimum_price_event": {
+    "minimum_price_usdt": "0.00100000",
+    "minimum_trade_count": 2,
+    "minimum_quantity_atom": "2531.17800000",
+    "minimum_quote_quantity_usdt": "2.53117800",
+    "below_one_trade_count": 22,
+    "below_one_quantity_atom": "6694.83000000",
+    "all_sub_one_trades_last_time_utc": "2025-10-10T21:21:45.818671Z",
+    "all_sub_one_trades_span_from_minimum_milliseconds": 68129.628,
+    "first_sub_one_excursion": {
+      "trade_count": 18,
+      "quantity_atom": "4223.32000000",
+      "first_trade_time_utc": "2025-10-10T21:20:37.689043Z",
+      "last_trade_time_utc": "2025-10-10T21:20:37.694203Z",
+      "observed_trade_span_milliseconds": 5.16,
+      "next_trade_at_or_above_one_time_utc": "2025-10-10T21:20:37.719493Z",
+      "time_from_minimum_to_next_trade_at_or_above_one_milliseconds": 30.45
+    },
+    "same_matching_timestamp_trade_count": 92,
+    "same_matching_timestamp_quantity_atom": "9695.33000000",
+    "same_timestamp_all_sell_aggressor": true,
+    "same_timestamp_first_price": "1.68800000",
+    "same_timestamp_last_price": "0.00100000",
+    "immediately_previous_trade": {
+      "trade_time_utc": "2025-10-10T21:20:37.689043Z",
+      "price": "0.24000000",
+      "elapsed_to_minimum_milliseconds": 0.0
+    },
+    "previous_distinct_matching_timestamp": {
+      "trade_time_utc": "2025-10-10T21:20:37.636366Z",
+      "price": "1.74500000",
+      "elapsed_to_minimum_milliseconds": 52.677
+    },
+    "immediately_next": {
+      "trade_time_utc": "2025-10-10T21:20:37.693401Z",
+      "price": "0.94000000",
+      "elapsed_from_minimum_milliseconds": 4.358
+    },
+    "recovery": {
+      "1": {
+        "trade_time_utc": "2025-10-10T21:20:37.719493Z",
+        "price": "1.74500000",
+        "elapsed_seconds": 0.03045
+      },
+      "1.5": {
+        "trade_time_utc": "2025-10-10T21:20:37.719493Z",
+        "price": "1.74500000",
+        "elapsed_seconds": 0.03045
+      },
+      "2": {
+        "trade_time_utc": "2025-10-10T21:20:39.046458Z",
+        "price": "2.01900000",
+        "elapsed_seconds": 1.357415
+      },
+      "2.5": {
+        "trade_time_utc": "2025-10-10T21:26:54.727876Z",
+        "price": "2.50100000",
+        "elapsed_seconds": 377.038833
+      },
+      "3": {
+        "trade_time_utc": "2025-10-10T21:46:48.615039Z",
+        "price": "3.00400000",
+        "elapsed_seconds": 1570.925996
+      }
+    }
+  },
+  "event_minute_cross_venue": {
+    "minute_start_utc": "2025-10-10T21:20:00Z",
+    "binance_spot_atomusdt": {
+      "trade_count": 1582,
+      "open": "1.86300000",
+      "high": "2.28300000",
+      "low": "0.00100000",
+      "close": "1.99700000",
+      "base_volume": "98726.74000000",
+      "quote_volume": "183229.52849800"
+    },
+    "binance_spot_atomusdc": {
+      "trade_count": 283,
+      "open": "1.91200000",
+      "high": "2.53100000",
+      "low": "1.59000000",
+      "close": "1.76900000",
+      "base_volume": "9086.41000000",
+      "quote_volume": "16980.38783000"
+    },
+    "binance_usdm_futures_atomusdt": {
+      "trade_count": 3671,
+      "open": "1.777",
+      "high": "1.827",
+      "low": "1.46",
+      "close": "1.642",
+      "base_volume": "986774.17",
+      "quote_volume": "1626337.46218"
+    },
+    "binance_usdm_mark_price": {
+      "open": "1.79400000",
+      "high": "1.79400000",
+      "low": "1.50447000",
+      "close": "1.63893086"
+    },
+    "kraken_spot_atomusd": {
+      "trade_count": 39,
+      "open": "3.374500",
+      "high": "3.374500",
+      "low": "3.000000",
+      "close": "3.323900",
+      "base_volume": "3203.57558917",
+      "quote_volume": "10439.16163819914200"
+    },
+    "coinbase_spot_atomusd": {
+      "open": "3.56",
+      "high": "3.594",
+      "low": "3.56",
+      "close": "3.594",
+      "base_volume": "2425.45"
+    }
+  },
+  "provenance": {
+    "data/raw/binance/spot/daily/trades/ATOMUSDT/ATOMUSDT-trades-2025-10-10.zip": {
+      "sha256": "cf86e3df7df98989698d1a57f79cbe6d91dbc593df97a6e1bb1ce2dc5e4b06d3",
+      "size_bytes": 5274719
+    },
+    "data/raw/binance/spot/daily/trades/ATOMUSDC/ATOMUSDC-trades-2025-10-10.zip": {
+      "sha256": "8104dc09ad376b4d40e9f706b1e62a8d3e6bb9f3f99d6802d966d1a45ead3ae4",
+      "size_bytes": 950251
+    },
+    "data/raw/binance/futures/um/daily/trades/ATOMUSDT/ATOMUSDT-trades-2025-10-10.zip": {
+      "sha256": "dbefedf97dc9ecd13f0c8e38885e1f6d3def41b176a3f63b38003f8a289a06de",
+      "size_bytes": 6790637
+    },
+    "data/raw/binance/futures/um/daily/markPriceKlines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-10.zip": {
+      "sha256": "3a58ed104192957a66d3eb9e8462c25031f3b6b9939c823fe3cf1f0f3d1f4494",
+      "size_bytes": 25715
+    },
+    "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-10.jsonl.gz": {
+      "sha256": "6e2c5a9ffc14989e1ac06ea1080994c92eb359498db7138056c28b80cd30291a",
+      "size_bytes": 320754
+    },
+    "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-10.json": {
+      "sha256": "c2bbb65a21b82a31d838e836baff936da88f4622275d9372ea9edb288d452366",
+      "size_bytes": 56880
+    }
+  },
+  "event_extract": {
+    "local_path": "data/processed/event_window/binance_spot_atomusdt_trades_2025-10-10_2115-2125_utc.csv.gz",
+    "sha256": "ea36372d77817b99a6aef24cdbfe71ba671767bf28787dbad441201cd2dc9bd6",
+    "window": "[2025-10-10T21:15:00Z, 2025-10-10T21:25:00Z)"
+  }
+}

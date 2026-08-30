@@ -1,0 +1,1355 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "generated_at_utc": "2026-08-29T23:44:12.637861Z",
+  "research_question": "Do public data support that a specific user or wallet deliberately engineered the ATOM/USDT flash crash?",
+  "scope_guardrail": "Addresses and memo clusters are pseudonymous flow identifiers. The analysis does not identify a natural person, beneficial owner, Binance account, intent, or wrongdoing.",
+  "source_sha256": {
+    "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+    "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+    "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
+    "binance_30d_checkpoint": "a3e3b2aca0f978b633e4fdba067fd9607366792e1a6a850ff4ffd6d9a1ef2126",
+    "binance_trades": "cf86e3df7df98989698d1a57f79cbe6d91dbc593df97a6e1bb1ce2dc5e4b06d3",
+    "binance_agg_trades": "8316d809ddb26e441889d63ac0601f42fcfb7e3704181032c3940371adddf5d0"
+  },
+  "market_side_order_episode": {
+    "timestamp_utc": "2025-10-10T21:20:37.689043Z",
+    "raw_trade_count": 92,
+    "aggregate_trade_row_count": 71,
+    "first_trade_id": 254107861,
+    "last_trade_id": 254107952,
+    "trade_ids_contiguous": true,
+    "all_buyer_is_maker": true,
+    "aggressive_sell_quantity_atom": 9695.33,
+    "execution_quote_usdt": 9170.080188,
+    "volume_weighted_price_usdt": 0.9458244523909964,
+    "first_execution_price_usdt": 1.688,
+    "minimum_execution_price_usdt": 0.001,
+    "within_timestamp_drop_pct": 99.94075829383888,
+    "last_trade_at_or_above_4_usdt": {
+      "trade_id": 254006394,
+      "price": 4.0,
+      "quantity_atom": 250.2,
+      "quote_usdt": 1000.8,
+      "time_utc": "2025-10-10T16:41:10.471671Z",
+      "buyer_is_maker": true
+    },
+    "seconds_from_last_4_usdt_trade_to_low": 16767.217372,
+    "first_trade_at_or_below_threshold": {
+      "4": {
+        "trade_id": 254033518,
+        "price": 3.937,
+        "quantity_atom": 2.94,
+        "quote_usdt": 11.57478,
+        "time_utc": "2025-10-10T20:30:02.996621Z",
+        "buyer_is_maker": false
+      },
+      "3.5": {
+        "trade_id": 254085915,
+        "price": 3.5,
+        "quantity_atom": 3.25,
+        "quote_usdt": 11.375,
+        "time_utc": "2025-10-10T21:13:25.881040Z",
+        "buyer_is_maker": true
+      },
+      "3": {
+        "trade_id": 254100261,
+        "price": 3.0,
+        "quantity_atom": 5.0,
+        "quote_usdt": 15.0,
+        "time_utc": "2025-10-10T21:16:50.360555Z",
+        "buyer_is_maker": true
+      },
+      "2.5": {
+        "trade_id": 254104095,
+        "price": 2.5,
+        "quantity_atom": 7.62,
+        "quote_usdt": 19.05,
+        "time_utc": "2025-10-10T21:18:06.500112Z",
+        "buyer_is_maker": true
+      },
+      "2": {
+        "trade_id": 254105849,
+        "price": 2.0,
+        "quantity_atom": 20.0,
+        "quote_usdt": 40.0,
+        "time_utc": "2025-10-10T21:19:08.960865Z",
+        "buyer_is_maker": true
+      },
+      "1.7": {
+        "trade_id": 254107829,
+        "price": 1.692,
+        "quantity_atom": 8.13,
+        "quote_usdt": 13.75596,
+        "time_utc": "2025-10-10T21:20:36.189535Z",
+        "buyer_is_maker": true
+      },
+      "1": {
+        "trade_id": 254107932,
+        "price": 1.0,
+        "quantity_atom": 50.0,
+        "quote_usdt": 50.0,
+        "time_utc": "2025-10-10T21:20:37.689043Z",
+        "buyer_is_maker": true
+      },
+      "0.1": {
+        "trade_id": 254107951,
+        "price": 0.001,
+        "quantity_atom": 2483.658,
+        "quote_usdt": 2.483658,
+        "time_utc": "2025-10-10T21:20:37.689043Z",
+        "buyer_is_maker": true
+      },
+      "0.001": {
+        "trade_id": 254107951,
+        "price": 0.001,
+        "quantity_atom": 2483.658,
+        "quote_usdt": 2.483658,
+        "time_utc": "2025-10-10T21:20:37.689043Z",
+        "buyer_is_maker": true
+      }
+    },
+    "public_data_inference": "The contiguous, same-microsecond, sell-aggressor sequence is strongly consistent with one aggressive taker-order episode sweeping multiple price levels. Different-price aggregate-trade rows do not expose a common order ID, so one versus tightly synchronized orders is not provable.",
+    "identity_limitation": "Public trade and aggregate-trade files contain no account, beneficial-owner, or taker-order identifier."
+  },
+  "nearest_pre_low_binance_inflow": {
+    "time_utc": "2025-10-10T21:20:18.16747211Z",
+    "seconds_before_low": 19.521571,
+    "blocks_before_low_height": 4,
+    "height": 27908324,
+    "tx_hash": "0DF333AAA3B832D92E0F0FC920D1DC51170CA192BAA2BC407F4158B1939CD153",
+    "sender": "cosmos1qml5yxnfgdhcywp2w2lpvuj9fazzeylg2gdaeq",
+    "recipient_public_label": "Binance",
+    "recipient_address": "cosmos1j8pp7zvcu9z8vd882m284j29fn2dszh05cqvf9",
+    "amount_atom": 2000.0,
+    "memo_cluster_id": "memo_sha256_5abe7361829a",
+    "amount_as_share_of_sell_episode": 0.20628488148417848,
+    "same_memo_four_day_count": 5,
+    "same_memo_four_day_atom": 10000.0,
+    "same_sender_binance_four_day_count": 59,
+    "same_sender_binance_four_day_atom": 368619.397651,
+    "same_exact_amount_binance_four_day_count": 12,
+    "sender_profile": {
+      "address": "cosmos1qml5yxnfgdhcywp2w2lpvuj9fazzeylg2gdaeq",
+      "four_day_first_seen_utc": "2025-10-09T00:00:58.151523411Z",
+      "four_day_last_seen_utc": "2025-10-12T23:01:59.198924452Z",
+      "four_day_incoming_count": 315,
+      "four_day_incoming_atom": 1405924.2361739995,
+      "four_day_outgoing_count": 449,
+      "four_day_outgoing_atom": 1124647.862346,
+      "four_day_counterparty_count": 228,
+      "binance_deposit_count": 59,
+      "binance_deposit_atom": 368619.397651,
+      "binance_unique_memo_cluster_count": 10,
+      "top_direct_source": "cosmos1vl8xm7x04cedgh639hc9ucvf6zc754fyfewhef",
+      "top_direct_source_public_label": "KuCoin",
+      "top_direct_source_atom": 1085802.9169219995,
+      "top_direct_source_share": 0.7723054265547342,
+      "incoming_from_confirmed_exchange_labels_atom": {
+        "KuCoin": 1085802.9169219995
+      },
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "HitBTC",
+        "MEXC"
+      ],
+      "ibc_match_count": 0,
+      "ibc_routes": [],
+      "top_direct_sources": [
+        {
+          "address": "cosmos1vl8xm7x04cedgh639hc9ucvf6zc754fyfewhef",
+          "public_label": "KuCoin",
+          "amount_atom": 1085802.9169219995,
+          "share": 0.7723054265547342
+        },
+        {
+          "address": "cosmos18wpvqfu9g0n8x3ysu72fcdtwz025tvg7eqsu7u",
+          "public_label": null,
+          "amount_atom": 250900.0,
+          "share": 0.17845911859573932
+        },
+        {
+          "address": "cosmos1xam9ddvyj9fxertqq5kg2avdum882pqzrlmgzm",
+          "public_label": null,
+          "amount_atom": 69221.0,
+          "share": 0.049235227773278885
+        },
+        {
+          "address": "cosmos1605flsh03s9gkep660797z30m49le90ypgvd3a",
+          "public_label": null,
+          "amount_atom": 0.15,
+          "share": 1.0669138218158987e-07
+        },
+        {
+          "address": "cosmos1nx33kngg9e4w50zl623wc8zp2gwfvnlrqjsylt",
+          "public_label": null,
+          "amount_atom": 0.15,
+          "share": 1.0669138218158987e-07
+        },
+        {
+          "address": "cosmos198hntpcyszg7aakcjtenz5zakuqqx30p2l6swz",
+          "public_label": null,
+          "amount_atom": 0.019249000000000002,
+          "share": 1.3691349437422824e-08
+        },
+        {
+          "address": "cosmos16a87dpmkutsfx7cddxt749urv62nkcajmr8nw2",
+          "public_label": null,
+          "amount_atom": 3e-06,
+          "share": 2.1338276436317976e-12
+        }
+      ],
+      "top_direct_destinations": [
+        {
+          "address": "cosmos1j8pp7zvcu9z8vd882m284j29fn2dszh05cqvf9",
+          "public_label": "Binance",
+          "amount_atom": 368619.397651,
+          "share": 0.32776428070744296
+        },
+        {
+          "address": "cosmos1hq5ewgz8zge4pklz3e8nf749u07jljhtfeljps",
+          "public_label": null,
+          "amount_atom": 105843.91690000001,
+          "share": 0.09411294009772184
+        },
+        {
+          "address": "cosmos17a8smrhauph552zkz5864vjafz9pszpe2zjjv4",
+          "public_label": null,
+          "amount_atom": 75075.50707800002,
+          "share": 0.06675467903472786
+        },
+        {
+          "address": "cosmos120yy882ct2jz5fxcamyr9r6ynxgym6ym0g6me6",
+          "public_label": null,
+          "amount_atom": 72353.2189,
+          "share": 0.0643341096555078
+        },
+        {
+          "address": "cosmos1sagykt4yxgml3ezyajq7rhwps6m4m7nmrrdx99",
+          "public_label": null,
+          "amount_atom": 71849.4556,
+          "share": 0.06388617984843986
+        },
+        {
+          "address": "cosmos19umfqffzdp4l4442gz44qt6mknfvs0a3wpprm8",
+          "public_label": null,
+          "amount_atom": 45925.6139,
+          "share": 0.040835549897547306
+        },
+        {
+          "address": "cosmos123pje047zslcvgrv4n7vrg7ur5c03eh0gcxd47",
+          "public_label": null,
+          "amount_atom": 45300.56,
+          "share": 0.04027977246629327
+        },
+        {
+          "address": "cosmos1pyyfs7lv2ymxexrd33v9vh9sqrazpppdjdwfga",
+          "public_label": null,
+          "amount_atom": 29000.76,
+          "share": 0.025786524805644327
+        }
+      ]
+    },
+    "direct_funding_from_public_label_kucoin_atom": 1085802.916922,
+    "interpretation": "Temporal proximity is a lead, not a link. The transfer is only 20.6% of the sell episode, the memo recurs, and the sender's many counterparties, multiple Binance memo clusters, and large public-label KuCoin adjacency are characteristic of service/operational routing rather than a uniquely attributable end user."
+  },
+  "temporal_coincidence_post_selection_check": {
+    "observed_gap_seconds": 19.521571,
+    "four_day_random_second_coverage": {
+      "any_binance_deposit": {
+        "deposit_count": 3165,
+        "random_second_coverage": 0.1596984910082611
+      },
+      "binance_deposit_at_least_nearest_amount": {
+        "deposit_count": 409,
+        "random_second_coverage": 0.022477177042491935
+      },
+      "same_sender": {
+        "deposit_count": 59,
+        "random_second_coverage": 0.0033333815593396894
+      },
+      "same_exact_amount": {
+        "deposit_count": 12,
+        "random_second_coverage": 0.0006770931292408744
+      },
+      "same_memo_cluster": {
+        "deposit_count": 5,
+        "random_second_coverage": 0.00028067535699301206
+      }
+    },
+    "caveat": "These are descriptive coverage rates, not valid confirmatory p-values: the nearest transfer, amount, sender, and memo were selected after observing the event, creating a multiple-testing/look-elsewhere problem."
+  },
+  "binance_pre_low_inflow_30d_baseline": {
+    "30m": {
+      "aligned_window_start_utc": "2025-10-10T20:50:00Z",
+      "aligned_window_end_utc": "2025-10-10T21:20:00Z",
+      "event_transfer_count": 36,
+      "event_amount_atom": 12887.657879,
+      "rolling_5min_control_count": 8635,
+      "rolling_5min_percentile_empirical": 74.03590040532715,
+      "rolling_5min_upper_tail_p_plus_one": 0.2597267253358036,
+      "rolling_5min_control_median_atom": 4391.100845,
+      "rolling_5min_control_p95_atom": 39615.394412,
+      "rolling_5min_control_max_atom": 502869.514974,
+      "nonoverlap_control_count": 1440,
+      "nonoverlap_percentile_empirical": 74.02777777777777,
+      "nonoverlap_upper_tail_p_plus_one": 0.260235947258848,
+      "nonoverlap_control_median_atom": 4431.7387035,
+      "nonoverlap_control_max_atom": 461906.321497,
+      "caveat": "Rolling controls overlap and are serially dependent; the p-value is descriptive."
+    },
+    "120m": {
+      "aligned_window_start_utc": "2025-10-10T19:20:00Z",
+      "aligned_window_end_utc": "2025-10-10T21:20:00Z",
+      "event_transfer_count": 89,
+      "event_amount_atom": 49647.000601,
+      "rolling_5min_control_count": 8617,
+      "rolling_5min_percentile_empirical": 74.0164790530347,
+      "rolling_5min_upper_tail_p_plus_one": 0.2599210953817591,
+      "rolling_5min_control_median_atom": 29436.300595999997,
+      "rolling_5min_control_p95_atom": 175609.731905,
+      "rolling_5min_control_max_atom": 1017320.476398,
+      "nonoverlap_control_count": 360,
+      "nonoverlap_percentile_empirical": 73.61111111111111,
+      "nonoverlap_upper_tail_p_plus_one": 0.2659279778393352,
+      "nonoverlap_control_median_atom": 28263.69552,
+      "nonoverlap_control_max_atom": 718989.642396,
+      "caveat": "Rolling controls overlap and are serially dependent; the p-value is descriptive."
+    },
+    "360m": {
+      "aligned_window_start_utc": "2025-10-10T15:20:00Z",
+      "aligned_window_end_utc": "2025-10-10T21:20:00Z",
+      "event_transfer_count": 234,
+      "event_amount_atom": 204522.656797,
+      "rolling_5min_control_count": 8569,
+      "rolling_5min_percentile_empirical": 79.95098611273194,
+      "rolling_5min_upper_tail_p_plus_one": 0.20058343057176195,
+      "rolling_5min_control_median_atom": 99197.16819,
+      "rolling_5min_control_p95_atom": 388723.492966,
+      "rolling_5min_control_max_atom": 1654684.389441,
+      "nonoverlap_control_count": 120,
+      "nonoverlap_percentile_empirical": 80.83333333333333,
+      "nonoverlap_upper_tail_p_plus_one": 0.19834710743801653,
+      "nonoverlap_control_median_atom": 97670.1252595,
+      "nonoverlap_control_max_atom": 1409978.10309,
+      "caveat": "Rolling controls overlap and are serially dependent; the p-value is descriptive."
+    },
+    "1440m": {
+      "aligned_window_start_utc": "2025-10-09T21:20:00Z",
+      "aligned_window_end_utc": "2025-10-10T21:20:00Z",
+      "event_transfer_count": 621,
+      "event_amount_atom": 797701.141021,
+      "rolling_5min_control_count": 8353,
+      "rolling_5min_percentile_empirical": 84.62827726565305,
+      "rolling_5min_upper_tail_p_plus_one": 0.15381853004548718,
+      "rolling_5min_control_median_atom": 512605.337492,
+      "rolling_5min_control_p95_atom": 1180365.082963,
+      "rolling_5min_control_max_atom": 2775916.513429,
+      "nonoverlap_control_count": 30,
+      "nonoverlap_percentile_empirical": 90.0,
+      "nonoverlap_upper_tail_p_plus_one": 0.12903225806451613,
+      "nonoverlap_control_median_atom": 521746.769226,
+      "nonoverlap_control_max_atom": 2559864.490495,
+      "caveat": "Rolling controls overlap and are serially dependent; the p-value is descriptive."
+    }
+  },
+  "binance_sender_level_four_day_controls": {
+    "30m": {
+      "exact_window_start_utc": "2025-10-10T20:50:37.689043Z",
+      "exact_window_end_utc": "2025-10-10T21:20:37.689043Z",
+      "control_endpoint_spacing": "1 minute with the flash timestamp's seconds and microseconds",
+      "control_count": 5699,
+      "event": {
+        "amount_atom": 14887.657879,
+        "top_sender_share": 0.1484988450143307,
+        "sender_hhi": 0.0899761733120291,
+        "top_memo_share": 0.21998087453497964
+      },
+      "metrics": {
+        "amount_atom": {
+          "event_percentile_empirical": 56.92226706439726,
+          "control_median": 11935.198766,
+          "control_p95": 62586.808506999994,
+          "control_max": 198975.662573
+        },
+        "top_sender_share": {
+          "event_percentile_empirical": 0.01754693805930865,
+          "control_median": 0.5486341196251788,
+          "control_p95": 0.9298876610113731,
+          "control_max": 1.0
+        },
+        "sender_hhi": {
+          "event_percentile_empirical": 0.01754693805930865,
+          "control_median": 0.4000504008652451,
+          "control_p95": 0.8672131274672102,
+          "control_max": 1.0
+        },
+        "top_memo_share": {
+          "event_percentile_empirical": 0.5965958940164942,
+          "control_median": 0.5552447117407687,
+          "control_p95": 0.9298876610113731,
+          "control_max": 1.0
+        }
+      },
+      "caveat": "Only four event-centered days are retained at sender level; controls overlap and are descriptive."
+    },
+    "120m": {
+      "exact_window_start_utc": "2025-10-10T19:20:37.689043Z",
+      "exact_window_end_utc": "2025-10-10T21:20:37.689043Z",
+      "control_endpoint_spacing": "1 minute with the flash timestamp's seconds and microseconds",
+      "control_count": 5519,
+      "event": {
+        "amount_atom": 51647.00060100001,
+        "top_sender_share": 0.4290544415384878,
+        "sender_hhi": 0.231353653205681,
+        "top_memo_share": 0.4290544415384878
+      },
+      "metrics": {
+        "amount_atom": {
+          "event_percentile_empirical": 44.57329226309114,
+          "control_median": 58199.764144,
+          "control_p95": 237613.895276,
+          "control_max": 354392.004998
+        },
+        "top_sender_share": {
+          "event_percentile_empirical": 57.29298786011959,
+          "control_median": 0.3737162416435092,
+          "control_p95": 0.6865877847327841,
+          "control_max": 1.0
+        },
+        "sender_hhi": {
+          "event_percentile_empirical": 53.252400797245876,
+          "control_median": 0.22025758606811466,
+          "control_p95": 0.4934069217560454,
+          "control_max": 1.0
+        },
+        "top_memo_share": {
+          "event_percentile_empirical": 57.74596847254937,
+          "control_median": 0.37693953317560225,
+          "control_p95": 0.6783118334063831,
+          "control_max": 1.0
+        }
+      },
+      "caveat": "Only four event-centered days are retained at sender level; controls overlap and are descriptive."
+    },
+    "360m": {
+      "exact_window_start_utc": "2025-10-10T15:20:37.689043Z",
+      "exact_window_end_utc": "2025-10-10T21:20:37.689043Z",
+      "control_endpoint_spacing": "1 minute with the flash timestamp's seconds and microseconds",
+      "control_count": 5039,
+      "event": {
+        "amount_atom": 200672.65679699997,
+        "top_sender_share": 0.34647985789282404,
+        "sender_hhi": 0.17072444121907662,
+        "top_memo_share": 0.3363428546036424
+      },
+      "metrics": {
+        "amount_atom": {
+          "event_percentile_empirical": 59.79360984322286,
+          "control_median": 163602.266578,
+          "control_p95": 476782.23561699997,
+          "control_max": 582767.436125
+        },
+        "top_sender_share": {
+          "event_percentile_empirical": 67.43401468545346,
+          "control_median": 0.2935580334325017,
+          "control_p95": 0.49117076980072294,
+          "control_max": 1.0
+        },
+        "sender_hhi": {
+          "event_percentile_empirical": 65.15181583647549,
+          "control_median": 0.14941368406372002,
+          "control_p95": 0.2790413956767326,
+          "control_max": 1.0
+        },
+        "top_memo_share": {
+          "event_percentile_empirical": 65.54871998412384,
+          "control_median": 0.292330663926879,
+          "control_p95": 0.5609218176924333,
+          "control_max": 1.0
+        }
+      },
+      "caveat": "Only four event-centered days are retained at sender level; controls overlap and are descriptive."
+    },
+    "1440m": {
+      "exact_window_start_utc": "2025-10-09T21:20:37.689043Z",
+      "exact_window_end_utc": "2025-10-10T21:20:37.689043Z",
+      "control_endpoint_spacing": "1 minute with the flash timestamp's seconds and microseconds",
+      "control_count": 2879,
+      "event": {
+        "amount_atom": 799701.141021,
+        "top_sender_share": 0.2224118964841259,
+        "sender_hhi": 0.0896581882103561,
+        "top_memo_share": 0.2198681719879937
+      },
+      "metrics": {
+        "amount_atom": {
+          "event_percentile_empirical": 44.45988190343869,
+          "control_median": 896561.390464,
+          "control_p95": 1440840.9141580001,
+          "control_max": 1522516.720773
+        },
+        "top_sender_share": {
+          "event_percentile_empirical": 77.14484195901355,
+          "control_median": 0.1837371917704375,
+          "control_p95": 0.5218412309718413,
+          "control_max": 1.0
+        },
+        "sender_hhi": {
+          "event_percentile_empirical": 67.73185133726989,
+          "control_median": 0.07879753299409041,
+          "control_p95": 0.30892676931398527,
+          "control_max": 1.0
+        },
+        "top_memo_share": {
+          "event_percentile_empirical": 58.42306356373741,
+          "control_median": 0.1927993033782961,
+          "control_p95": 0.6163861603022134,
+          "control_max": 1.0
+        }
+      },
+      "caveat": "Only four event-centered days are retained at sender level; controls overlap and are descriptive."
+    }
+  },
+  "exact_pre_low_concentration": {
+    "30m_sender": {
+      "transfer_count": 37,
+      "group_count": 28,
+      "amount_atom": 14887.657879,
+      "top1_share": 0.1484988450143307,
+      "top5_share": 0.5889704123553496,
+      "hhi": 0.0899761733120291,
+      "effective_group_count": 11.114053456486662,
+      "top_groups": [
+        {
+          "key": "cosmos1t3vqgqjlk0zzcx32juhqqhpn5aar0gus63lnnp",
+          "amount_atom": 2210.8,
+          "share": 0.1484988450143307
+        },
+        {
+          "key": "cosmos1h9ymfm2fxrqgd257dlw5nku3jgqjgpl59sm5ns",
+          "amount_atom": 2075.69,
+          "share": 0.13942354243160668
+        },
+        {
+          "key": "cosmos1qml5yxnfgdhcywp2w2lpvuj9fazzeylg2gdaeq",
+          "amount_atom": 2000.0,
+          "share": 0.13433946536487307
+        },
+        {
+          "key": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 1284.0,
+          "share": 0.08624593676424851
+        },
+        {
+          "key": "cosmos1t4d55agpf9xlsmgwc0c2yw6vvcrj6degtdf94c",
+          "amount_atom": 1197.9,
+          "share": 0.08046262278029072
+        }
+      ]
+    },
+    "120m_sender": {
+      "transfer_count": 90,
+      "group_count": 47,
+      "amount_atom": 51647.00060100001,
+      "top1_share": 0.4290544415384878,
+      "top5_share": 0.7911396018844288,
+      "hhi": 0.231353653205681,
+      "effective_group_count": 4.322386900504083,
+      "top_groups": [
+        {
+          "key": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 22159.375000000004,
+          "share": 0.4290544415384878
+        },
+        {
+          "key": "cosmos1qml5yxnfgdhcywp2w2lpvuj9fazzeylg2gdaeq",
+          "amount_atom": 9361.602494,
+          "share": 0.18126130046395644
+        },
+        {
+          "key": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 3700.0,
+          "share": 0.07164017187724855
+        },
+        {
+          "key": "cosmos1h9ymfm2fxrqgd257dlw5nku3jgqjgpl59sm5ns",
+          "amount_atom": 3428.21,
+          "share": 0.06637771719764926
+        },
+        {
+          "key": "cosmos1t3vqgqjlk0zzcx32juhqqhpn5aar0gus63lnnp",
+          "amount_atom": 2210.8,
+          "share": 0.04280597080708679
+        }
+      ]
+    },
+    "120m_memo_cluster": {
+      "transfer_count": 90,
+      "group_count": 49,
+      "amount_atom": 51647.00060100001,
+      "top1_share": 0.4290544415384878,
+      "top5_share": 0.772357884249093,
+      "hhi": 0.22157804490148678,
+      "effective_group_count": 4.51308251431047,
+      "top_groups": [
+        {
+          "key": "memo_sha256_90ac7bf0d3a5",
+          "amount_atom": 22159.375000000004,
+          "share": 0.4290544415384878
+        },
+        {
+          "key": "memo_sha256_377afe7eea62",
+          "amount_atom": 7327.383112,
+          "share": 0.14187432042003473
+        },
+        {
+          "key": "memo_sha256_af9fc13bed4c",
+          "amount_atom": 3700.0,
+          "share": 0.07164017187724855
+        },
+        {
+          "key": "memo_sha256_91e5e372e619",
+          "amount_atom": 3428.21,
+          "share": 0.06637771719764926
+        },
+        {
+          "key": "memo_sha256_378afcd1955e",
+          "amount_atom": 3275.0,
+          "share": 0.06341123321567271
+        }
+      ]
+    }
+  },
+  "top_pre_2h_binance_sender_profiles": [
+    {
+      "rank_by_pre_2h_binance_inflow": 1,
+      "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+      "pre_30m_binance_atom": 681.715,
+      "pre_2h_binance_atom": 22159.375000000004,
+      "pre_2h_share": 0.4290544415384878,
+      "pre_6h_binance_atom": 36239.609999,
+      "pre_24h_binance_atom": 111302.374998,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:04:17.348748197Z",
+      "seconds_from_last_binance_transfer_to_low": 980.340295,
+      "four_day_first_seen_utc": "2025-10-09T00:12:44.277497669Z",
+      "four_day_last_seen_utc": "2025-10-12T23:34:00.269002909Z",
+      "four_day_incoming_count": 282,
+      "four_day_incoming_atom": 362898.8150030001,
+      "four_day_outgoing_count": 445,
+      "four_day_outgoing_atom": 429055.1949809998,
+      "four_day_counterparty_count": 8,
+      "binance_deposit_count": 445,
+      "binance_deposit_atom": 429055.194981,
+      "binance_unique_memo_cluster_count": 1,
+      "top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 75392.19000000002,
+      "top_direct_source_share": 0.2077498930366492,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 893
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 2,
+      "address": "cosmos1qml5yxnfgdhcywp2w2lpvuj9fazzeylg2gdaeq",
+      "pre_30m_binance_atom": 2000.0,
+      "pre_2h_binance_atom": 9361.602494,
+      "pre_2h_share": 0.18126130046395644,
+      "pre_6h_binance_atom": 69529.03361,
+      "pre_24h_binance_atom": 177863.047395,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:20:18.16747211Z",
+      "seconds_from_last_binance_transfer_to_low": 19.521571,
+      "four_day_first_seen_utc": "2025-10-09T00:00:58.151523411Z",
+      "four_day_last_seen_utc": "2025-10-12T23:01:59.198924452Z",
+      "four_day_incoming_count": 315,
+      "four_day_incoming_atom": 1405924.2361739995,
+      "four_day_outgoing_count": 449,
+      "four_day_outgoing_atom": 1124647.862346,
+      "four_day_counterparty_count": 228,
+      "binance_deposit_count": 59,
+      "binance_deposit_atom": 368619.397651,
+      "binance_unique_memo_cluster_count": 10,
+      "top_direct_source": "cosmos1vl8xm7x04cedgh639hc9ucvf6zc754fyfewhef",
+      "top_direct_source_public_label": "KuCoin",
+      "top_direct_source_atom": 1085802.9169219995,
+      "top_direct_source_share": 0.7723054265547342,
+      "incoming_from_confirmed_exchange_labels_atom": {
+        "KuCoin": 1085802.9169219995
+      },
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "HitBTC",
+        "MEXC"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 3,
+      "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+      "pre_30m_binance_atom": 0,
+      "pre_2h_binance_atom": 3700.0,
+      "pre_2h_share": 0.07164017187724855,
+      "pre_6h_binance_atom": 7500.0,
+      "pre_24h_binance_atom": 7500.0,
+      "last_pre_flash_binance_time_utc": "2025-10-10T19:48:37.464662748Z",
+      "seconds_from_last_binance_transfer_to_low": 5520.224381,
+      "four_day_first_seen_utc": "2025-10-09T15:22:50.205617967Z",
+      "four_day_last_seen_utc": "2025-10-12T20:23:34.832599887Z",
+      "four_day_incoming_count": 40,
+      "four_day_incoming_atom": 151099.22000099998,
+      "four_day_outgoing_count": 49,
+      "four_day_outgoing_atom": 154900.0,
+      "four_day_counterparty_count": 8,
+      "binance_deposit_count": 49,
+      "binance_deposit_atom": 154900.0,
+      "binance_unique_memo_cluster_count": 1,
+      "top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 43699.78,
+      "top_direct_source_share": 0.28921247905654834,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 88
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 4,
+      "address": "cosmos1h9ymfm2fxrqgd257dlw5nku3jgqjgpl59sm5ns",
+      "pre_30m_binance_atom": 2075.69,
+      "pre_2h_binance_atom": 3428.21,
+      "pre_2h_share": 0.06637771719764926,
+      "pre_6h_binance_atom": 9738.05,
+      "pre_24h_binance_atom": 11020.64,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:03:17.060560978Z",
+      "seconds_from_last_binance_transfer_to_low": 1040.628483,
+      "four_day_first_seen_utc": "2025-10-09T04:39:40.564208906Z",
+      "four_day_last_seen_utc": "2025-10-12T23:15:03.139553046Z",
+      "four_day_incoming_count": 22,
+      "four_day_incoming_atom": 45549.063574,
+      "four_day_outgoing_count": 32,
+      "four_day_outgoing_atom": 60723.377798,
+      "four_day_counterparty_count": 24,
+      "binance_deposit_count": 11,
+      "binance_deposit_atom": 19521.64,
+      "binance_unique_memo_cluster_count": 2,
+      "top_direct_source": "cosmos12wdyqye0tp3kwwzw34xp5mxm97r4hrjrk7n28k",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 18182.083001,
+      "top_direct_source_share": 0.3991757804517977,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "KuCoin"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 5,
+      "address": "cosmos1t3vqgqjlk0zzcx32juhqqhpn5aar0gus63lnnp",
+      "pre_30m_binance_atom": 2210.8,
+      "pre_2h_binance_atom": 2210.8,
+      "pre_2h_share": 0.04280597080708679,
+      "pre_6h_binance_atom": 5926.3,
+      "pre_24h_binance_atom": 6703.990155,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:19:11.03914684Z",
+      "seconds_from_last_binance_transfer_to_low": 86.649897,
+      "four_day_first_seen_utc": "2025-10-09T02:30:05.422122215Z",
+      "four_day_last_seen_utc": "2025-10-12T22:41:43.959923735Z",
+      "four_day_incoming_count": 39,
+      "four_day_incoming_atom": 112757.61455500002,
+      "four_day_outgoing_count": 74,
+      "four_day_outgoing_atom": 95530.572958,
+      "four_day_counterparty_count": 8,
+      "binance_deposit_count": 35,
+      "binance_deposit_atom": 32411.961851,
+      "binance_unique_memo_cluster_count": 4,
+      "top_direct_source": "cosmos1z7g5w84ynmjyg0kqpahdjqpj7yq34v3suckp0e",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 112757.61455300002,
+      "top_direct_source_share": 0.9999999999822629,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 6,
+      "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+      "pre_30m_binance_atom": 1284.0,
+      "pre_2h_binance_atom": 1284.0,
+      "pre_2h_share": 0.024861075862266796,
+      "pre_6h_binance_atom": 1284.0,
+      "pre_24h_binance_atom": 1284.0,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:06:43.820939601Z",
+      "seconds_from_last_binance_transfer_to_low": 833.868104,
+      "four_day_first_seen_utc": "2025-10-09T13:31:44.57128142Z",
+      "four_day_last_seen_utc": "2025-10-12T13:33:06.173496746Z",
+      "four_day_incoming_count": 172,
+      "four_day_incoming_atom": 158121.47745,
+      "four_day_outgoing_count": 154,
+      "four_day_outgoing_atom": 158078.65400499996,
+      "four_day_counterparty_count": 16,
+      "binance_deposit_count": 19,
+      "binance_deposit_atom": 13850.0,
+      "binance_unique_memo_cluster_count": 1,
+      "top_direct_source": "cosmos1gwyv83zcnckdhuz3n78rvyzj59u8x6l8dk9cfy",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 27195.3286,
+      "top_direct_source_share": 0.17199009924884812,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 7,
+      "address": "cosmos1t4d55agpf9xlsmgwc0c2yw6vvcrj6degtdf94c",
+      "pre_30m_binance_atom": 1197.9,
+      "pre_2h_binance_atom": 1197.9,
+      "pre_2h_share": 0.023193989700474607,
+      "pre_6h_binance_atom": 1767.8,
+      "pre_24h_binance_atom": 2177.8,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:16:00.585159891Z",
+      "seconds_from_last_binance_transfer_to_low": 277.103884,
+      "four_day_first_seen_utc": "2025-10-09T03:07:47.372195779Z",
+      "four_day_last_seen_utc": "2025-10-12T12:39:34.855830814Z",
+      "four_day_incoming_count": 14,
+      "four_day_incoming_atom": 164496.331726,
+      "four_day_outgoing_count": 64,
+      "four_day_outgoing_atom": 162337.440941,
+      "four_day_counterparty_count": 22,
+      "binance_deposit_count": 17,
+      "binance_deposit_atom": 30181.418262,
+      "binance_unique_memo_cluster_count": 7,
+      "top_direct_source": "cosmos1hjyde2kfgtl78twvhs53u5j2gcsxrt649nn8j5",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 127696.331725,
+      "top_direct_source_share": 0.7762868046060905,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 8,
+      "address": "cosmos1qaz83m30j392287nslgg4585q6uhaluj72d4zs",
+      "pre_30m_binance_atom": 1064.2,
+      "pre_2h_binance_atom": 1064.2,
+      "pre_2h_share": 0.020605262408585925,
+      "pre_6h_binance_atom": 5803.403867,
+      "pre_24h_binance_atom": 16879.018698,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:17:05.014301447Z",
+      "seconds_from_last_binance_transfer_to_low": 212.674742,
+      "four_day_first_seen_utc": "2025-10-09T00:10:05.394495566Z",
+      "four_day_last_seen_utc": "2025-10-12T23:37:56.516609127Z",
+      "four_day_incoming_count": 22,
+      "four_day_incoming_atom": 380000.000003,
+      "four_day_outgoing_count": 190,
+      "four_day_outgoing_atom": 309324.37804499996,
+      "four_day_counterparty_count": 15,
+      "binance_deposit_count": 59,
+      "binance_deposit_atom": 98603.711424,
+      "binance_unique_memo_cluster_count": 12,
+      "top_direct_source": "cosmos15ghk4pcyx7377m0s874nlg6yy2j4l2dc4zkfmw",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 380000.0,
+      "top_direct_source_share": 0.9999999999921052,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 9,
+      "address": "cosmos15peustvjpa44sdhh2ymx96c6ke79ztjar35twr",
+      "pre_30m_binance_atom": 597.418,
+      "pre_2h_binance_atom": 1001.615081,
+      "pre_2h_share": 0.019393480150725468,
+      "pre_6h_binance_atom": 1001.615081,
+      "pre_24h_binance_atom": 2859.160032,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:18:35.379954592Z",
+      "seconds_from_last_binance_transfer_to_low": 122.309089,
+      "four_day_first_seen_utc": "2025-10-09T00:51:24.385182796Z",
+      "four_day_last_seen_utc": "2025-10-12T23:19:49.959557778Z",
+      "four_day_incoming_count": 123,
+      "four_day_incoming_atom": 183279.949535,
+      "four_day_outgoing_count": 175,
+      "four_day_outgoing_atom": 146802.159106,
+      "four_day_counterparty_count": 144,
+      "binance_deposit_count": 49,
+      "binance_deposit_atom": 33398.930316,
+      "binance_unique_memo_cluster_count": 4,
+      "top_direct_source": "cosmos1uawr28nd3wp9yldrhxsl0ktdvrt6uz2dd6e9r3",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 101000.0,
+      "top_direct_source_share": 0.5510695537414068,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 10,
+      "address": "cosmos16na4yg4rtt4n8j72n54uy5mvxn7f08l7t4h3xv",
+      "pre_30m_binance_atom": 844.0,
+      "pre_2h_binance_atom": 844.0,
+      "pre_2h_share": 0.016341704071458858,
+      "pre_6h_binance_atom": 1860.813561,
+      "pre_24h_binance_atom": 1860.813561,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:17:53.224490879Z",
+      "seconds_from_last_binance_transfer_to_low": 164.464553,
+      "four_day_first_seen_utc": "2025-10-09T02:53:26.424600054Z",
+      "four_day_last_seen_utc": "2025-10-12T21:43:55.930000783Z",
+      "four_day_incoming_count": 19,
+      "four_day_incoming_atom": 126584.945592,
+      "four_day_outgoing_count": 33,
+      "four_day_outgoing_atom": 82648.88493500001,
+      "four_day_counterparty_count": 13,
+      "binance_deposit_count": 9,
+      "binance_deposit_atom": 5206.550348,
+      "binance_unique_memo_cluster_count": 5,
+      "top_direct_source": "cosmos13rf3upgznjvrwdgwje7ts8ja605a06hvaqlt7d",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 85670.28499100001,
+      "top_direct_source_share": 0.6767809915337536,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "MEXC"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 11,
+      "address": "cosmos134amdum68rsfv4wpkanx253vw6zkmmfa3ssrxa",
+      "pre_30m_binance_atom": 387.99,
+      "pre_2h_binance_atom": 690.98,
+      "pre_2h_share": 0.013378898909119245,
+      "pre_6h_binance_atom": 690.98,
+      "pre_24h_binance_atom": 690.98,
+      "last_pre_flash_binance_time_utc": "2025-10-10T20:58:25.856677219Z",
+      "seconds_from_last_binance_transfer_to_low": 1331.832366,
+      "four_day_first_seen_utc": "2025-10-09T02:32:07.715405418Z",
+      "four_day_last_seen_utc": "2025-10-12T22:12:10.412102319Z",
+      "four_day_incoming_count": 131,
+      "four_day_incoming_atom": 123805.887226,
+      "four_day_outgoing_count": 276,
+      "four_day_outgoing_atom": 311329.75947600004,
+      "four_day_counterparty_count": 250,
+      "binance_deposit_count": 16,
+      "binance_deposit_atom": 23275.690407000002,
+      "binance_unique_memo_cluster_count": 13,
+      "top_direct_source": "cosmos1cyfkpj7pxc2etvmtz36egmrhefgnwd7m4xvpn0",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 18446.712788,
+      "top_direct_source_share": 0.14899705661271717,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "KuCoin",
+        "MEXC"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 12,
+      "address": "cosmos1ncq3d3442pfe96vmc7e0f0t304cyqr4y4ne6nt",
+      "pre_30m_binance_atom": 86.984,
+      "pre_2h_binance_atom": 678.382297,
+      "pre_2h_share": 0.01313497955555748,
+      "pre_6h_binance_atom": 726.399721,
+      "pre_24h_binance_atom": 4491.075793,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:16:52.407807387Z",
+      "seconds_from_last_binance_transfer_to_low": 225.281236,
+      "four_day_first_seen_utc": "2025-10-09T00:00:39.73836785Z",
+      "four_day_last_seen_utc": "2025-10-12T23:44:28.138297627Z",
+      "four_day_incoming_count": 515,
+      "four_day_incoming_atom": 1262101.773879,
+      "four_day_outgoing_count": 629,
+      "four_day_outgoing_atom": 1281861.7717829999,
+      "four_day_counterparty_count": 688,
+      "binance_deposit_count": 40,
+      "binance_deposit_atom": 32394.648143,
+      "binance_unique_memo_cluster_count": 25,
+      "top_direct_source": "cosmos10tkfys86qhqaq7yp6edhkcr2s7v5zwr0adyvqv",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 599017.36,
+      "top_direct_source_share": 0.47461890348109825,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "HitBTC",
+        "KuCoin",
+        "MEXC"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 13,
+      "address": "cosmos1d90dejqz2jlttc3jdcrrkc8s5zwdn8s90v38nl",
+      "pre_30m_binance_atom": 524.26,
+      "pre_2h_binance_atom": 529.26,
+      "pre_2h_share": 0.01024764253182502,
+      "pre_6h_binance_atom": 529.26,
+      "pre_24h_binance_atom": 529.26,
+      "last_pre_flash_binance_time_utc": "2025-10-10T20:52:27.98242249Z",
+      "seconds_from_last_binance_transfer_to_low": 1689.706621,
+      "four_day_first_seen_utc": "2025-10-10T20:49:42.242534379Z",
+      "four_day_last_seen_utc": "2025-10-10T20:52:27.98242249Z",
+      "four_day_incoming_count": 0,
+      "four_day_incoming_atom": 0,
+      "four_day_outgoing_count": 2,
+      "four_day_outgoing_atom": 529.26,
+      "four_day_counterparty_count": 1,
+      "binance_deposit_count": 2,
+      "binance_deposit_atom": 529.26,
+      "binance_unique_memo_cluster_count": 1,
+      "top_direct_source": null,
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 0.0,
+      "top_direct_source_share": 0.0,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 14,
+      "address": "cosmos1f4g8s3kkey3nw5w0r6dt6qe6tccej799w3xqun",
+      "pre_30m_binance_atom": 458.861004,
+      "pre_2h_binance_atom": 458.861004,
+      "pre_2h_share": 0.0088845624849532,
+      "pre_6h_binance_atom": 458.861004,
+      "pre_24h_binance_atom": 458.861004,
+      "last_pre_flash_binance_time_utc": "2025-10-10T21:18:17.437074222Z",
+      "seconds_from_last_binance_transfer_to_low": 140.251969,
+      "four_day_first_seen_utc": "2025-10-10T21:16:21.085091726Z",
+      "four_day_last_seen_utc": "2025-10-11T12:31:37.35313066Z",
+      "four_day_incoming_count": 8,
+      "four_day_incoming_atom": 4243.585282,
+      "four_day_outgoing_count": 6,
+      "four_day_outgoing_atom": 3969.312404,
+      "four_day_counterparty_count": 6,
+      "binance_deposit_count": 4,
+      "binance_deposit_atom": 1190.7765279999999,
+      "binance_unique_memo_cluster_count": 1,
+      "top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 2619.9700000000003,
+      "top_direct_source_share": 0.6173953923143992,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 0
+    },
+    {
+      "rank_by_pre_2h_binance_inflow": 15,
+      "address": "cosmos1dwj2m4d5jq5dxl027seqj4qawq2s8pesjdy3g5",
+      "pre_30m_binance_atom": 448.0,
+      "pre_2h_binance_atom": 448.0,
+      "pre_2h_share": 0.008674269459731716,
+      "pre_6h_binance_atom": 448.0,
+      "pre_24h_binance_atom": 25072.0,
+      "last_pre_flash_binance_time_utc": "2025-10-10T20:58:43.904609272Z",
+      "seconds_from_last_binance_transfer_to_low": 1313.784434,
+      "four_day_first_seen_utc": "2025-10-09T00:22:37.217168569Z",
+      "four_day_last_seen_utc": "2025-10-12T20:57:39.41003921Z",
+      "four_day_incoming_count": 25,
+      "four_day_incoming_atom": 521094.432751,
+      "four_day_outgoing_count": 76,
+      "four_day_outgoing_atom": 453539.723045,
+      "four_day_counterparty_count": 17,
+      "binance_deposit_count": 8,
+      "binance_deposit_atom": 92129.0,
+      "binance_unique_memo_cluster_count": 2,
+      "top_direct_source": "cosmos1ncq3d3442pfe96vmc7e0f0t304cyqr4y4ne6nt",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 274989.0,
+      "top_direct_source_share": 0.5277143310632929,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance",
+        "KuCoin"
+      ],
+      "ibc_match_count": 0
+    }
+  ],
+  "top_2h_sender_detail": {
+    "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+    "profile": {
+      "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+      "four_day_first_seen_utc": "2025-10-09T00:12:44.277497669Z",
+      "four_day_last_seen_utc": "2025-10-12T23:34:00.269002909Z",
+      "four_day_incoming_count": 282,
+      "four_day_incoming_atom": 362898.8150030001,
+      "four_day_outgoing_count": 445,
+      "four_day_outgoing_atom": 429055.1949809998,
+      "four_day_counterparty_count": 8,
+      "binance_deposit_count": 445,
+      "binance_deposit_atom": 429055.194981,
+      "binance_unique_memo_cluster_count": 1,
+      "top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "top_direct_source_public_label": null,
+      "top_direct_source_atom": 75392.19000000002,
+      "top_direct_source_share": 0.2077498930366492,
+      "incoming_from_confirmed_exchange_labels_atom": {},
+      "confirmed_exchange_destination_labels": [
+        "Binance"
+      ],
+      "ibc_match_count": 893,
+      "ibc_routes": [
+        {
+          "direction": "inbound",
+          "counterparty_chain_hint": "osmo",
+          "count": 616,
+          "amount_atom": 431382.0070850001
+        },
+        {
+          "direction": "outbound",
+          "counterparty_chain_hint": "osmo",
+          "count": 277,
+          "amount_atom": 365222.7989059992
+        }
+      ],
+      "top_direct_sources": [
+        {
+          "address": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+          "public_label": null,
+          "amount_atom": 75392.19000000002,
+          "share": 0.2077498930366492
+        },
+        {
+          "address": "cosmos10clzsllyngem5jyz3dpqsxu2x0p5533j7937yw",
+          "public_label": null,
+          "amount_atom": 73423.11500000002,
+          "share": 0.20232393153279662
+        },
+        {
+          "address": "cosmos1aasrlxl6y82tk2gsvgm5uavp56tjtxffy4472w",
+          "public_label": null,
+          "amount_atom": 60418.31000000002,
+          "share": 0.16648803330895567
+        },
+        {
+          "address": "cosmos18ld4633yswcyjdklej3att6aw93nhlf7ce4v8u",
+          "public_label": null,
+          "amount_atom": 54323.35500000002,
+          "share": 0.14969284206549677
+        },
+        {
+          "address": "cosmos1u5we9ww76a4s0ldqh8c5q4tzwvkxualf0anxfx",
+          "public_label": null,
+          "amount_atom": 52792.37000000002,
+          "share": 0.14547407656749606
+        },
+        {
+          "address": "cosmos1gwyv83zcnckdhuz3n78rvyzj59u8x6l8dk9cfy",
+          "public_label": null,
+          "amount_atom": 46549.47500000001,
+          "share": 0.12827122348033898
+        },
+        {
+          "address": "cosmos16a87dpmkutsfx7cddxt749urv62nkcajmr8nw2",
+          "public_label": null,
+          "amount_atom": 3e-06,
+          "share": 8.266767142723238e-12
+        }
+      ],
+      "top_direct_destinations": [
+        {
+          "address": "cosmos1j8pp7zvcu9z8vd882m284j29fn2dszh05cqvf9",
+          "public_label": "Binance",
+          "amount_atom": 429055.1949809998,
+          "share": 1.0
+        }
+      ]
+    },
+    "interpretation": "This address is the largest two-hour Binance sender, but its high-frequency bidirectional Osmosis IBC activity and hundreds of repeated fixed-memo Binance deposits are consistent with an automated routing/arbitrage role."
+  },
+  "common_one_hop_funding_sources_for_top10": [
+    {
+      "source_address": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "source_public_label": null,
+      "funded_top10_target_count": 3,
+      "funded_top10_amount_atom": 137283.5453,
+      "targets": [
+        {
+          "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 75392.19000000002
+        },
+        {
+          "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 43699.78
+        },
+        {
+          "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 18191.575299999997
+        }
+      ],
+      "source_four_day_counterparty_count": 518,
+      "source_four_day_incoming_atom": 8649051.323168,
+      "source_four_day_outgoing_atom": 7808805.895767,
+      "source_top_direct_source": "cosmos1p3ucd3ptpw902fluyjzhq3ffgq4ntddac9sa3s",
+      "source_top_direct_source_public_label": null,
+      "source_incoming_from_confirmed_exchange_labels_atom": {
+        "Binance": 3649051.323165
+      }
+    },
+    {
+      "source_address": "cosmos10clzsllyngem5jyz3dpqsxu2x0p5533j7937yw",
+      "source_public_label": null,
+      "funded_top10_target_count": 3,
+      "funded_top10_amount_atom": 121349.15900000001,
+      "targets": [
+        {
+          "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 73423.11500000002
+        },
+        {
+          "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 26499.859999999997
+        },
+        {
+          "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 21426.184
+        }
+      ],
+      "source_four_day_counterparty_count": 469,
+      "source_four_day_incoming_atom": 1396363.020669,
+      "source_four_day_outgoing_atom": 1240849.853362,
+      "source_top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "source_top_direct_source_public_label": null,
+      "source_incoming_from_confirmed_exchange_labels_atom": {}
+    },
+    {
+      "source_address": "cosmos18ld4633yswcyjdklej3att6aw93nhlf7ce4v8u",
+      "source_public_label": null,
+      "funded_top10_target_count": 3,
+      "funded_top10_amount_atom": 107975.95160000001,
+      "targets": [
+        {
+          "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 54323.35500000002
+        },
+        {
+          "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 30999.859999999997
+        },
+        {
+          "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 22652.7366
+        }
+      ],
+      "source_four_day_counterparty_count": 442,
+      "source_four_day_incoming_atom": 1499958.8434449998,
+      "source_four_day_outgoing_atom": 1250763.69095,
+      "source_top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "source_top_direct_source_public_label": null,
+      "source_incoming_from_confirmed_exchange_labels_atom": {}
+    },
+    {
+      "source_address": "cosmos1aasrlxl6y82tk2gsvgm5uavp56tjtxffy4472w",
+      "source_public_label": null,
+      "funded_top10_target_count": 3,
+      "funded_top10_amount_atom": 105624.02070000002,
+      "targets": [
+        {
+          "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 60418.31000000002
+        },
+        {
+          "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 30999.839999999997
+        },
+        {
+          "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 14205.8707
+        }
+      ],
+      "source_four_day_counterparty_count": 449,
+      "source_four_day_incoming_atom": 1520380.108485,
+      "source_four_day_outgoing_atom": 1362297.6151530002,
+      "source_top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "source_top_direct_source_public_label": null,
+      "source_incoming_from_confirmed_exchange_labels_atom": {}
+    },
+    {
+      "source_address": "cosmos1gwyv83zcnckdhuz3n78rvyzj59u8x6l8dk9cfy",
+      "source_public_label": null,
+      "funded_top10_target_count": 3,
+      "funded_top10_amount_atom": 85244.72360000001,
+      "targets": [
+        {
+          "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 46549.47500000001
+        },
+        {
+          "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 27195.3286
+        },
+        {
+          "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 11499.92
+        }
+      ],
+      "source_four_day_counterparty_count": 481,
+      "source_four_day_incoming_atom": 1060704.576418,
+      "source_four_day_outgoing_atom": 925373.8233609999,
+      "source_top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "source_top_direct_source_public_label": null,
+      "source_incoming_from_confirmed_exchange_labels_atom": {}
+    },
+    {
+      "source_address": "cosmos1u5we9ww76a4s0ldqh8c5q4tzwvkxualf0anxfx",
+      "source_public_label": null,
+      "funded_top10_target_count": 3,
+      "funded_top10_amount_atom": 82946.26570000002,
+      "targets": [
+        {
+          "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+          "amount_atom": 52792.37000000002
+        },
+        {
+          "address": "cosmos1dnssyzyhnja28zdww2ffa6fcxaxwanguf7nmq7",
+          "amount_atom": 22753.935699999998
+        },
+        {
+          "address": "cosmos188frg3urnzayxdvsy4kr2gv6deuxnl5rsppaw6",
+          "amount_atom": 7399.959999999999
+        }
+      ],
+      "source_four_day_counterparty_count": 453,
+      "source_four_day_incoming_atom": 1058872.275966,
+      "source_four_day_outgoing_atom": 901679.654655,
+      "source_top_direct_source": "cosmos1l0znsvddllw9knha3yx2svnlxny676d8ns7uys",
+      "source_top_direct_source_public_label": null,
+      "source_incoming_from_confirmed_exchange_labels_atom": {}
+    }
+  ],
+  "evidence_assessment": {
+    "one_aggressive_sell_order_episode": "strongly_supported_but_order_id_not_public",
+    "one_or_more_specific_binance_accounts_caused_final_wick": "plausible_but_not_publicly_attributable",
+    "nearest_cosmos_sender_was_the_selling_account": "not_supported",
+    "abnormally_large_binance_preloading_in_prior_30m_or_2h": "not_supported",
+    "abnormally_concentrated_binance_preloading_in_prior_2h": "not_supported",
+    "coordinated_wallet_manipulation_or_deliberate_intent": "not_established",
+    "named_natural_person_or_beneficial_owner": "not_identifiable_from_public_data"
+  },
+  "required_nonpublic_evidence": [
+    "Binance taker order ID, account/subaccount ID, order type, clientOrderId, IP/API-key audit trail, and liquidation flag",
+    "Binance deposit-credit timestamp and mapping from the hashed memo cluster to the internal account",
+    "Historical ATOM/USDT order-book snapshots immediately before 21:20:37.689043 UTC",
+    "Cross-venue account records linking Cosmos transfers to sell orders and withdrawals"
+  ],
+  "bottom_line": "Public market data isolate a likely single or tightly synchronized aggressive sell-order episode that produced the terminal wick. Public on-chain data do not connect that episode to a specific Cosmos wallet or user and do not show exceptional Binance pre-loading or concentration. Deliberate manipulation remains possible but is not established."
+}

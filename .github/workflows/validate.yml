@@ -1,0 +1,22 @@
+name: validate-intermediate-data
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python scripts/validate_release.py --deep
+      - run: python scripts/verify_publication_extensions.py
+      - run: python scripts/verify_wallet_coordination.py

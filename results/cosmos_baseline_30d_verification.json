@@ -1,0 +1,127 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "verification_status": "PASS",
+  "baseline_manifest": "data/processed/cosmoshub/baseline_30d/baseline_indexed_manifest.json",
+  "checks": [
+    {
+      "check": "block_sha256",
+      "passed": true,
+      "detail": "008e785fe2b79085e746582498eb1789112a82c70d2db627c44b10838e0d8405"
+    },
+    {
+      "check": "series_sha256",
+      "passed": true,
+      "detail": "27d8ff7a4d2661d40659eeb0baa0bbd7a207532afdbc92f28566571d64bc6c43"
+    },
+    {
+      "check": "block_height_continuity",
+      "passed": true,
+      "detail": {
+        "record_count": 438529,
+        "first_height": 27456806,
+        "last_height": 27895334,
+        "gaps": 0
+      }
+    },
+    {
+      "check": "block_time_monotonicity",
+      "passed": true,
+      "detail": {
+        "nonmonotonic_pairs": 0
+      }
+    },
+    {
+      "check": "five_minute_continuity",
+      "passed": true,
+      "detail": {
+        "actual_rows": 8640,
+        "expected_rows": 8640,
+        "missing": 0
+      }
+    },
+    {
+      "check": "five_minute_finite_values",
+      "passed": true,
+      "detail": {
+        "nonfinite_values": 0
+      }
+    },
+    {
+      "check": "independent_endpoint_crosscheck",
+      "passed": true,
+      "detail": {
+        "distinct_endpoint_count": 2,
+        "endpoints": [
+          "https://cosmos-rpc.publicnode.com",
+          "https://rpc.cosmoshub-main.ccvalidators.com"
+        ]
+      }
+    },
+    {
+      "check": "prespecified_query_scope",
+      "passed": true,
+      "detail": {
+        "address_query_count": 307,
+        "excluded_watchlist_address_count": 49,
+        "confirmed_label_count": 4,
+        "query_count": 371
+      }
+    },
+    {
+      "check": "watchlist_excluded_from_query_summaries",
+      "passed": true,
+      "detail": {
+        "queried_watchlist_addresses": [],
+        "recipient_summary_count": 307
+      }
+    },
+    {
+      "check": "query_page_provenance",
+      "passed": true,
+      "detail": {
+        "mismatches": []
+      }
+    },
+    {
+      "check": "query_decode_errors",
+      "passed": true,
+      "detail": {
+        "decode_errors": 0
+      }
+    },
+    {
+      "check": "overlap_full_raw_exact_match",
+      "passed": true,
+      "detail": {
+        "difference_count": 0,
+        "totals": {
+          "confirmed_exchange_in": {
+            "actual_count": 811,
+            "actual_uatom": 655387901292,
+            "expected_count": 811,
+            "expected_uatom": 655387901292
+          },
+          "confirmed_exchange_out": {
+            "actual_count": 356,
+            "actual_uatom": 647890659941,
+            "expected_count": 356,
+            "expected_uatom": 647890659941
+          },
+          "ibc_inbound": {
+            "actual_count": 1544,
+            "actual_uatom": 387860685653,
+            "expected_count": 1544,
+            "expected_uatom": 387860685653
+          },
+          "ibc_outbound": {
+            "actual_count": 2107,
+            "actual_uatom": 234126839038,
+            "expected_count": 2107,
+            "expected_uatom": 234126839038
+          }
+        }
+      }
+    }
+  ],
+  "overlap_differences_first_20": []
+}

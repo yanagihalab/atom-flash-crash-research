@@ -1,0 +1,110 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "status": "verified",
+  "window_definition": {
+    "focal_count": 5,
+    "non_event_distribution_count": 36,
+    "duration_hours": 2,
+    "primary_control_start_utc": "2025-10-09T20:30:00Z"
+  },
+  "source_checks": {
+    "atom_transfers": {
+      "sha256": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+      "status": "verified"
+    },
+    "ibc_transfers": {
+      "sha256": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+      "status": "verified"
+    },
+    "candidates": {
+      "sha256": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
+      "status": "verified"
+    },
+    "labels": {
+      "sha256": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
+      "status": "verified"
+    },
+    "market_files": {
+      "count": 24,
+      "status": "verified"
+    }
+  },
+  "event_reconciliation": {
+    "status": "matches_cosmoshub_flow_analysis",
+    "chain": {
+      "direct_transfer_count": 1533,
+      "direct_transfer_atom": 2721343.637883,
+      "structured_candidate_in_count": 706,
+      "structured_candidate_in_atom": 1393999.777324,
+      "large_flow_watchlist_in_count": 182,
+      "large_flow_watchlist_in_atom": 1101138.408901,
+      "confirmed_exchange_in_count": 193,
+      "confirmed_exchange_in_atom": 188053.420087,
+      "confirmed_exchange_out_count": 56,
+      "confirmed_exchange_out_atom": 195398.332856,
+      "ibc_inbound_count": 1113,
+      "ibc_inbound_atom": 277987.972547,
+      "ibc_outbound_count": 1125,
+      "ibc_outbound_atom": 450890.178305,
+      "confirmed_exchange_net_in_atom": -7344.912769,
+      "ibc_net_inbound_atom": -172902.205758
+    },
+    "binance_atomusdt_low": 0.001
+  },
+  "distribution_metric_checks": {
+    "direct_transfer_atom": {
+      "event": 2721343.637883,
+      "control_median": 807663.772615,
+      "event_percentile_empirical": 91.66666666666667,
+      "status": "verified"
+    },
+    "structured_candidate_in_atom": {
+      "event": 1393999.777324,
+      "control_median": 347647.21916700003,
+      "event_percentile_empirical": 91.66666666666667,
+      "status": "verified"
+    },
+    "large_flow_watchlist_in_atom": {
+      "event": 1101138.408901,
+      "control_median": 147375.78597199998,
+      "event_percentile_empirical": 94.44444444444444,
+      "status": "verified"
+    },
+    "confirmed_exchange_in_atom": {
+      "event": 188053.420087,
+      "control_median": 85117.89712149999,
+      "event_percentile_empirical": 80.55555555555556,
+      "status": "verified"
+    },
+    "confirmed_exchange_out_atom": {
+      "event": 195398.332856,
+      "control_median": 87001.96506399999,
+      "event_percentile_empirical": 80.55555555555556,
+      "status": "verified"
+    },
+    "confirmed_exchange_net_in_atom": {
+      "event": -7344.912769,
+      "control_median": -463.67427899999996,
+      "event_percentile_empirical": 16.666666666666668,
+      "status": "verified"
+    },
+    "ibc_inbound_atom": {
+      "event": 277987.972547,
+      "control_median": 29893.617345,
+      "event_percentile_empirical": 100.0,
+      "status": "verified"
+    },
+    "ibc_outbound_atom": {
+      "event": 450890.178305,
+      "control_median": 28971.367508000003,
+      "event_percentile_empirical": 100.0,
+      "status": "verified"
+    },
+    "ibc_net_inbound_atom": {
+      "event": -172902.205758,
+      "control_median": 7784.810091,
+      "event_percentile_empirical": 0.0,
+      "status": "verified"
+    }
+  }
+}

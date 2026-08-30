@@ -1,0 +1,1925 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "run_started_at_utc": "2026-08-29T09:52:43.917396Z",
+  "run_finished_at_utc": "2026-08-29T09:54:09.679441Z",
+  "start_date_utc": "2025-09-10",
+  "end_date_utc_inclusive": "2025-10-08",
+  "records": [
+    {
+      "date_utc": "2025-09-10",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1588,
+      "first_trade_ts": "2025-09-10T00:00:00.131162012Z",
+      "last_trade_ts": "2025-09-10T23:51:40.383043112Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-10T00:00:00Z",
+          "to_ts": "2025-09-11T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-10T14:46:33.012066508Z",
+          "to_ts": "2025-09-11T00:00:00Z",
+          "count_returned": 589
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-10.jsonl.gz",
+      "sha256": "84143bab29405684614fa211b9dc39d027182c9cf5f59d94bc927dc3db1ebdc7",
+      "size_bytes": 59893
+    },
+    {
+      "date_utc": "2025-09-10",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1257,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 183,
+      "queries": [
+        {
+          "start": "2025-09-10T00:00:00Z",
+          "end": "2025-09-10T05:00:00Z",
+          "count_returned": 264
+        },
+        {
+          "start": "2025-09-10T05:00:00Z",
+          "end": "2025-09-10T10:00:00Z",
+          "count_returned": 260
+        },
+        {
+          "start": "2025-09-10T10:00:00Z",
+          "end": "2025-09-10T15:00:00Z",
+          "count_returned": 267
+        },
+        {
+          "start": "2025-09-10T15:00:00Z",
+          "end": "2025-09-10T20:00:00Z",
+          "count_returned": 275
+        },
+        {
+          "start": "2025-09-10T20:00:00Z",
+          "end": "2025-09-11T00:00:00Z",
+          "count_returned": 196
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-10.json",
+      "sha256": "64640062287eda7d9a0c2a6745c1517fab67e4a9e96a94c467e437edc0970d62",
+      "size_bytes": 53784
+    },
+    {
+      "date_utc": "2025-09-11",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1714,
+      "first_trade_ts": "2025-09-11T00:00:00.254075028Z",
+      "last_trade_ts": "2025-09-11T23:58:48.111189772Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-11T00:00:00Z",
+          "to_ts": "2025-09-12T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-11T13:40:57.357121922Z",
+          "to_ts": "2025-09-12T00:00:00Z",
+          "count_returned": 715
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-11.jsonl.gz",
+      "sha256": "4a935858b78a1290f6cc04dcacd982ef255d15d2b05e53eb52677e7d732debdc",
+      "size_bytes": 62958
+    },
+    {
+      "date_utc": "2025-09-11",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1131,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 309,
+      "queries": [
+        {
+          "start": "2025-09-11T00:00:00Z",
+          "end": "2025-09-11T05:00:00Z",
+          "count_returned": 234
+        },
+        {
+          "start": "2025-09-11T05:00:00Z",
+          "end": "2025-09-11T10:00:00Z",
+          "count_returned": 211
+        },
+        {
+          "start": "2025-09-11T10:00:00Z",
+          "end": "2025-09-11T15:00:00Z",
+          "count_returned": 267
+        },
+        {
+          "start": "2025-09-11T15:00:00Z",
+          "end": "2025-09-11T20:00:00Z",
+          "count_returned": 253
+        },
+        {
+          "start": "2025-09-11T20:00:00Z",
+          "end": "2025-09-12T00:00:00Z",
+          "count_returned": 170
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-11.json",
+      "sha256": "28a64a6e6b0f1d88a48137fa58201a1ac2b0688106f2dbdc86f78cc4ffa8700e",
+      "size_bytes": 48426
+    },
+    {
+      "date_utc": "2025-09-12",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2044,
+      "first_trade_ts": "2025-09-12T00:00:54.040346510Z",
+      "last_trade_ts": "2025-09-12T23:59:49.062063920Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-12T00:00:00Z",
+          "to_ts": "2025-09-13T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-12T13:31:30.623313122Z",
+          "to_ts": "2025-09-13T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-12T23:25:07.996723730Z",
+          "to_ts": "2025-09-13T00:00:00Z",
+          "count_returned": 46
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-12.jsonl.gz",
+      "sha256": "e8a50130291a8b7a22ceed17e699f7ee248cf55429b1a98a27d08ad21f1a2053",
+      "size_bytes": 75754
+    },
+    {
+      "date_utc": "2025-09-12",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1152,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 288,
+      "queries": [
+        {
+          "start": "2025-09-12T00:00:00Z",
+          "end": "2025-09-12T05:00:00Z",
+          "count_returned": 221
+        },
+        {
+          "start": "2025-09-12T05:00:00Z",
+          "end": "2025-09-12T10:00:00Z",
+          "count_returned": 212
+        },
+        {
+          "start": "2025-09-12T10:00:00Z",
+          "end": "2025-09-12T15:00:00Z",
+          "count_returned": 244
+        },
+        {
+          "start": "2025-09-12T15:00:00Z",
+          "end": "2025-09-12T20:00:00Z",
+          "count_returned": 277
+        },
+        {
+          "start": "2025-09-12T20:00:00Z",
+          "end": "2025-09-13T00:00:00Z",
+          "count_returned": 203
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-12.json",
+      "sha256": "5bcbe8e77eef1ccfe5eddb5ee14453ab99f8582947f7fd3eb7937a1754b0b7b4",
+      "size_bytes": 49321
+    },
+    {
+      "date_utc": "2025-09-13",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2280,
+      "first_trade_ts": "2025-09-13T00:00:54.035327412Z",
+      "last_trade_ts": "2025-09-13T23:59:26.591941504Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-13T00:00:00Z",
+          "to_ts": "2025-09-14T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-13T10:15:28.994615766Z",
+          "to_ts": "2025-09-14T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-13T19:12:28.654564782Z",
+          "to_ts": "2025-09-14T00:00:00Z",
+          "count_returned": 282
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-13.jsonl.gz",
+      "sha256": "ee42a3454ee6a31adcf45a8abfd9e56ac27b88610ca0adb48372a43982037d37",
+      "size_bytes": 85115
+    },
+    {
+      "date_utc": "2025-09-13",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1232,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 208,
+      "queries": [
+        {
+          "start": "2025-09-13T00:00:00Z",
+          "end": "2025-09-13T05:00:00Z",
+          "count_returned": 254
+        },
+        {
+          "start": "2025-09-13T05:00:00Z",
+          "end": "2025-09-13T10:00:00Z",
+          "count_returned": 232
+        },
+        {
+          "start": "2025-09-13T10:00:00Z",
+          "end": "2025-09-13T15:00:00Z",
+          "count_returned": 272
+        },
+        {
+          "start": "2025-09-13T15:00:00Z",
+          "end": "2025-09-13T20:00:00Z",
+          "count_returned": 280
+        },
+        {
+          "start": "2025-09-13T20:00:00Z",
+          "end": "2025-09-14T00:00:00Z",
+          "count_returned": 199
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-13.json",
+      "sha256": "2bb18b26476e291b3d47631fbfa2f6ee829a77559f3c29af2c7226ee9063b012",
+      "size_bytes": 52941
+    },
+    {
+      "date_utc": "2025-09-14",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2596,
+      "first_trade_ts": "2025-09-14T00:00:54.035191738Z",
+      "last_trade_ts": "2025-09-14T23:59:30.893328474Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-14T00:00:00Z",
+          "to_ts": "2025-09-15T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-14T12:54:51.923571062Z",
+          "to_ts": "2025-09-15T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-14T16:19:36.017136272Z",
+          "to_ts": "2025-09-15T00:00:00Z",
+          "count_returned": 598
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-14.jsonl.gz",
+      "sha256": "6d9bcaee8e6c090f3bfc04c8dcce27876d5a7487e1341ece41b35823095e05f5",
+      "size_bytes": 94099
+    },
+    {
+      "date_utc": "2025-09-14",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1265,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 175,
+      "queries": [
+        {
+          "start": "2025-09-14T00:00:00Z",
+          "end": "2025-09-14T05:00:00Z",
+          "count_returned": 270
+        },
+        {
+          "start": "2025-09-14T05:00:00Z",
+          "end": "2025-09-14T10:00:00Z",
+          "count_returned": 239
+        },
+        {
+          "start": "2025-09-14T10:00:00Z",
+          "end": "2025-09-14T15:00:00Z",
+          "count_returned": 280
+        },
+        {
+          "start": "2025-09-14T15:00:00Z",
+          "end": "2025-09-14T20:00:00Z",
+          "count_returned": 280
+        },
+        {
+          "start": "2025-09-14T20:00:00Z",
+          "end": "2025-09-15T00:00:00Z",
+          "count_returned": 200
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-14.json",
+      "sha256": "4370dd8a941d58eda00814c33703edcc2421e8af06bdc9537e8097cd04c11dc7",
+      "size_bytes": 54001
+    },
+    {
+      "date_utc": "2025-09-15",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2593,
+      "first_trade_ts": "2025-09-15T00:00:54.038049472Z",
+      "last_trade_ts": "2025-09-15T23:58:29.101672414Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-15T00:00:00Z",
+          "to_ts": "2025-09-16T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-15T08:56:00.367110340Z",
+          "to_ts": "2025-09-16T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-15T15:20:36.042894510Z",
+          "to_ts": "2025-09-16T00:00:00Z",
+          "count_returned": 595
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-15.jsonl.gz",
+      "sha256": "8b3331d24abe092e7c4e10bd31469feea4c12ced34b8acb56efb55a6db873752",
+      "size_bytes": 94813
+    },
+    {
+      "date_utc": "2025-09-15",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1296,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 144,
+      "queries": [
+        {
+          "start": "2025-09-15T00:00:00Z",
+          "end": "2025-09-15T05:00:00Z",
+          "count_returned": 268
+        },
+        {
+          "start": "2025-09-15T05:00:00Z",
+          "end": "2025-09-15T10:00:00Z",
+          "count_returned": 282
+        },
+        {
+          "start": "2025-09-15T10:00:00Z",
+          "end": "2025-09-15T15:00:00Z",
+          "count_returned": 281
+        },
+        {
+          "start": "2025-09-15T15:00:00Z",
+          "end": "2025-09-15T20:00:00Z",
+          "count_returned": 283
+        },
+        {
+          "start": "2025-09-15T20:00:00Z",
+          "end": "2025-09-16T00:00:00Z",
+          "count_returned": 187
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-15.json",
+      "sha256": "f04af7b48162d6bb663c9447648131c6d61e0a3c18c1ebe015a957da59959695",
+      "size_bytes": 55426
+    },
+    {
+      "date_utc": "2025-09-16",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1680,
+      "first_trade_ts": "2025-09-16T00:00:42.290048994Z",
+      "last_trade_ts": "2025-09-16T23:59:18.125858094Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-16T00:00:00Z",
+          "to_ts": "2025-09-17T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-16T14:24:23.151583984Z",
+          "to_ts": "2025-09-17T00:00:00Z",
+          "count_returned": 681
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-16.jsonl.gz",
+      "sha256": "f4e580f569577a6c34dd567aa618fab1c650c234a4231737acef1d9f4ba7dad3",
+      "size_bytes": 63777
+    },
+    {
+      "date_utc": "2025-09-16",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1304,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 136,
+      "queries": [
+        {
+          "start": "2025-09-16T00:00:00Z",
+          "end": "2025-09-16T05:00:00Z",
+          "count_returned": 287
+        },
+        {
+          "start": "2025-09-16T05:00:00Z",
+          "end": "2025-09-16T10:00:00Z",
+          "count_returned": 276
+        },
+        {
+          "start": "2025-09-16T10:00:00Z",
+          "end": "2025-09-16T15:00:00Z",
+          "count_returned": 276
+        },
+        {
+          "start": "2025-09-16T15:00:00Z",
+          "end": "2025-09-16T20:00:00Z",
+          "count_returned": 270
+        },
+        {
+          "start": "2025-09-16T20:00:00Z",
+          "end": "2025-09-17T00:00:00Z",
+          "count_returned": 199
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-16.json",
+      "sha256": "0a577dfa724aa7f53333418a59501469aa881dea31e63277688ea246af8c5ffe",
+      "size_bytes": 56482
+    },
+    {
+      "date_utc": "2025-09-17",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1826,
+      "first_trade_ts": "2025-09-17T00:00:00.103194720Z",
+      "last_trade_ts": "2025-09-17T23:57:52.755345708Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-17T00:00:00Z",
+          "to_ts": "2025-09-18T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-17T18:00:01.707009704Z",
+          "to_ts": "2025-09-18T00:00:00Z",
+          "count_returned": 827
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-17.jsonl.gz",
+      "sha256": "34abf6d5ce11bcccc16bb8d856e77c9d2853a687a6329e5bd251b6a08636dbf6",
+      "size_bytes": 67383
+    },
+    {
+      "date_utc": "2025-09-17",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1219,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 221,
+      "queries": [
+        {
+          "start": "2025-09-17T00:00:00Z",
+          "end": "2025-09-17T05:00:00Z",
+          "count_returned": 231
+        },
+        {
+          "start": "2025-09-17T05:00:00Z",
+          "end": "2025-09-17T10:00:00Z",
+          "count_returned": 230
+        },
+        {
+          "start": "2025-09-17T10:00:00Z",
+          "end": "2025-09-17T15:00:00Z",
+          "count_returned": 247
+        },
+        {
+          "start": "2025-09-17T15:00:00Z",
+          "end": "2025-09-17T20:00:00Z",
+          "count_returned": 282
+        },
+        {
+          "start": "2025-09-17T20:00:00Z",
+          "end": "2025-09-18T00:00:00Z",
+          "count_returned": 234
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-17.json",
+      "sha256": "60a1655f93da8288e25854fc3e5678f6a24ec80fefd8ffab4c663db0f1ff82b7",
+      "size_bytes": 52145
+    },
+    {
+      "date_utc": "2025-09-18",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2412,
+      "first_trade_ts": "2025-09-18T00:00:00.911489750Z",
+      "last_trade_ts": "2025-09-18T23:59:06.080389996Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-18T00:00:00Z",
+          "to_ts": "2025-09-19T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-18T14:56:19.692271228Z",
+          "to_ts": "2025-09-19T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-18T22:47:44.777767884Z",
+          "to_ts": "2025-09-19T00:00:00Z",
+          "count_returned": 414
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-18.jsonl.gz",
+      "sha256": "ddc6aba214888dfa0cc2bfabcd5a9b731b47e252601778e2d936db1db193adc9",
+      "size_bytes": 87382
+    },
+    {
+      "date_utc": "2025-09-18",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1257,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 183,
+      "queries": [
+        {
+          "start": "2025-09-18T00:00:00Z",
+          "end": "2025-09-18T05:00:00Z",
+          "count_returned": 266
+        },
+        {
+          "start": "2025-09-18T05:00:00Z",
+          "end": "2025-09-18T10:00:00Z",
+          "count_returned": 242
+        },
+        {
+          "start": "2025-09-18T10:00:00Z",
+          "end": "2025-09-18T15:00:00Z",
+          "count_returned": 262
+        },
+        {
+          "start": "2025-09-18T15:00:00Z",
+          "end": "2025-09-18T20:00:00Z",
+          "count_returned": 279
+        },
+        {
+          "start": "2025-09-18T20:00:00Z",
+          "end": "2025-09-19T00:00:00Z",
+          "count_returned": 213
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-18.json",
+      "sha256": "579b753b25aa9d36e7201e718e2612471e1ccdfb6bf678c38e32252d8987b5f7",
+      "size_bytes": 53810
+    },
+    {
+      "date_utc": "2025-09-19",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2341,
+      "first_trade_ts": "2025-09-19T00:00:54.036638068Z",
+      "last_trade_ts": "2025-09-19T23:52:02.359841074Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-19T00:00:00Z",
+          "to_ts": "2025-09-20T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-19T10:04:32.406181790Z",
+          "to_ts": "2025-09-20T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-19T19:37:54.861165584Z",
+          "to_ts": "2025-09-20T00:00:00Z",
+          "count_returned": 343
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-19.jsonl.gz",
+      "sha256": "4ec7c4ed2205f658e9d5ed415150a20f2ddbbfa263d076b49c927d8be5dc2dda",
+      "size_bytes": 86358
+    },
+    {
+      "date_utc": "2025-09-19",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1268,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 172,
+      "queries": [
+        {
+          "start": "2025-09-19T00:00:00Z",
+          "end": "2025-09-19T05:00:00Z",
+          "count_returned": 261
+        },
+        {
+          "start": "2025-09-19T05:00:00Z",
+          "end": "2025-09-19T10:00:00Z",
+          "count_returned": 261
+        },
+        {
+          "start": "2025-09-19T10:00:00Z",
+          "end": "2025-09-19T15:00:00Z",
+          "count_returned": 274
+        },
+        {
+          "start": "2025-09-19T15:00:00Z",
+          "end": "2025-09-19T20:00:00Z",
+          "count_returned": 273
+        },
+        {
+          "start": "2025-09-19T20:00:00Z",
+          "end": "2025-09-20T00:00:00Z",
+          "count_returned": 204
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-19.json",
+      "sha256": "711595190f7a4a9658e304db4190628b963674f1f3906987068f3fe3a7620b16",
+      "size_bytes": 54304
+    },
+    {
+      "date_utc": "2025-09-20",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1721,
+      "first_trade_ts": "2025-09-20T00:00:06.746361106Z",
+      "last_trade_ts": "2025-09-20T23:59:39.290234946Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-20T00:00:00Z",
+          "to_ts": "2025-09-21T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-20T12:25:13.235207834Z",
+          "to_ts": "2025-09-21T00:00:00Z",
+          "count_returned": 722
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-20.jsonl.gz",
+      "sha256": "f1817d01361345729962219f7a09a1b512e88742a29b32ad85700f7625a66fd1",
+      "size_bytes": 64298
+    },
+    {
+      "date_utc": "2025-09-20",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1100,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 340,
+      "queries": [
+        {
+          "start": "2025-09-20T00:00:00Z",
+          "end": "2025-09-20T05:00:00Z",
+          "count_returned": 240
+        },
+        {
+          "start": "2025-09-20T05:00:00Z",
+          "end": "2025-09-20T10:00:00Z",
+          "count_returned": 208
+        },
+        {
+          "start": "2025-09-20T10:00:00Z",
+          "end": "2025-09-20T15:00:00Z",
+          "count_returned": 220
+        },
+        {
+          "start": "2025-09-20T15:00:00Z",
+          "end": "2025-09-20T20:00:00Z",
+          "count_returned": 261
+        },
+        {
+          "start": "2025-09-20T20:00:00Z",
+          "end": "2025-09-21T00:00:00Z",
+          "count_returned": 176
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-20.json",
+      "sha256": "0e59e33e2798fb71cb957b89ebaf62deda75924346afb402f54da509ab84fce1",
+      "size_bytes": 47071
+    },
+    {
+      "date_utc": "2025-09-21",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1296,
+      "first_trade_ts": "2025-09-21T00:00:07.314412346Z",
+      "last_trade_ts": "2025-09-21T23:52:48.134486768Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-21T00:00:00Z",
+          "to_ts": "2025-09-22T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-21T17:54:22.960528824Z",
+          "to_ts": "2025-09-22T00:00:00Z",
+          "count_returned": 297
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-21.jsonl.gz",
+      "sha256": "450f3cecc238977cabbbf982a11d689b87319212b53d7a5fe83d0b7d5f18cb96",
+      "size_bytes": 49000
+    },
+    {
+      "date_utc": "2025-09-21",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1093,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 347,
+      "queries": [
+        {
+          "start": "2025-09-21T00:00:00Z",
+          "end": "2025-09-21T05:00:00Z",
+          "count_returned": 216
+        },
+        {
+          "start": "2025-09-21T05:00:00Z",
+          "end": "2025-09-21T10:00:00Z",
+          "count_returned": 226
+        },
+        {
+          "start": "2025-09-21T10:00:00Z",
+          "end": "2025-09-21T15:00:00Z",
+          "count_returned": 228
+        },
+        {
+          "start": "2025-09-21T15:00:00Z",
+          "end": "2025-09-21T20:00:00Z",
+          "count_returned": 252
+        },
+        {
+          "start": "2025-09-21T20:00:00Z",
+          "end": "2025-09-22T00:00:00Z",
+          "count_returned": 176
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-21.json",
+      "sha256": "7dbe9d160328ce063b1e6ed35ffb35b4af82b8f5747eb20923785e7a97ef0c2c",
+      "size_bytes": 46601
+    },
+    {
+      "date_utc": "2025-09-22",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 4,
+      "trade_count": 3556,
+      "first_trade_ts": "2025-09-22T00:00:20.533027138Z",
+      "last_trade_ts": "2025-09-22T23:57:20.244025130Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-22T00:00:00Z",
+          "to_ts": "2025-09-23T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-22T06:00:00.077111860Z",
+          "to_ts": "2025-09-23T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-22T07:00:40.043084958Z",
+          "to_ts": "2025-09-23T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-22T16:21:06.898300644Z",
+          "to_ts": "2025-09-23T00:00:00Z",
+          "count_returned": 559
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-22.jsonl.gz",
+      "sha256": "118d4d4d8607918270d1b911e0e859b8e30bb64143e6a93796b7badebdbf3c4a",
+      "size_bytes": 130443
+    },
+    {
+      "date_utc": "2025-09-22",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1353,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 87,
+      "queries": [
+        {
+          "start": "2025-09-22T00:00:00Z",
+          "end": "2025-09-22T05:00:00Z",
+          "count_returned": 286
+        },
+        {
+          "start": "2025-09-22T05:00:00Z",
+          "end": "2025-09-22T10:00:00Z",
+          "count_returned": 289
+        },
+        {
+          "start": "2025-09-22T10:00:00Z",
+          "end": "2025-09-22T15:00:00Z",
+          "count_returned": 296
+        },
+        {
+          "start": "2025-09-22T15:00:00Z",
+          "end": "2025-09-22T20:00:00Z",
+          "count_returned": 286
+        },
+        {
+          "start": "2025-09-22T20:00:00Z",
+          "end": "2025-09-23T00:00:00Z",
+          "count_returned": 201
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-22.json",
+      "sha256": "b62601b58c37c956f8912443cdfd5c45e05d556e4803ad7f1d982a7483b6304e",
+      "size_bytes": 58531
+    },
+    {
+      "date_utc": "2025-09-23",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1516,
+      "first_trade_ts": "2025-09-23T00:00:07.617819492Z",
+      "last_trade_ts": "2025-09-23T23:59:15.450385136Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-23T00:00:00Z",
+          "to_ts": "2025-09-24T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-23T15:13:46.154788074Z",
+          "to_ts": "2025-09-24T00:00:00Z",
+          "count_returned": 517
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-23.jsonl.gz",
+      "sha256": "a0eb46ebd3ef5d493dc6bdef43df4538679c0a2b6bff5d41255852f1f4a1f1a3",
+      "size_bytes": 57856
+    },
+    {
+      "date_utc": "2025-09-23",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1206,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 234,
+      "queries": [
+        {
+          "start": "2025-09-23T00:00:00Z",
+          "end": "2025-09-23T05:00:00Z",
+          "count_returned": 247
+        },
+        {
+          "start": "2025-09-23T05:00:00Z",
+          "end": "2025-09-23T10:00:00Z",
+          "count_returned": 228
+        },
+        {
+          "start": "2025-09-23T10:00:00Z",
+          "end": "2025-09-23T15:00:00Z",
+          "count_returned": 264
+        },
+        {
+          "start": "2025-09-23T15:00:00Z",
+          "end": "2025-09-23T20:00:00Z",
+          "count_returned": 281
+        },
+        {
+          "start": "2025-09-23T20:00:00Z",
+          "end": "2025-09-24T00:00:00Z",
+          "count_returned": 191
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-23.json",
+      "sha256": "866c5630ce303bb6ed7c019484ad5cb765006320f8ffb2f3707bc2449aa75991",
+      "size_bytes": 51442
+    },
+    {
+      "date_utc": "2025-09-24",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1683,
+      "first_trade_ts": "2025-09-24T00:00:00.104628582Z",
+      "last_trade_ts": "2025-09-24T23:55:49.721934590Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-24T00:00:00Z",
+          "to_ts": "2025-09-25T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-24T12:09:20.552502484Z",
+          "to_ts": "2025-09-25T00:00:00Z",
+          "count_returned": 684
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-24.jsonl.gz",
+      "sha256": "06aeeb30481e448c96e428261610f573cca4942b7ff9eaa6facf1f3c15748683",
+      "size_bytes": 62640
+    },
+    {
+      "date_utc": "2025-09-24",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1170,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 270,
+      "queries": [
+        {
+          "start": "2025-09-24T00:00:00Z",
+          "end": "2025-09-24T05:00:00Z",
+          "count_returned": 264
+        },
+        {
+          "start": "2025-09-24T05:00:00Z",
+          "end": "2025-09-24T10:00:00Z",
+          "count_returned": 245
+        },
+        {
+          "start": "2025-09-24T10:00:00Z",
+          "end": "2025-09-24T15:00:00Z",
+          "count_returned": 236
+        },
+        {
+          "start": "2025-09-24T15:00:00Z",
+          "end": "2025-09-24T20:00:00Z",
+          "count_returned": 243
+        },
+        {
+          "start": "2025-09-24T20:00:00Z",
+          "end": "2025-09-25T00:00:00Z",
+          "count_returned": 187
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-24.json",
+      "sha256": "8627a508358b60e82d930993825faf1de06e1de6a45e49796eeb4b42b2f6621e",
+      "size_bytes": 50058
+    },
+    {
+      "date_utc": "2025-09-25",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2674,
+      "first_trade_ts": "2025-09-25T00:06:11.628917000Z",
+      "last_trade_ts": "2025-09-25T23:59:43.008914728Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-25T00:00:00Z",
+          "to_ts": "2025-09-26T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-25T12:29:31.318447330Z",
+          "to_ts": "2025-09-26T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-25T17:56:35.634002622Z",
+          "to_ts": "2025-09-26T00:00:00Z",
+          "count_returned": 676
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-25.jsonl.gz",
+      "sha256": "0f9adbe2d37408039c1b19c3f8184755b00a068ef607cf1473d18ba9ec472aec",
+      "size_bytes": 99116
+    },
+    {
+      "date_utc": "2025-09-25",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1352,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 88,
+      "queries": [
+        {
+          "start": "2025-09-25T00:00:00Z",
+          "end": "2025-09-25T05:00:00Z",
+          "count_returned": 284
+        },
+        {
+          "start": "2025-09-25T05:00:00Z",
+          "end": "2025-09-25T10:00:00Z",
+          "count_returned": 270
+        },
+        {
+          "start": "2025-09-25T10:00:00Z",
+          "end": "2025-09-25T15:00:00Z",
+          "count_returned": 283
+        },
+        {
+          "start": "2025-09-25T15:00:00Z",
+          "end": "2025-09-25T20:00:00Z",
+          "count_returned": 295
+        },
+        {
+          "start": "2025-09-25T20:00:00Z",
+          "end": "2025-09-26T00:00:00Z",
+          "count_returned": 225
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-25.json",
+      "sha256": "65c38f99a070855cd1c34ad6f4d101d19e28a9faf865a1e752fc12ed85ffeb16",
+      "size_bytes": 58265
+    },
+    {
+      "date_utc": "2025-09-26",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1729,
+      "first_trade_ts": "2025-09-26T00:00:02.516891714Z",
+      "last_trade_ts": "2025-09-26T23:59:52.014246644Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-26T00:00:00Z",
+          "to_ts": "2025-09-27T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-26T14:18:49.169249552Z",
+          "to_ts": "2025-09-27T00:00:00Z",
+          "count_returned": 730
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-26.jsonl.gz",
+      "sha256": "479a6eea6578efddd84a437b06b3ca67f976b41d27228217bbfaf48bc500144b",
+      "size_bytes": 65436
+    },
+    {
+      "date_utc": "2025-09-26",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1295,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 145,
+      "queries": [
+        {
+          "start": "2025-09-26T00:00:00Z",
+          "end": "2025-09-26T05:00:00Z",
+          "count_returned": 284
+        },
+        {
+          "start": "2025-09-26T05:00:00Z",
+          "end": "2025-09-26T10:00:00Z",
+          "count_returned": 262
+        },
+        {
+          "start": "2025-09-26T10:00:00Z",
+          "end": "2025-09-26T15:00:00Z",
+          "count_returned": 283
+        },
+        {
+          "start": "2025-09-26T15:00:00Z",
+          "end": "2025-09-26T20:00:00Z",
+          "count_returned": 282
+        },
+        {
+          "start": "2025-09-26T20:00:00Z",
+          "end": "2025-09-27T00:00:00Z",
+          "count_returned": 189
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-26.json",
+      "sha256": "e0c201c39e735ea1c65dc2714ec22df62b233e8675569ea713745cadb2110c5e",
+      "size_bytes": 55487
+    },
+    {
+      "date_utc": "2025-09-27",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1324,
+      "first_trade_ts": "2025-09-27T00:03:35.148165194Z",
+      "last_trade_ts": "2025-09-27T23:59:11.820221882Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-27T00:00:00Z",
+          "to_ts": "2025-09-28T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-27T17:32:33.071920266Z",
+          "to_ts": "2025-09-28T00:00:00Z",
+          "count_returned": 325
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-27.jsonl.gz",
+      "sha256": "4b062a24c5bfe8020f409848d8443b69ed37bb79c656ad4ea8045a1b231cdebe",
+      "size_bytes": 49477
+    },
+    {
+      "date_utc": "2025-09-27",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1060,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 380,
+      "queries": [
+        {
+          "start": "2025-09-27T00:00:00Z",
+          "end": "2025-09-27T05:00:00Z",
+          "count_returned": 205
+        },
+        {
+          "start": "2025-09-27T05:00:00Z",
+          "end": "2025-09-27T10:00:00Z",
+          "count_returned": 206
+        },
+        {
+          "start": "2025-09-27T10:00:00Z",
+          "end": "2025-09-27T15:00:00Z",
+          "count_returned": 214
+        },
+        {
+          "start": "2025-09-27T15:00:00Z",
+          "end": "2025-09-27T20:00:00Z",
+          "count_returned": 255
+        },
+        {
+          "start": "2025-09-27T20:00:00Z",
+          "end": "2025-09-28T00:00:00Z",
+          "count_returned": 184
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-27.json",
+      "sha256": "04058307f2227322cb0ef9784ea07459dbaabe6295016456d38060195212248c",
+      "size_bytes": 44999
+    },
+    {
+      "date_utc": "2025-09-28",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1232,
+      "first_trade_ts": "2025-09-28T00:06:23.487148980Z",
+      "last_trade_ts": "2025-09-28T23:59:01.872115638Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-28T00:00:00Z",
+          "to_ts": "2025-09-29T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-28T20:22:40.101198936Z",
+          "to_ts": "2025-09-29T00:00:00Z",
+          "count_returned": 233
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-28.jsonl.gz",
+      "sha256": "35d64cce233d59550c71e7509d1d2a620a452e0c507d95fc87f0b647b83d5006",
+      "size_bytes": 46892
+    },
+    {
+      "date_utc": "2025-09-28",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1062,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 378,
+      "queries": [
+        {
+          "start": "2025-09-28T00:00:00Z",
+          "end": "2025-09-28T05:00:00Z",
+          "count_returned": 202
+        },
+        {
+          "start": "2025-09-28T05:00:00Z",
+          "end": "2025-09-28T10:00:00Z",
+          "count_returned": 190
+        },
+        {
+          "start": "2025-09-28T10:00:00Z",
+          "end": "2025-09-28T15:00:00Z",
+          "count_returned": 239
+        },
+        {
+          "start": "2025-09-28T15:00:00Z",
+          "end": "2025-09-28T20:00:00Z",
+          "count_returned": 248
+        },
+        {
+          "start": "2025-09-28T20:00:00Z",
+          "end": "2025-09-29T00:00:00Z",
+          "count_returned": 187
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-28.json",
+      "sha256": "f2898303e1e7b07d7130b52a61d840003ea787f5d923f0591e86f0c67c0ebc60",
+      "size_bytes": 45222
+    },
+    {
+      "date_utc": "2025-09-29",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1476,
+      "first_trade_ts": "2025-09-29T00:04:34.138732250Z",
+      "last_trade_ts": "2025-09-29T23:59:36.209066442Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-29T00:00:00Z",
+          "to_ts": "2025-09-30T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-29T15:50:56.604949250Z",
+          "to_ts": "2025-09-30T00:00:00Z",
+          "count_returned": 477
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-29.jsonl.gz",
+      "sha256": "efb04741a00a2fe8d5450e66c628b64f02287bdb4218e106541b7a4b3d1170f1",
+      "size_bytes": 56150
+    },
+    {
+      "date_utc": "2025-09-29",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1140,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 300,
+      "queries": [
+        {
+          "start": "2025-09-29T00:00:00Z",
+          "end": "2025-09-29T05:00:00Z",
+          "count_returned": 222
+        },
+        {
+          "start": "2025-09-29T05:00:00Z",
+          "end": "2025-09-29T10:00:00Z",
+          "count_returned": 220
+        },
+        {
+          "start": "2025-09-29T10:00:00Z",
+          "end": "2025-09-29T15:00:00Z",
+          "count_returned": 254
+        },
+        {
+          "start": "2025-09-29T15:00:00Z",
+          "end": "2025-09-29T20:00:00Z",
+          "count_returned": 275
+        },
+        {
+          "start": "2025-09-29T20:00:00Z",
+          "end": "2025-09-30T00:00:00Z",
+          "count_returned": 174
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-29.json",
+      "sha256": "5c13cb6e96b2f2a9f89095e298a4630c574597974bb903e355df11f0b182857a",
+      "size_bytes": 48890
+    },
+    {
+      "date_utc": "2025-09-30",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1233,
+      "first_trade_ts": "2025-09-30T00:00:52.671025222Z",
+      "last_trade_ts": "2025-09-30T23:59:53.701055686Z",
+      "queries": [
+        {
+          "from_ts": "2025-09-30T00:00:00Z",
+          "to_ts": "2025-10-01T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-09-30T18:52:31.129557916Z",
+          "to_ts": "2025-10-01T00:00:00Z",
+          "count_returned": 234
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-09-30.jsonl.gz",
+      "sha256": "2c26cf5cfb4ccd242389cef79dcde3265dbd1043ac5d9c22cc0a862dc6edb873",
+      "size_bytes": 48486
+    },
+    {
+      "date_utc": "2025-09-30",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1190,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 250,
+      "queries": [
+        {
+          "start": "2025-09-30T00:00:00Z",
+          "end": "2025-09-30T05:00:00Z",
+          "count_returned": 255
+        },
+        {
+          "start": "2025-09-30T05:00:00Z",
+          "end": "2025-09-30T10:00:00Z",
+          "count_returned": 211
+        },
+        {
+          "start": "2025-09-30T10:00:00Z",
+          "end": "2025-09-30T15:00:00Z",
+          "count_returned": 268
+        },
+        {
+          "start": "2025-09-30T15:00:00Z",
+          "end": "2025-09-30T20:00:00Z",
+          "count_returned": 269
+        },
+        {
+          "start": "2025-09-30T20:00:00Z",
+          "end": "2025-10-01T00:00:00Z",
+          "count_returned": 191
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-09-30.json",
+      "sha256": "147d7da1c743f636c7a4e9e66c1ec42532b9b7f8b5f4074f9a7fc64e31006951",
+      "size_bytes": 50912
+    },
+    {
+      "date_utc": "2025-10-01",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2331,
+      "first_trade_ts": "2025-10-01T00:00:00.239474262Z",
+      "last_trade_ts": "2025-10-01T23:56:37.925118668Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-01T00:00:00Z",
+          "to_ts": "2025-10-02T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-01T13:11:15.039082290Z",
+          "to_ts": "2025-10-02T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-01T21:07:31.282140144Z",
+          "to_ts": "2025-10-02T00:00:00Z",
+          "count_returned": 333
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-01.jsonl.gz",
+      "sha256": "f27a3c66ff58213a36b217b9e824c7f4fb4983824732704ba9c516a88e619783",
+      "size_bytes": 86093
+    },
+    {
+      "date_utc": "2025-10-01",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1281,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 159,
+      "queries": [
+        {
+          "start": "2025-10-01T00:00:00Z",
+          "end": "2025-10-01T05:00:00Z",
+          "count_returned": 241
+        },
+        {
+          "start": "2025-10-01T05:00:00Z",
+          "end": "2025-10-01T10:00:00Z",
+          "count_returned": 258
+        },
+        {
+          "start": "2025-10-01T10:00:00Z",
+          "end": "2025-10-01T15:00:00Z",
+          "count_returned": 266
+        },
+        {
+          "start": "2025-10-01T15:00:00Z",
+          "end": "2025-10-01T20:00:00Z",
+          "count_returned": 288
+        },
+        {
+          "start": "2025-10-01T20:00:00Z",
+          "end": "2025-10-02T00:00:00Z",
+          "count_returned": 233
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-01.json",
+      "sha256": "040d7a3411903bde070876690d7597fdda37f7fad92023ec89ff266ac448a166",
+      "size_bytes": 55236
+    },
+    {
+      "date_utc": "2025-10-02",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2057,
+      "first_trade_ts": "2025-10-02T00:00:54.034736222Z",
+      "last_trade_ts": "2025-10-02T23:58:32.362421008Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-02T00:00:00Z",
+          "to_ts": "2025-10-03T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-02T08:55:34.428897952Z",
+          "to_ts": "2025-10-03T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-02T22:23:36.033860744Z",
+          "to_ts": "2025-10-03T00:00:00Z",
+          "count_returned": 59
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-02.jsonl.gz",
+      "sha256": "338252a7fa81d51c59691c8804bf627ec3ac91d04447d5181cf90cf7c47ea483",
+      "size_bytes": 75800
+    },
+    {
+      "date_utc": "2025-10-02",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1288,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 152,
+      "queries": [
+        {
+          "start": "2025-10-02T00:00:00Z",
+          "end": "2025-10-02T05:00:00Z",
+          "count_returned": 281
+        },
+        {
+          "start": "2025-10-02T05:00:00Z",
+          "end": "2025-10-02T10:00:00Z",
+          "count_returned": 247
+        },
+        {
+          "start": "2025-10-02T10:00:00Z",
+          "end": "2025-10-02T15:00:00Z",
+          "count_returned": 271
+        },
+        {
+          "start": "2025-10-02T15:00:00Z",
+          "end": "2025-10-02T20:00:00Z",
+          "count_returned": 292
+        },
+        {
+          "start": "2025-10-02T20:00:00Z",
+          "end": "2025-10-03T00:00:00Z",
+          "count_returned": 201
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-02.json",
+      "sha256": "a73c349202452c05f3b892f98c91fc707ccdfb8af2ca540496cb018746312180",
+      "size_bytes": 55418
+    },
+    {
+      "date_utc": "2025-10-03",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1570,
+      "first_trade_ts": "2025-10-03T00:00:01.482851184Z",
+      "last_trade_ts": "2025-10-03T23:57:24.636520488Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-03T00:00:00Z",
+          "to_ts": "2025-10-04T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-03T16:35:10.026404352Z",
+          "to_ts": "2025-10-04T00:00:00Z",
+          "count_returned": 571
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-03.jsonl.gz",
+      "sha256": "db191fcff9044699b7748ecee0e9b9aa3c46f17c10eda86f39615b6aa9804ec7",
+      "size_bytes": 59488
+    },
+    {
+      "date_utc": "2025-10-03",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1287,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 153,
+      "queries": [
+        {
+          "start": "2025-10-03T00:00:00Z",
+          "end": "2025-10-03T05:00:00Z",
+          "count_returned": 257
+        },
+        {
+          "start": "2025-10-03T05:00:00Z",
+          "end": "2025-10-03T10:00:00Z",
+          "count_returned": 247
+        },
+        {
+          "start": "2025-10-03T10:00:00Z",
+          "end": "2025-10-03T15:00:00Z",
+          "count_returned": 278
+        },
+        {
+          "start": "2025-10-03T15:00:00Z",
+          "end": "2025-10-03T20:00:00Z",
+          "count_returned": 291
+        },
+        {
+          "start": "2025-10-03T20:00:00Z",
+          "end": "2025-10-04T00:00:00Z",
+          "count_returned": 219
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-03.json",
+      "sha256": "b14ccf3df69157d07d0d0285894c61d3b55b045c0215ddc4ad2c5c3d5ed4f8fc",
+      "size_bytes": 55325
+    },
+    {
+      "date_utc": "2025-10-04",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1553,
+      "first_trade_ts": "2025-10-04T00:00:54.036127464Z",
+      "last_trade_ts": "2025-10-04T23:50:36.420518328Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-04T00:00:00Z",
+          "to_ts": "2025-10-05T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-04T15:20:22.361119736Z",
+          "to_ts": "2025-10-05T00:00:00Z",
+          "count_returned": 554
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-04.jsonl.gz",
+      "sha256": "ffbe99fffc03794a79a0e9b266dff98cc4f88f1b195fd100656929e0c3e6ba6d",
+      "size_bytes": 59957
+    },
+    {
+      "date_utc": "2025-10-04",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1270,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 170,
+      "queries": [
+        {
+          "start": "2025-10-04T00:00:00Z",
+          "end": "2025-10-04T05:00:00Z",
+          "count_returned": 281
+        },
+        {
+          "start": "2025-10-04T05:00:00Z",
+          "end": "2025-10-04T10:00:00Z",
+          "count_returned": 265
+        },
+        {
+          "start": "2025-10-04T10:00:00Z",
+          "end": "2025-10-04T15:00:00Z",
+          "count_returned": 278
+        },
+        {
+          "start": "2025-10-04T15:00:00Z",
+          "end": "2025-10-04T20:00:00Z",
+          "count_returned": 274
+        },
+        {
+          "start": "2025-10-04T20:00:00Z",
+          "end": "2025-10-05T00:00:00Z",
+          "count_returned": 177
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-04.json",
+      "sha256": "5dc24faa1d2ccf77dd732b2b88edcb60f4dc8729f472ac0c403dcc94d66af9df",
+      "size_bytes": 55042
+    },
+    {
+      "date_utc": "2025-10-05",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1675,
+      "first_trade_ts": "2025-10-05T00:00:49.291759984Z",
+      "last_trade_ts": "2025-10-05T23:59:30.941221568Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-05T00:00:00Z",
+          "to_ts": "2025-10-06T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-05T15:23:32.916139054Z",
+          "to_ts": "2025-10-06T00:00:00Z",
+          "count_returned": 676
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-05.jsonl.gz",
+      "sha256": "f0f5ca62a6932f4693b235d35d86f85022396497aac38470413ed09287325252",
+      "size_bytes": 62782
+    },
+    {
+      "date_utc": "2025-10-05",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1255,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 185,
+      "queries": [
+        {
+          "start": "2025-10-05T00:00:00Z",
+          "end": "2025-10-05T05:00:00Z",
+          "count_returned": 258
+        },
+        {
+          "start": "2025-10-05T05:00:00Z",
+          "end": "2025-10-05T10:00:00Z",
+          "count_returned": 256
+        },
+        {
+          "start": "2025-10-05T10:00:00Z",
+          "end": "2025-10-05T15:00:00Z",
+          "count_returned": 275
+        },
+        {
+          "start": "2025-10-05T15:00:00Z",
+          "end": "2025-10-05T20:00:00Z",
+          "count_returned": 267
+        },
+        {
+          "start": "2025-10-05T20:00:00Z",
+          "end": "2025-10-06T00:00:00Z",
+          "count_returned": 204
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-05.json",
+      "sha256": "26de79373cbaf064236993f978fc41348c91e25f917ff14fc5f4dc350fd5aeef",
+      "size_bytes": 53744
+    },
+    {
+      "date_utc": "2025-10-06",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1636,
+      "first_trade_ts": "2025-10-06T00:01:17.205138412Z",
+      "last_trade_ts": "2025-10-06T23:58:49.888515814Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-06T00:00:00Z",
+          "to_ts": "2025-10-07T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-06T16:00:00.357564574Z",
+          "to_ts": "2025-10-07T00:00:00Z",
+          "count_returned": 637
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-06.jsonl.gz",
+      "sha256": "17f9f3f70d202aca8391aa1e0fecc59ddd0d41a0408fd7ec0e8165adfdb71510",
+      "size_bytes": 62914
+    },
+    {
+      "date_utc": "2025-10-06",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1265,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 175,
+      "queries": [
+        {
+          "start": "2025-10-06T00:00:00Z",
+          "end": "2025-10-06T05:00:00Z",
+          "count_returned": 270
+        },
+        {
+          "start": "2025-10-06T05:00:00Z",
+          "end": "2025-10-06T10:00:00Z",
+          "count_returned": 245
+        },
+        {
+          "start": "2025-10-06T10:00:00Z",
+          "end": "2025-10-06T15:00:00Z",
+          "count_returned": 259
+        },
+        {
+          "start": "2025-10-06T15:00:00Z",
+          "end": "2025-10-06T20:00:00Z",
+          "count_returned": 283
+        },
+        {
+          "start": "2025-10-06T20:00:00Z",
+          "end": "2025-10-07T00:00:00Z",
+          "count_returned": 212
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-06.json",
+      "sha256": "7b111b96ea84af2b3c03c45a7dd7cd48312e0e8b13d0ef58fa7996daac51b119",
+      "size_bytes": 54320
+    },
+    {
+      "date_utc": "2025-10-07",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 3,
+      "trade_count": 2272,
+      "first_trade_ts": "2025-10-07T00:00:54.036851950Z",
+      "last_trade_ts": "2025-10-07T23:57:51.899245816Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-07T00:00:00Z",
+          "to_ts": "2025-10-08T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-07T13:39:25.671505590Z",
+          "to_ts": "2025-10-08T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-07T20:12:37.977938460Z",
+          "to_ts": "2025-10-08T00:00:00Z",
+          "count_returned": 274
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-07.jsonl.gz",
+      "sha256": "33e6218f7f15e983db26bc037cb545c6f6ff3882f0a0e1a1d31ae9cfac0f393f",
+      "size_bytes": 84979
+    },
+    {
+      "date_utc": "2025-10-07",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1346,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 94,
+      "queries": [
+        {
+          "start": "2025-10-07T00:00:00Z",
+          "end": "2025-10-07T05:00:00Z",
+          "count_returned": 267
+        },
+        {
+          "start": "2025-10-07T05:00:00Z",
+          "end": "2025-10-07T10:00:00Z",
+          "count_returned": 289
+        },
+        {
+          "start": "2025-10-07T10:00:00Z",
+          "end": "2025-10-07T15:00:00Z",
+          "count_returned": 294
+        },
+        {
+          "start": "2025-10-07T15:00:00Z",
+          "end": "2025-10-07T20:00:00Z",
+          "count_returned": 290
+        },
+        {
+          "start": "2025-10-07T20:00:00Z",
+          "end": "2025-10-08T00:00:00Z",
+          "count_returned": 211
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-07.json",
+      "sha256": "9ec804c58de76462139fb1fd344cf02a932ff541a0e44f78e84a2e18e685f3a3",
+      "size_bytes": 57662
+    },
+    {
+      "date_utc": "2025-10-08",
+      "source": "Kraken PostTrade",
+      "endpoint": "https://api.kraken.com/0/public/PostTrade",
+      "symbol": "ATOM/USD",
+      "page_count": 2,
+      "trade_count": 1498,
+      "first_trade_ts": "2025-10-08T00:00:00.174868152Z",
+      "last_trade_ts": "2025-10-08T23:58:51.900887834Z",
+      "queries": [
+        {
+          "from_ts": "2025-10-08T00:00:00Z",
+          "to_ts": "2025-10-09T00:00:00Z",
+          "count_returned": 1000
+        },
+        {
+          "from_ts": "2025-10-08T17:12:22.088317428Z",
+          "to_ts": "2025-10-09T00:00:00Z",
+          "count_returned": 499
+        }
+      ],
+      "local_path": "data/raw/kraken/spot/trades/ATOMUSD/ATOMUSD-trades-2025-10-08.jsonl.gz",
+      "sha256": "8751e04926dbf2f6a3d64ad7cb8d318bf0974879314904c359b7ef2509747360",
+      "size_bytes": 57740
+    },
+    {
+      "date_utc": "2025-10-08",
+      "source": "Coinbase Exchange candles",
+      "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "granularity_seconds": 60,
+      "candle_count": 1334,
+      "expected_intervals": 1440,
+      "missing_no_tick_intervals": 106,
+      "queries": [
+        {
+          "start": "2025-10-08T00:00:00Z",
+          "end": "2025-10-08T05:00:00Z",
+          "count_returned": 277
+        },
+        {
+          "start": "2025-10-08T05:00:00Z",
+          "end": "2025-10-08T10:00:00Z",
+          "count_returned": 289
+        },
+        {
+          "start": "2025-10-08T10:00:00Z",
+          "end": "2025-10-08T15:00:00Z",
+          "count_returned": 274
+        },
+        {
+          "start": "2025-10-08T15:00:00Z",
+          "end": "2025-10-08T20:00:00Z",
+          "count_returned": 288
+        },
+        {
+          "start": "2025-10-08T20:00:00Z",
+          "end": "2025-10-09T00:00:00Z",
+          "count_returned": 211
+        }
+      ],
+      "local_path": "data/raw/coinbase/spot/candles/ATOM-USD/60s/ATOM-USD-60s-2025-10-08.json",
+      "sha256": "c001d142a601216ee323ea6c107ed2eab57cef3529708571d2204bfc819d9fee",
+      "size_bytes": 57021
+    }
+  ]
+}

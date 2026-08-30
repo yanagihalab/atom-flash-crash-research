@@ -1,0 +1,1638 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "run_started_at_utc": "2026-08-29T04:31:53.730115Z",
+  "run_finished_at_utc": "2026-08-29T05:18:15.584473Z",
+  "chain_id": "cosmoshub-4",
+  "endpoints": [
+    {
+      "rpc": "https://rpc.cosmoshub-main.ccvalidators.com",
+      "chain_id": "cosmoshub-4",
+      "node_version": "0.38.22",
+      "earliest_block_height": 5200791,
+      "latest_block_height": 32719155,
+      "cross_check_height": 27908328,
+      "cross_check_block_hash": "839CB7420809401252CABC2466996AB9946EAE9E7F79EF1AD564E733794D0C4E",
+      "cross_check_block_results_sha256": "da86c38931c7193b5d20a683f883530059bc3ba19cadba36d27aa62af7990fe4"
+    },
+    {
+      "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com",
+      "chain_id": "cosmoshub-4",
+      "node_version": "0.38.22",
+      "earliest_block_height": 5200791,
+      "latest_block_height": 32719156,
+      "cross_check_height": 27908328,
+      "cross_check_block_hash": "839CB7420809401252CABC2466996AB9946EAE9E7F79EF1AD564E733794D0C4E",
+      "cross_check_block_results_sha256": "da86c38931c7193b5d20a683f883530059bc3ba19cadba36d27aa62af7990fe4"
+    },
+    {
+      "rpc": "https://cosmos-rpc.publicnode.com",
+      "chain_id": "cosmoshub-4",
+      "node_version": "0.38.22",
+      "earliest_block_height": 25280088,
+      "latest_block_height": 32719157,
+      "cross_check_height": 27908328,
+      "cross_check_block_hash": "839CB7420809401252CABC2466996AB9946EAE9E7F79EF1AD564E733794D0C4E",
+      "cross_check_block_results_sha256": "da86c38931c7193b5d20a683f883530059bc3ba19cadba36d27aa62af7990fe4"
+    }
+  ],
+  "daily_partitions": [
+    {
+      "date_utc": "2025-10-09",
+      "first_height": 27880743,
+      "end_height_exclusive": 27895335,
+      "height_count": 14592,
+      "transaction_count": 32406,
+      "tx_page_record_count": 14596,
+      "block_metas": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-09/block_metas.jsonl.gz",
+        "sha256": "efb585b1fd816a8fbf00fa9d08aca3376badcb84e3f4402d64239308abbfc346",
+        "size_bytes": 4237433
+      },
+      "tx_search": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-09/tx_search.jsonl.gz",
+        "sha256": "2c31f31714243478625a9e454f83611ce6770e29282c316033ef6262fa5fc32a",
+        "size_bytes": 122271567
+      },
+      "block_meta_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 29,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 26,
+        "https://cosmos-rpc.publicnode.com": 18
+      },
+      "tx_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 363,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 306,
+        "https://cosmos-rpc.publicnode.com": 791
+      }
+    },
+    {
+      "date_utc": "2025-10-10",
+      "first_height": 27895335,
+      "end_height_exclusive": 27909945,
+      "height_count": 14610,
+      "transaction_count": 37462,
+      "tx_page_record_count": 14610,
+      "block_metas": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-10/block_metas.jsonl.gz",
+        "sha256": "6c59016fdc5b9c95b8f0a5b98c275564ad2f3c6646096645457bf18b783663e6",
+        "size_bytes": 4293084
+      },
+      "tx_search": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-10/tx_search.jsonl.gz",
+        "sha256": "96c6d3d2ba7185ca9ff6ab18e6ea52ea151fb50b9658a8c661e3d49912078a29",
+        "size_bytes": 177076977
+      },
+      "block_meta_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 22,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 19,
+        "https://cosmos-rpc.publicnode.com": 33
+      },
+      "tx_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 381,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 324,
+        "https://cosmos-rpc.publicnode.com": 756
+      }
+    },
+    {
+      "date_utc": "2025-10-11",
+      "first_height": 27909945,
+      "end_height_exclusive": 27924543,
+      "height_count": 14598,
+      "transaction_count": 53711,
+      "tx_page_record_count": 14598,
+      "block_metas": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-11/block_metas.jsonl.gz",
+        "sha256": "62480a3c7fe3fe3557650084dddb45250ae7512874ecf23a9510b5995f0fa5ab",
+        "size_bytes": 4450759
+      },
+      "tx_search": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-11/tx_search.jsonl.gz",
+        "sha256": "ac64284ae12fcd80b0e664f29c68c3217ff1508fd15c7e5e7cd76f6bf954e01e",
+        "size_bytes": 250624534
+      },
+      "block_meta_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 21,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 19,
+        "https://cosmos-rpc.publicnode.com": 33
+      },
+      "tx_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 400,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 329,
+        "https://cosmos-rpc.publicnode.com": 731
+      }
+    },
+    {
+      "date_utc": "2025-10-12",
+      "first_height": 27924543,
+      "end_height_exclusive": 27939155,
+      "height_count": 14612,
+      "transaction_count": 38176,
+      "tx_page_record_count": 14612,
+      "block_metas": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-12/block_metas.jsonl.gz",
+        "sha256": "d0f97bdfb955f61b67e89a4093f57537cfd3f6868343e6e6e64bb9d1394fee9c",
+        "size_bytes": 4361949
+      },
+      "tx_search": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/daily/2025-10-12/tx_search.jsonl.gz",
+        "sha256": "b4fca681c1ce979bb8f09fc72da86dd96ee2988ea2fa829948bfa4783038f2e5",
+        "size_bytes": 162872476
+      },
+      "block_meta_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 23,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 20,
+        "https://cosmos-rpc.publicnode.com": 31
+      },
+      "tx_source_batch_counts": {
+        "https://rpc.cosmoshub-main.ccvalidators.com": 383,
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com": 324,
+        "https://cosmos-rpc.publicnode.com": 755
+      }
+    }
+  ],
+  "event_window": {
+    "window": "[2025-10-10T20:30:00Z, 2025-10-10T22:30:00Z)",
+    "first_height": 27907815,
+    "end_height_exclusive": 27909033,
+    "height_count": 1218,
+    "blocks": {
+      "local_path": "data/raw/cosmoshub/cosmoshub-4/event_window/2025-10-10_2030-2230_utc/blocks.jsonl.gz",
+      "sha256": "10412a51768ac70b9ae3291e51ecb6a41e075fb939e9d6f4e4db037712c28491",
+      "size_bytes": 59413324
+    },
+    "block_results": {
+      "local_path": "data/raw/cosmoshub/cosmoshub-4/event_window/2025-10-10_2030-2230_utc/block_results.jsonl.gz",
+      "sha256": "d815dff61332dbaec35a6e8e366c28ed501464f93e40486057d47b4e2ebbd7ac",
+      "size_bytes": 21199733
+    },
+    "batch_sources": [
+      {
+        "batch_index": 0,
+        "first_height": 27907815,
+        "last_height": 27907819,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 1,
+        "first_height": 27907820,
+        "last_height": 27907824,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 2,
+        "first_height": 27907825,
+        "last_height": 27907829,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 3,
+        "first_height": 27907830,
+        "last_height": 27907834,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 4,
+        "first_height": 27907835,
+        "last_height": 27907839,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 5,
+        "first_height": 27907840,
+        "last_height": 27907844,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 6,
+        "first_height": 27907845,
+        "last_height": 27907849,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 7,
+        "first_height": 27907850,
+        "last_height": 27907854,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 8,
+        "first_height": 27907855,
+        "last_height": 27907859,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 9,
+        "first_height": 27907860,
+        "last_height": 27907864,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 10,
+        "first_height": 27907865,
+        "last_height": 27907869,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 11,
+        "first_height": 27907870,
+        "last_height": 27907874,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 12,
+        "first_height": 27907875,
+        "last_height": 27907879,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 13,
+        "first_height": 27907880,
+        "last_height": 27907884,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 14,
+        "first_height": 27907885,
+        "last_height": 27907889,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 15,
+        "first_height": 27907890,
+        "last_height": 27907894,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 16,
+        "first_height": 27907895,
+        "last_height": 27907899,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 17,
+        "first_height": 27907900,
+        "last_height": 27907904,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 18,
+        "first_height": 27907905,
+        "last_height": 27907909,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 19,
+        "first_height": 27907910,
+        "last_height": 27907914,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 20,
+        "first_height": 27907915,
+        "last_height": 27907919,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 21,
+        "first_height": 27907920,
+        "last_height": 27907924,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 22,
+        "first_height": 27907925,
+        "last_height": 27907929,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 23,
+        "first_height": 27907930,
+        "last_height": 27907934,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 24,
+        "first_height": 27907935,
+        "last_height": 27907939,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 25,
+        "first_height": 27907940,
+        "last_height": 27907944,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 26,
+        "first_height": 27907945,
+        "last_height": 27907949,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 27,
+        "first_height": 27907950,
+        "last_height": 27907954,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 28,
+        "first_height": 27907955,
+        "last_height": 27907959,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 29,
+        "first_height": 27907960,
+        "last_height": 27907964,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 30,
+        "first_height": 27907965,
+        "last_height": 27907969,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 31,
+        "first_height": 27907970,
+        "last_height": 27907974,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 32,
+        "first_height": 27907975,
+        "last_height": 27907979,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 33,
+        "first_height": 27907980,
+        "last_height": 27907984,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 34,
+        "first_height": 27907985,
+        "last_height": 27907989,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 35,
+        "first_height": 27907990,
+        "last_height": 27907994,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 36,
+        "first_height": 27907995,
+        "last_height": 27907999,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 37,
+        "first_height": 27908000,
+        "last_height": 27908004,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 38,
+        "first_height": 27908005,
+        "last_height": 27908009,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 39,
+        "first_height": 27908010,
+        "last_height": 27908014,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 40,
+        "first_height": 27908015,
+        "last_height": 27908019,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 41,
+        "first_height": 27908020,
+        "last_height": 27908024,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 42,
+        "first_height": 27908025,
+        "last_height": 27908029,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 43,
+        "first_height": 27908030,
+        "last_height": 27908034,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 44,
+        "first_height": 27908035,
+        "last_height": 27908039,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 45,
+        "first_height": 27908040,
+        "last_height": 27908044,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 46,
+        "first_height": 27908045,
+        "last_height": 27908049,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 47,
+        "first_height": 27908050,
+        "last_height": 27908054,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 48,
+        "first_height": 27908055,
+        "last_height": 27908059,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 49,
+        "first_height": 27908060,
+        "last_height": 27908064,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 50,
+        "first_height": 27908065,
+        "last_height": 27908069,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 51,
+        "first_height": 27908070,
+        "last_height": 27908074,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 52,
+        "first_height": 27908075,
+        "last_height": 27908079,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 53,
+        "first_height": 27908080,
+        "last_height": 27908084,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 54,
+        "first_height": 27908085,
+        "last_height": 27908089,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 55,
+        "first_height": 27908090,
+        "last_height": 27908094,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 56,
+        "first_height": 27908095,
+        "last_height": 27908099,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 57,
+        "first_height": 27908100,
+        "last_height": 27908104,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 58,
+        "first_height": 27908105,
+        "last_height": 27908109,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 59,
+        "first_height": 27908110,
+        "last_height": 27908114,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 60,
+        "first_height": 27908115,
+        "last_height": 27908119,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 61,
+        "first_height": 27908120,
+        "last_height": 27908124,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 62,
+        "first_height": 27908125,
+        "last_height": 27908129,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 63,
+        "first_height": 27908130,
+        "last_height": 27908134,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 64,
+        "first_height": 27908135,
+        "last_height": 27908139,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 65,
+        "first_height": 27908140,
+        "last_height": 27908144,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 66,
+        "first_height": 27908145,
+        "last_height": 27908149,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 67,
+        "first_height": 27908150,
+        "last_height": 27908154,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 68,
+        "first_height": 27908155,
+        "last_height": 27908159,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 69,
+        "first_height": 27908160,
+        "last_height": 27908164,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 70,
+        "first_height": 27908165,
+        "last_height": 27908169,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 71,
+        "first_height": 27908170,
+        "last_height": 27908174,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 72,
+        "first_height": 27908175,
+        "last_height": 27908179,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 73,
+        "first_height": 27908180,
+        "last_height": 27908184,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 74,
+        "first_height": 27908185,
+        "last_height": 27908189,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 75,
+        "first_height": 27908190,
+        "last_height": 27908194,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 76,
+        "first_height": 27908195,
+        "last_height": 27908199,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 77,
+        "first_height": 27908200,
+        "last_height": 27908204,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 78,
+        "first_height": 27908205,
+        "last_height": 27908209,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 79,
+        "first_height": 27908210,
+        "last_height": 27908214,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 80,
+        "first_height": 27908215,
+        "last_height": 27908219,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 81,
+        "first_height": 27908220,
+        "last_height": 27908224,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 82,
+        "first_height": 27908225,
+        "last_height": 27908229,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 83,
+        "first_height": 27908230,
+        "last_height": 27908234,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 84,
+        "first_height": 27908235,
+        "last_height": 27908239,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 85,
+        "first_height": 27908240,
+        "last_height": 27908244,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 86,
+        "first_height": 27908245,
+        "last_height": 27908249,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 87,
+        "first_height": 27908250,
+        "last_height": 27908254,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 88,
+        "first_height": 27908255,
+        "last_height": 27908259,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 89,
+        "first_height": 27908260,
+        "last_height": 27908264,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 90,
+        "first_height": 27908265,
+        "last_height": 27908269,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 91,
+        "first_height": 27908270,
+        "last_height": 27908274,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 92,
+        "first_height": 27908275,
+        "last_height": 27908279,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 93,
+        "first_height": 27908280,
+        "last_height": 27908284,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 94,
+        "first_height": 27908285,
+        "last_height": 27908289,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 95,
+        "first_height": 27908290,
+        "last_height": 27908294,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 96,
+        "first_height": 27908295,
+        "last_height": 27908299,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 97,
+        "first_height": 27908300,
+        "last_height": 27908304,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 98,
+        "first_height": 27908305,
+        "last_height": 27908309,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 99,
+        "first_height": 27908310,
+        "last_height": 27908314,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 100,
+        "first_height": 27908315,
+        "last_height": 27908319,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 101,
+        "first_height": 27908320,
+        "last_height": 27908324,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 102,
+        "first_height": 27908325,
+        "last_height": 27908329,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 103,
+        "first_height": 27908330,
+        "last_height": 27908334,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 104,
+        "first_height": 27908335,
+        "last_height": 27908339,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 105,
+        "first_height": 27908340,
+        "last_height": 27908344,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 106,
+        "first_height": 27908345,
+        "last_height": 27908349,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 107,
+        "first_height": 27908350,
+        "last_height": 27908354,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 108,
+        "first_height": 27908355,
+        "last_height": 27908359,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 109,
+        "first_height": 27908360,
+        "last_height": 27908364,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 110,
+        "first_height": 27908365,
+        "last_height": 27908369,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 111,
+        "first_height": 27908370,
+        "last_height": 27908374,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 112,
+        "first_height": 27908375,
+        "last_height": 27908379,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 113,
+        "first_height": 27908380,
+        "last_height": 27908384,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 114,
+        "first_height": 27908385,
+        "last_height": 27908389,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 115,
+        "first_height": 27908390,
+        "last_height": 27908394,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 116,
+        "first_height": 27908395,
+        "last_height": 27908399,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 117,
+        "first_height": 27908400,
+        "last_height": 27908404,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 118,
+        "first_height": 27908405,
+        "last_height": 27908409,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 119,
+        "first_height": 27908410,
+        "last_height": 27908414,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 120,
+        "first_height": 27908415,
+        "last_height": 27908419,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 121,
+        "first_height": 27908420,
+        "last_height": 27908424,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 122,
+        "first_height": 27908425,
+        "last_height": 27908429,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 123,
+        "first_height": 27908430,
+        "last_height": 27908434,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 124,
+        "first_height": 27908435,
+        "last_height": 27908439,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 125,
+        "first_height": 27908440,
+        "last_height": 27908444,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 126,
+        "first_height": 27908445,
+        "last_height": 27908449,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 127,
+        "first_height": 27908450,
+        "last_height": 27908454,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 128,
+        "first_height": 27908455,
+        "last_height": 27908459,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 129,
+        "first_height": 27908460,
+        "last_height": 27908464,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 130,
+        "first_height": 27908465,
+        "last_height": 27908469,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 131,
+        "first_height": 27908470,
+        "last_height": 27908474,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 132,
+        "first_height": 27908475,
+        "last_height": 27908479,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 133,
+        "first_height": 27908480,
+        "last_height": 27908484,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 134,
+        "first_height": 27908485,
+        "last_height": 27908489,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 135,
+        "first_height": 27908490,
+        "last_height": 27908494,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 136,
+        "first_height": 27908495,
+        "last_height": 27908499,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 137,
+        "first_height": 27908500,
+        "last_height": 27908504,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 138,
+        "first_height": 27908505,
+        "last_height": 27908509,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 139,
+        "first_height": 27908510,
+        "last_height": 27908514,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 140,
+        "first_height": 27908515,
+        "last_height": 27908519,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 141,
+        "first_height": 27908520,
+        "last_height": 27908524,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 142,
+        "first_height": 27908525,
+        "last_height": 27908529,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 143,
+        "first_height": 27908530,
+        "last_height": 27908534,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 144,
+        "first_height": 27908535,
+        "last_height": 27908539,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 145,
+        "first_height": 27908540,
+        "last_height": 27908544,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 146,
+        "first_height": 27908545,
+        "last_height": 27908549,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 147,
+        "first_height": 27908550,
+        "last_height": 27908554,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 148,
+        "first_height": 27908555,
+        "last_height": 27908559,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 149,
+        "first_height": 27908560,
+        "last_height": 27908564,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 150,
+        "first_height": 27908565,
+        "last_height": 27908569,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 151,
+        "first_height": 27908570,
+        "last_height": 27908574,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 152,
+        "first_height": 27908575,
+        "last_height": 27908579,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 153,
+        "first_height": 27908580,
+        "last_height": 27908584,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 154,
+        "first_height": 27908585,
+        "last_height": 27908589,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 155,
+        "first_height": 27908590,
+        "last_height": 27908594,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 156,
+        "first_height": 27908595,
+        "last_height": 27908599,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 157,
+        "first_height": 27908600,
+        "last_height": 27908604,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 158,
+        "first_height": 27908605,
+        "last_height": 27908609,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 159,
+        "first_height": 27908610,
+        "last_height": 27908614,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 160,
+        "first_height": 27908615,
+        "last_height": 27908619,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 161,
+        "first_height": 27908620,
+        "last_height": 27908624,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 162,
+        "first_height": 27908625,
+        "last_height": 27908629,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 163,
+        "first_height": 27908630,
+        "last_height": 27908634,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 164,
+        "first_height": 27908635,
+        "last_height": 27908639,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 165,
+        "first_height": 27908640,
+        "last_height": 27908644,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 166,
+        "first_height": 27908645,
+        "last_height": 27908649,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 167,
+        "first_height": 27908650,
+        "last_height": 27908654,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 168,
+        "first_height": 27908655,
+        "last_height": 27908659,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 169,
+        "first_height": 27908660,
+        "last_height": 27908664,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 170,
+        "first_height": 27908665,
+        "last_height": 27908669,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 171,
+        "first_height": 27908670,
+        "last_height": 27908674,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 172,
+        "first_height": 27908675,
+        "last_height": 27908679,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 173,
+        "first_height": 27908680,
+        "last_height": 27908684,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 174,
+        "first_height": 27908685,
+        "last_height": 27908689,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 175,
+        "first_height": 27908690,
+        "last_height": 27908694,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 176,
+        "first_height": 27908695,
+        "last_height": 27908699,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 177,
+        "first_height": 27908700,
+        "last_height": 27908704,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 178,
+        "first_height": 27908705,
+        "last_height": 27908709,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 179,
+        "first_height": 27908710,
+        "last_height": 27908714,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 180,
+        "first_height": 27908715,
+        "last_height": 27908719,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 181,
+        "first_height": 27908720,
+        "last_height": 27908724,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 182,
+        "first_height": 27908725,
+        "last_height": 27908729,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 183,
+        "first_height": 27908730,
+        "last_height": 27908734,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 184,
+        "first_height": 27908735,
+        "last_height": 27908739,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 185,
+        "first_height": 27908740,
+        "last_height": 27908744,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 186,
+        "first_height": 27908745,
+        "last_height": 27908749,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 187,
+        "first_height": 27908750,
+        "last_height": 27908754,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 188,
+        "first_height": 27908755,
+        "last_height": 27908759,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 189,
+        "first_height": 27908760,
+        "last_height": 27908764,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 190,
+        "first_height": 27908765,
+        "last_height": 27908769,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 191,
+        "first_height": 27908770,
+        "last_height": 27908774,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 192,
+        "first_height": 27908775,
+        "last_height": 27908779,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 193,
+        "first_height": 27908780,
+        "last_height": 27908784,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 194,
+        "first_height": 27908785,
+        "last_height": 27908789,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 195,
+        "first_height": 27908790,
+        "last_height": 27908794,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 196,
+        "first_height": 27908795,
+        "last_height": 27908799,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 197,
+        "first_height": 27908800,
+        "last_height": 27908804,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 198,
+        "first_height": 27908805,
+        "last_height": 27908809,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 199,
+        "first_height": 27908810,
+        "last_height": 27908814,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 200,
+        "first_height": 27908815,
+        "last_height": 27908819,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 201,
+        "first_height": 27908820,
+        "last_height": 27908824,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 202,
+        "first_height": 27908825,
+        "last_height": 27908829,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 203,
+        "first_height": 27908830,
+        "last_height": 27908834,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 204,
+        "first_height": 27908835,
+        "last_height": 27908839,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 205,
+        "first_height": 27908840,
+        "last_height": 27908844,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 206,
+        "first_height": 27908845,
+        "last_height": 27908849,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 207,
+        "first_height": 27908850,
+        "last_height": 27908854,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 208,
+        "first_height": 27908855,
+        "last_height": 27908859,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 209,
+        "first_height": 27908860,
+        "last_height": 27908864,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 210,
+        "first_height": 27908865,
+        "last_height": 27908869,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 211,
+        "first_height": 27908870,
+        "last_height": 27908874,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 212,
+        "first_height": 27908875,
+        "last_height": 27908879,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 213,
+        "first_height": 27908880,
+        "last_height": 27908884,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 214,
+        "first_height": 27908885,
+        "last_height": 27908889,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 215,
+        "first_height": 27908890,
+        "last_height": 27908894,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 216,
+        "first_height": 27908895,
+        "last_height": 27908899,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 217,
+        "first_height": 27908900,
+        "last_height": 27908904,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 218,
+        "first_height": 27908905,
+        "last_height": 27908909,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 219,
+        "first_height": 27908910,
+        "last_height": 27908914,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 220,
+        "first_height": 27908915,
+        "last_height": 27908919,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 221,
+        "first_height": 27908920,
+        "last_height": 27908924,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 222,
+        "first_height": 27908925,
+        "last_height": 27908929,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 223,
+        "first_height": 27908930,
+        "last_height": 27908934,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 224,
+        "first_height": 27908935,
+        "last_height": 27908939,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 225,
+        "first_height": 27908940,
+        "last_height": 27908944,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 226,
+        "first_height": 27908945,
+        "last_height": 27908949,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 227,
+        "first_height": 27908950,
+        "last_height": 27908954,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 228,
+        "first_height": 27908955,
+        "last_height": 27908959,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 229,
+        "first_height": 27908960,
+        "last_height": 27908964,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 230,
+        "first_height": 27908965,
+        "last_height": 27908969,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 231,
+        "first_height": 27908970,
+        "last_height": 27908974,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 232,
+        "first_height": 27908975,
+        "last_height": 27908979,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 233,
+        "first_height": 27908980,
+        "last_height": 27908984,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 234,
+        "first_height": 27908985,
+        "last_height": 27908989,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 235,
+        "first_height": 27908990,
+        "last_height": 27908994,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 236,
+        "first_height": 27908995,
+        "last_height": 27908999,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 237,
+        "first_height": 27909000,
+        "last_height": 27909004,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 238,
+        "first_height": 27909005,
+        "last_height": 27909009,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 239,
+        "first_height": 27909010,
+        "last_height": 27909014,
+        "rpc": "https://rpc.cosmoshub-4-archive.citizenweb3.com"
+      },
+      {
+        "batch_index": 240,
+        "first_height": 27909015,
+        "last_height": 27909019,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      },
+      {
+        "batch_index": 241,
+        "first_height": 27909020,
+        "last_height": 27909024,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 242,
+        "first_height": 27909025,
+        "last_height": 27909029,
+        "rpc": "https://cosmos-rpc.publicnode.com"
+      },
+      {
+        "batch_index": 243,
+        "first_height": 27909030,
+        "last_height": 27909032,
+        "rpc": "https://rpc.cosmoshub-main.ccvalidators.com"
+      }
+    ]
+  },
+  "limitations": [
+    "Daily block_metas and tx_search preserve block headers and indexed transaction results, not consensus-only block events.",
+    "Full block and block_results RPC responses are retained for the two-hour event window."
+  ]
+}

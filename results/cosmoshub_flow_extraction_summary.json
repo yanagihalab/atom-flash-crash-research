@@ -1,0 +1,62 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "chain_id": "cosmoshub-4",
+  "started_at_utc": "2026-08-29T06:09:04.124932Z",
+  "finished_at_utc": "2026-08-29T06:09:32.710983Z",
+  "source_run_manifest": "metadata/runs/20260829T043153730115Z_cosmoshub_study_data.json",
+  "source_run_manifest_sha256": "a23f5f09369be867714f3e509ecc6016506ab36c60517d5062f593051084599a",
+  "transactions_scanned": 161755,
+  "successful_transactions_scanned": 160310,
+  "protobuf_decode_errors": 0,
+  "packet_decode_errors": 0,
+  "atom_transfer_class_counts": {
+    "direct_bank": 55905,
+    "distribution": 31606,
+    "ibc_transfer": 10153,
+    "other_message": 31211,
+    "staking": 19515,
+    "unindexed_or_fee": 320620,
+    "wrapped_or_group": 10034
+  },
+  "ibc_direction_counts": {
+    "inbound": 17013,
+    "outbound": 17757
+  },
+  "ibc_atom_direction_counts": {
+    "inbound": 13303,
+    "outbound": 14659
+  },
+  "exchange_candidate_count": 356,
+  "artifacts": {
+    "atom_transfers_2025-10-09_2025-10-12.jsonl.gz": {
+      "local_path": "data/processed/cosmoshub/atom_transfers_2025-10-09_2025-10-12.jsonl.gz",
+      "record_count": 479044,
+      "size_bytes": 22702659,
+      "sha256": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7"
+    },
+    "ibc_transfers_2025-10-09_2025-10-12.jsonl.gz": {
+      "local_path": "data/processed/cosmoshub/ibc_transfers_2025-10-09_2025-10-12.jsonl.gz",
+      "record_count": 34770,
+      "size_bytes": 4769619,
+      "sha256": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412"
+    },
+    "event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz": {
+      "local_path": "data/processed/cosmoshub/event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz",
+      "record_count": 19749,
+      "size_bytes": 1226538,
+      "sha256": "a43a1da3f20150c8140e0b41dca1e00aa609fefa8d879c9c361ff7799af99e0d"
+    },
+    "exchange_inflow_candidates_2025-10-09_2025-10-12.json": {
+      "local_path": "data/processed/cosmoshub/exchange_inflow_candidates_2025-10-09_2025-10-12.json",
+      "record_count": 356,
+      "size_bytes": 860564,
+      "sha256": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107"
+    }
+  },
+  "limitations": [
+    "Behavioral exchange candidates are not proof of exchange ownership.",
+    "A numeric memo is consistent with shared-account deposit routing but is not unique to exchanges.",
+    "IBC chain hints use bech32 address prefixes and may be absent or ambiguous.",
+    "Association in time does not establish causation for the market-price event."
+  ]
+}

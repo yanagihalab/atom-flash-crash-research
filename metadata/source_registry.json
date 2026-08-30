@@ -1,0 +1,37 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "sources": [
+    {
+      "name": "Binance Public Data",
+      "role": "Primary venue trades, aggregate trades, spot klines, futures trades and reference prices",
+      "url": "https://data.binance.vision/",
+      "documentation": "https://github.com/binance/binance-public-data",
+      "integrity": "Provider SHA-256 .CHECKSUM files are downloaded and verified"
+    },
+    {
+      "name": "Kraken PostTrade API",
+      "role": "Independent ATOM/USD trade-level comparison",
+      "url": "https://api.kraken.com/0/public/PostTrade",
+      "documentation": "https://docs.kraken.com/api/docs/rest-api/get-post-trade",
+      "integrity": "Local deterministic gzip SHA-256 plus query log in run manifest"
+    },
+    {
+      "name": "Coinbase Exchange candles API",
+      "role": "Independent ATOM-USD one-minute comparison",
+      "url": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+      "documentation": "https://docs.cdp.coinbase.com/api-reference/exchange-api/rest-api/products/get-product-candles",
+      "integrity": "Local SHA-256 plus query log and missing-interval count in run manifest"
+    },
+    {
+      "name": "Cosmos Hub archive RPC",
+      "role": "Blocks, transactions, events, IBC transfers and exchange-flow candidates",
+      "url": "https://rpc.cosmoshub-main.ccvalidators.com",
+      "mirrors": [
+        "https://rpc.cosmoshub-4-archive.citizenweb3.com",
+        "https://cosmos-rpc.publicnode.com"
+      ],
+      "documentation": "https://docs.cometbft.com/v0.38/rpc/",
+      "integrity": "Three endpoints validated as cosmoshub-4 and cross-checked at height 27908328; deterministic gzip artifacts have SHA-256 values in the acquisition and verification manifests"
+    }
+  ]
+}

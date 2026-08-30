@@ -1,0 +1,13 @@
+{
+  "first_height": 27456806,
+  "end_height_exclusive": 27895335,
+  "record_count": 438529,
+  "sha256": "008e785fe2b79085e746582498eb1789112a82c70d2db627c44b10838e0d8405",
+  "size_bytes": 23859443,
+  "source_batch_counts": {
+    "https://rpc.cosmoshub-main.ccvalidators.com": 727,
+    "https://rpc.cosmoshub-4-archive.citizenweb3.com": 642,
+    "https://cosmos-rpc.publicnode.com": 824
+  },
+  "batch_count": 2193
+}

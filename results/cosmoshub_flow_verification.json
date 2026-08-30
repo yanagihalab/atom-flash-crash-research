@@ -1,0 +1,60 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "chain_id": "cosmoshub-4",
+  "status": "verified",
+  "artifact_checks": {
+    "atom_transfers_2025-10-09_2025-10-12.jsonl.gz": {
+      "size_bytes": 22702659,
+      "record_count": 479044,
+      "sha256": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+      "status": "verified"
+    },
+    "ibc_transfers_2025-10-09_2025-10-12.jsonl.gz": {
+      "size_bytes": 4769619,
+      "record_count": 34770,
+      "sha256": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+      "status": "verified"
+    },
+    "event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz": {
+      "size_bytes": 1226538,
+      "record_count": 19749,
+      "sha256": "a43a1da3f20150c8140e0b41dca1e00aa609fefa8d879c9c361ff7799af99e0d",
+      "status": "verified"
+    },
+    "exchange_inflow_candidates_2025-10-09_2025-10-12.json": {
+      "size_bytes": 860564,
+      "record_count": 356,
+      "sha256": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
+      "status": "verified"
+    }
+  },
+  "event_subset": {
+    "status": "exact_multiset_match",
+    "record_count": 19749,
+    "atom_transfer_records": 16945,
+    "ibc_transfer_records": 2804
+  },
+  "event_window_recalculation": {
+    "direct_transfer_count": 1533,
+    "direct_transfer_atom": 2721343.637883,
+    "confirmed_exchange_inflow_count": 193,
+    "confirmed_exchange_inflow_atom": 188053.420087,
+    "confirmed_exchange_outflow_count": 56,
+    "confirmed_exchange_outflow_atom": 195398.332856,
+    "confirmed_exchange_net_inflow_atom": -7344.912769,
+    "ibc_inbound_count": 1113,
+    "ibc_inbound_atom": 277987.972547,
+    "ibc_outbound_count": 1125,
+    "ibc_outbound_atom": 450890.178305
+  },
+  "analysis_source_sha256": {
+    "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+    "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+    "candidates": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
+    "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0"
+  },
+  "decode_errors": {
+    "protobuf": 0,
+    "ibc_packet": 0
+  }
+}

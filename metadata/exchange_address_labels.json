@@ -1,0 +1,55 @@
+{
+  "chain_id": "cosmoshub-4",
+  "as_of_utc": "2026-08-29T00:00:00Z",
+  "method": "Exact-address matches in public records that name the associated service provider. Labels indicate the shared receiving service identified by the record; they do not identify an individual transaction sender or beneficial owner.",
+  "labels": [
+    {
+      "address": "cosmos1j8pp7zvcu9z8vd882m284j29fn2dszh05cqvf9",
+      "label": "Binance",
+      "confidence": "high",
+      "evidence": [
+        {
+          "url": "https://public.nazk.gov.ua/documents/8afa386d-0561-446b-bc83-de4ddeca736f",
+          "description": "Ukrainian public asset declaration lists the exact ATOM address with Binance as service provider."
+        },
+        {
+          "url": "https://downloads.coindesk.com/legal/SEC_BinanceUS%20Status%20Update%20March%205.pdf",
+          "description": "Legal exhibit includes an ATOM withdrawal record using the exact address."
+        }
+      ]
+    },
+    {
+      "address": "cosmos1vl8xm7x04cedgh639hc9ucvf6zc754fyfewhef",
+      "label": "KuCoin",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "url": "https://public.nazk.gov.ua/documents/53023432-fc72-4bfb-b8a1-b7375d31e1c7",
+          "description": "Ukrainian public asset declaration lists the exact ATOM address with KuCoin as service provider."
+        }
+      ]
+    },
+    {
+      "address": "cosmos144sh8vyv5nqfylmg4mlydnpe3l4w780jsrmf4k",
+      "label": "MEXC",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "url": "https://public.nazk.gov.ua/documents/e01389f9-a252-4c0a-8bf9-a029c74ff3f0",
+          "description": "Ukrainian public asset declaration lists the exact ATOM address with mexc.com as service provider."
+        }
+      ]
+    },
+    {
+      "address": "cosmos1s3mu2eyc7ql5hrcqvuerfhxxfxs7ax4kzye8hz",
+      "label": "HitBTC",
+      "confidence": "medium",
+      "evidence": [
+        {
+          "url": "https://public.nazk.gov.ua/documents/5d77e625-aeb8-47d6-89ee-390a7397fabc",
+          "description": "Ukrainian public asset declaration lists the exact ATOM address with HitBTC as service provider."
+        }
+      ]
+    }
+  ]
+}

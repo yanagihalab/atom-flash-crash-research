@@ -1,0 +1,12 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "inventory_path": "metadata/file_inventory.csv",
+  "file_count": 411,
+  "size_bytes": 55336556,
+  "groups": {
+    "analysis_intermediate": {
+      "file_count": 411,
+      "size_bytes": 55336556
+    }
+  }
+}

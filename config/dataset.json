@@ -1,0 +1,71 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "event_time_utc": "2025-10-10T21:20:37.689043Z",
+  "start_date_utc": "2025-10-09",
+  "end_date_utc_inclusive": "2025-10-12",
+  "binance_base_url": "https://data.binance.vision/data",
+  "binance_datasets": [
+    {
+      "market": "spot",
+      "data_type": "trades",
+      "symbols": ["ATOMUSDT", "ATOMUSDC"]
+    },
+    {
+      "market": "spot",
+      "data_type": "aggTrades",
+      "symbols": ["ATOMUSDT", "ATOMUSDC"]
+    },
+    {
+      "market": "spot",
+      "data_type": "klines",
+      "interval": "1s",
+      "symbols": ["ATOMUSDT", "ATOMUSDC"]
+    },
+    {
+      "market": "spot",
+      "data_type": "klines",
+      "interval": "1m",
+      "symbols": ["ATOMUSDT", "ATOMUSDC", "BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "USDCUSDT"]
+    },
+    {
+      "market": "futures/um",
+      "data_type": "trades",
+      "symbols": ["ATOMUSDT"]
+    },
+    {
+      "market": "futures/um",
+      "data_type": "klines",
+      "interval": "1m",
+      "symbols": ["ATOMUSDT"]
+    },
+    {
+      "market": "futures/um",
+      "data_type": "markPriceKlines",
+      "interval": "1m",
+      "symbols": ["ATOMUSDT"]
+    },
+    {
+      "market": "futures/um",
+      "data_type": "indexPriceKlines",
+      "interval": "1m",
+      "symbols": ["ATOMUSDT"]
+    },
+    {
+      "market": "futures/um",
+      "data_type": "premiumIndexKlines",
+      "interval": "1m",
+      "symbols": ["ATOMUSDT"]
+    }
+  ],
+  "kraken": {
+    "endpoint": "https://api.kraken.com/0/public/PostTrade",
+    "symbol": "ATOM/USD",
+    "page_size": 1000
+  },
+  "coinbase": {
+    "endpoint": "https://api.exchange.coinbase.com/products/ATOM-USD/candles",
+    "product_id": "ATOM-USD",
+    "granularity_seconds": 60,
+    "max_candles_per_request": 300
+  }
+}

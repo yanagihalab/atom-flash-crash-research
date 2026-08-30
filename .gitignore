@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+tmp/
+
+# Source archives are local inputs. GitHub contains analysis-ready intermediate data.
+data/raw/
+release-assets/
+
+# Local editor and build products.
+*.dvi
+*.aux
+*.log

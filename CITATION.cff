@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this dataset or code, please cite this repository and the associated manuscript."
+title: "Analysis-Ready Intermediate Data for a Case Study of a Transient Price Dislocation in the Binance ATOM/USDT Market"
+type: dataset
+authors:
+  - family-names: "Yanagihara"
+    given-names: "Takaaki"
+version: 0.1.0
+date-released: 2026-08-30
+keywords:
+  - ATOM
+  - Cosmos Hub
+  - flash crash
+  - market microstructure
+  - on-chain analysis

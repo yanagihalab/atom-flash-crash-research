@@ -1,0 +1,89 @@
+{
+  "verification_status": "passed",
+  "verified_at_utc": "2026-08-29T05:22:37.510099Z",
+  "run_manifest": "metadata/runs/20260829T043153730115Z_cosmoshub_study_data.json",
+  "run_manifest_sha256": "a23f5f09369be867714f3e509ecc6016506ab36c60517d5062f593051084599a",
+  "chain_id": "cosmoshub-4",
+  "endpoint_count": 3,
+  "cross_endpoint_block_hash_match": true,
+  "cross_endpoint_block_results_match": true,
+  "daily_partitions": [
+    {
+      "date_utc": "2025-10-09",
+      "first_height": 27880743,
+      "end_height_exclusive": 27895335,
+      "height_count": 14592,
+      "transaction_count": 32406,
+      "tx_page_record_count": 14596,
+      "first_block_time": "2025-10-09T00:00:05.099414003Z",
+      "last_block_time": "2025-10-09T23:59:59.147836908Z",
+      "block_metas_sha256": "efb585b1fd816a8fbf00fa9d08aca3376badcb84e3f4402d64239308abbfc346",
+      "tx_search_sha256": "2c31f31714243478625a9e454f83611ce6770e29282c316033ef6262fa5fc32a"
+    },
+    {
+      "date_utc": "2025-10-10",
+      "first_height": 27895335,
+      "end_height_exclusive": 27909945,
+      "height_count": 14610,
+      "transaction_count": 37462,
+      "tx_page_record_count": 14610,
+      "first_block_time": "2025-10-10T00:00:05.634039979Z",
+      "last_block_time": "2025-10-10T23:59:59.927252436Z",
+      "block_metas_sha256": "6c59016fdc5b9c95b8f0a5b98c275564ad2f3c6646096645457bf18b783663e6",
+      "tx_search_sha256": "96c6d3d2ba7185ca9ff6ab18e6ea52ea151fb50b9658a8c661e3d49912078a29"
+    },
+    {
+      "date_utc": "2025-10-11",
+      "first_height": 27909945,
+      "end_height_exclusive": 27924543,
+      "height_count": 14598,
+      "transaction_count": 53711,
+      "tx_page_record_count": 14598,
+      "first_block_time": "2025-10-11T00:00:05.942837708Z",
+      "last_block_time": "2025-10-11T23:59:56.211678611Z",
+      "block_metas_sha256": "62480a3c7fe3fe3557650084dddb45250ae7512874ecf23a9510b5995f0fa5ab",
+      "tx_search_sha256": "ac64284ae12fcd80b0e664f29c68c3217ff1508fd15c7e5e7cd76f6bf954e01e"
+    },
+    {
+      "date_utc": "2025-10-12",
+      "first_height": 27924543,
+      "end_height_exclusive": 27939155,
+      "height_count": 14612,
+      "transaction_count": 38176,
+      "tx_page_record_count": 14612,
+      "first_block_time": "2025-10-12T00:00:02.268881098Z",
+      "last_block_time": "2025-10-12T23:59:59.664135439Z",
+      "block_metas_sha256": "d0f97bdfb955f61b67e89a4093f57537cfd3f6868343e6e6e64bb9d1394fee9c",
+      "tx_search_sha256": "b4fca681c1ce979bb8f09fc72da86dd96ee2988ea2fa829948bfa4783038f2e5"
+    }
+  ],
+  "totals": {
+    "height_count": 58412,
+    "transaction_count": 161755,
+    "tx_page_record_count": 58416
+  },
+  "event_window": {
+    "window": "[2025-10-10T20:30:00Z, 2025-10-10T22:30:00Z)",
+    "first_height": 27907815,
+    "end_height_exclusive": 27909033,
+    "height_count": 1218,
+    "first_block_time": "2025-10-10T20:30:05.746367779Z",
+    "last_block_time": "2025-10-10T22:29:59.580602439Z",
+    "blocks_sha256": "10412a51768ac70b9ae3291e51ecb6a41e075fb939e9d6f4e4db037712c28491",
+    "block_results_sha256": "d815dff61332dbaec35a6e8e366c28ed501464f93e40486057d47b4e2ebbd7ac",
+    "cross_check_height": 27908328,
+    "cross_check_block_id": "839CB7420809401252CABC2466996AB9946EAE9E7F79EF1AD564E733794D0C4E",
+    "cross_check_transaction_count": 7
+  },
+  "checks": [
+    "artifact sizes and SHA-256 values match the acquisition manifest",
+    "all gzip streams and JSONL records are readable",
+    "daily block heights are contiguous and timestamps fall inside their UTC partitions",
+    "tx_search has complete height and pagination coverage",
+    "every block metadata num_txs value equals the complete tx_search count for that height",
+    "each indexed transaction raw-byte SHA-256 equals its reported hash",
+    "event-window block transactions match tx_search raw transactions in order",
+    "event-window block_results match tx_search execution results in order",
+    "all archive endpoints agree on the cross-check block and block_results"
+  ]
+}
