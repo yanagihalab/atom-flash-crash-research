@@ -1,8 +1,231 @@
-# Binance ATOM/USDT市場における瞬間的価格乖離の分析用中間データ
+# Analysis-Ready Intermediate Data for a Transient Price Dislocation in the Binance ATOM/USDT Market
 
-Analysis-Ready Intermediate Data for a Transient Price Dislocation in the Binance ATOM/USDT Market
+Binance ATOM/USDT市場における瞬間的価格乖離の分析用中間データ
 
-[日本語](#japanese) | [English](#english)
+[English](#english) | [日本語](#japanese)
+
+---
+
+<a id="english"></a>
+
+## English
+
+### Overview
+
+This repository contains analysis-ready intermediate data, analysis code,
+verification outputs, and reproducibility documentation for the 0.001 USDT
+execution observed in the Binance ATOM/USDT spot market at
+2025-10-10T21:20:37.689043Z.
+
+The study integrates public executions, Binance comparison pairs and futures
+reference series, Coinbase and Kraken ATOM/USD observations, and Cosmos Hub ATOM
+transfer and IBC events. It examines:
+
+- how extreme the event window was relative to a 30-day pre-event baseline;
+- one-minute and five-minute lead-lag relationships across market and on-chain series;
+- robustness when only publicly confirmed exchange addresses are used;
+- sensitivity to adding unconfirmed behavior-based candidates; and
+- whether public data can attribute deliberate action to a wallet or user.
+
+### Scope of the claims
+
+> The evidence is consistent with a pair-specific liquidity or market-microstructure
+> disruption. It does not prove liquidity depletion, a causal link to a particular
+> wallet, deliberate manipulation, or the involvement of a named person. Historical
+> Binance order-book snapshots, internal account identifiers, order identifiers,
+> and deposit-credit timestamps are unavailable.
+
+A blockchain address is a public-ledger identifier, not a natural person or
+beneficial owner. An exchange label indicates only an exact-address association
+supported by a retained public record.
+
+### Publication policy
+
+The GitHub publication unit is an analysis-ready intermediate dataset, not a
+mirror of third-party raw source archives.
+
+| Category | Tracked in Git | Description |
+|---|---:|---|
+| Analysis-ready intermediate data | Yes | Event extract, ATOM transfers, IBC, 30-day five-minute panel, block-time index |
+| Statistical analysis tables | Yes | 360 control windows, empirical tests, lead-lag curves, robustness comparisons |
+| Analysis and validation code | Yes | Acquisition, extraction, aggregation, testing, validation, and figure scripts |
+| Provenance and integrity metadata | Yes | Sources, run records, SHA-256 inventory, and validation manifests |
+| Binance, Coinbase, and Kraken raw data | No | Acquisition scripts and run records are included |
+| Complete Cosmos Hub RPC responses | No | Acquisition/verification scripts and processed manifests are included |
+| Historical Binance order book | No | No event-time historical depth snapshot was available |
+
+Release v0.1.0 contains 411 intermediate data files totaling 55,336,556 bytes.
+See [metadata/file_inventory.csv](metadata/file_inventory.csv) for file-level
+SHA-256 digests and
+[metadata/dataset_summary.json](metadata/dataset_summary.json) for the summary.
+
+### Time coverage and analysis units
+
+All analysis timestamps are UTC.
+
+| Component | Interval or timestamp |
+|---|---|
+| Observed low | 2025-10-10T21:20:37.689043Z |
+| Detailed trade extract | [2025-10-10T21:15:00Z, 21:25:00Z) |
+| Primary event window | [2025-10-10T20:30:00Z, 22:30:00Z) |
+| Detailed Cosmos Hub interval | 9–12 October 2025 |
+| 30-day pre-event baseline | [2025-09-10T00:00:00Z, 2025-10-10T00:00:00Z) |
+| Main control distribution | 360 non-overlapping two-hour windows |
+| Matched-clock sensitivity set | 30 windows at 20:30–22:30 UTC |
+| Lead-lag ranges | ±5 minutes at 1-minute resolution; ±60 minutes at 5-minute resolution |
+
+### Main intermediate artifacts
+
+- [Ten-minute ATOM/USDT trade extract](data/processed/event_window/binance_spot_atomusdt_trades_2025-10-10_2115-2125_utc.csv.gz)
+- [Normalized ATOM transfers](data/processed/cosmoshub/atom_transfers_2025-10-09_2025-10-12.jsonl.gz)
+- [Decoded IBC sends and receives](data/processed/cosmoshub/ibc_transfers_2025-10-09_2025-10-12.jsonl.gz)
+- [Combined event-window flows](data/processed/cosmoshub/event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz)
+- [Exchange-inflow candidate registry](data/processed/cosmoshub/exchange_inflow_candidates_2025-10-09_2025-10-12.json)
+- [Continuous 30-day five-minute on-chain panel](data/processed/cosmoshub/baseline_30d/baseline_5min_2025-09-10_2025-10-10.jsonl.gz)
+- [Compact 30-day block-time index](data/processed/cosmoshub/baseline_30d/block_times_2025-09-10_2025-10-10.jsonl.gz)
+
+See [data/processed/README.md](data/processed/README.md) for the intermediate-data
+contract and [docs/data_dictionary.md](docs/data_dictionary.md) for field definitions.
+
+### Main analysis tables
+
+| File | Contents |
+|---|---|
+| [publication_control_windows.csv](results/publication_control_windows.csv) | 360 non-overlapping two-hour controls |
+| [publication_matched_clock_windows.csv](results/publication_matched_clock_windows.csv) | 30 matched-clock controls |
+| [publication_window_tests.csv](results/publication_window_tests.csv) | Empirical percentiles and plus-one permutation tests |
+| [publication_lead_lag.csv](results/publication_lead_lag.csv) | 26 lead-lag summaries |
+| [publication_lead_lag_curves.csv](results/publication_lead_lag_curves.csv) | All 510 evaluated lag points |
+| [wallet_coordination_candidates.csv](results/wallet_coordination_candidates.csv) | Descriptive pre-event exchange-inflow sender candidates |
+| [flash_sell_sequence.csv](results/flash_sell_sequence.csv) | Sell-aggressor sequence at the final-low microsecond |
+
+The files in results are both manuscript-verification outputs and tidy inputs for
+additional statistical analysis or visualization.
+
+### Quick start
+
+Python 3.11 or later is recommended.
+
+~~~bash
+git clone <repository-url>
+cd atom-flash-crash-research
+
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+
+make validate
+make verify
+~~~
+
+make validate checks tracked files, JSON syntax, gzip/ZIP streams, individual
+file size, local absolute paths, and token-like secrets. make verify independently
+checks the publication tables and wallet-attribution analysis. Neither command
+requires the excluded raw source files.
+
+### Analysis from the intermediate files
+
+Immediately after cloning, users can:
+
+- reaggregate ATOM transfers, IBC activity, and confirmed exchange flows;
+- recalculate control-window tests and inspect lead-lag results;
+- compare the confirmed-address primary analysis with the unconfirmed-candidate sensitivity analysis;
+- reassess address concentration and temporal proximity; and
+- use the included PDF figures and Japanese analysis reports in manuscript workflows.
+
+See [docs/reproducibility.md](docs/reproducibility.md) for the full workflow.
+
+### Full rebuild from raw sources
+
+Raw inputs are downloaded to the Git-ignored data/raw directory. Users must
+review third-party availability, terms, and possible future API changes.
+
+~~~bash
+python scripts/download_binance.py
+python scripts/download_comparison_markets.py
+python scripts/collect_cosmos_study_data.py
+python scripts/collect_cosmos_baseline_indexed.py --start 2025-09-10T00:00:00Z --end-exclusive 2025-10-10T00:00:00Z
+~~~
+
+After acquisition:
+
+~~~bash
+python scripts/build_event_extract.py
+python scripts/extract_cosmos_flows.py
+python scripts/compare_control_windows.py
+python scripts/analyze_publication_extensions.py
+python scripts/analyze_wallet_coordination.py
+~~~
+
+Archive RPC availability may change. Sources and recorded acquisition runs are
+documented in [metadata/source_registry.json](metadata/source_registry.json)
+and [metadata/runs/](metadata/runs/).
+
+### Main reproducible findings
+
+- The ATOM/USDT two-hour event-window price range, trade count, and low-price
+  dislocation relative to ATOM/USDC exceed all 360 pre-event control windows.
+- Inflow to exact-address, publicly confirmed exchange labels is at the 93.9th
+  percentile with plus-one p=0.0637; it is not an upper-tail anomaly at the 5% level.
+- The terminal low was formed by 92 consecutive sell-aggressor executions in the
+  same microsecond, totaling 9,695.33 ATOM.
+- A temporally nearby on-chain deposit is observable, but public data contain no
+  exchange-internal join key connecting it to the sell sequence or a user.
+- Adding unconfirmed candidates does not establish wallet-specific manipulation.
+
+These are descriptive and statistical findings within the dataset. They do not
+establish causality, intent, or wrongdoing.
+
+### Integrity and provenance
+
+- Binance archives were checked against provider .CHECKSUM SHA-256 values.
+- Cosmos Hub acquisition was checked for continuous heights, UTC boundaries,
+  pagination, and transaction counts.
+- Selected blocks and result hashes were cross-checked across independent RPC endpoints.
+- Intermediate files are fixed by the [SHA-256 inventory](metadata/file_inventory.csv).
+- The 36 publication-test rows, 26 lead-lag summaries, and 510 curve rows are independently verified.
+- The absence of historical order-book data and the permitted scope of claims are machine-checked.
+
+Final checks are recorded in
+[publication_additional_verification.json](results/publication_additional_verification.json)
+and [wallet_coordination_verification.json](results/wallet_coordination_verification.json).
+
+### Repository layout
+
+~~~text
+config/          Acquisition, event-window, and baseline configuration
+data/processed/  Analysis-ready intermediate data tracked in Git
+docs/            Data dictionary, reproducibility guide, and ethics guidance
+figures/         Reproducible PDF figures for the manuscript
+metadata/        Sources, acquisition records, labels, and SHA-256 inventory
+outputs/         Japanese analysis reports and analysis workbook
+results/         Aggregates, tests, lead-lag tables, and verification outputs
+scripts/         Acquisition, extraction, analysis, validation, and figure code
+~~~
+
+### Limitations and ethics
+
+- No historical Binance ATOM/USDT order-book snapshot is available; resting
+  depth, cancellations, queue age, and actual liquidity depletion cannot be reconstructed.
+- Public executions contain no user ID, account ID, common taker-order ID,
+  API-key audit information, or liquidation flag.
+- A Cosmos Hub transfer timestamp is not an exchange deposit-credit timestamp.
+- IBC direction is defined from the Cosmos Hub perspective and is not centralized-exchange net flow.
+- Behavior-based candidates are not ownership labels and are used only for sensitivity analysis.
+- Addresses and memos must not be used to identify a person or assert misconduct.
+
+See [docs/ETHICS.md](docs/ETHICS.md) for the complete guidance.
+
+### License and citation
+
+- Code: [MIT License](LICENSE)
+- Author-created documentation, figures, intermediate data, and analysis outputs:
+  [CC BY 4.0](LICENSE-DATA.md)
+- Third-party raw source data: not included and not relicensed
+- Citation metadata: [CITATION.cff](CITATION.cff)
+
+Please include the release version or commit hash when citing the dataset or
+reporting a secondary analysis.
 
 ---
 
@@ -243,226 +466,3 @@ scripts/         取得、抽出、集計、分析、検証、作図コード
 - 引用情報：[CITATION.cff](CITATION.cff)
 
 論文又は二次分析では、使用したリリース番号又はコミットハッシュも併記してください。
-
----
-
-<a id="english"></a>
-
-## English
-
-### Overview
-
-This repository contains analysis-ready intermediate data, analysis code,
-verification outputs, and reproducibility documentation for the 0.001 USDT
-execution observed in the Binance ATOM/USDT spot market at
-2025-10-10T21:20:37.689043Z.
-
-The study integrates public executions, Binance comparison pairs and futures
-reference series, Coinbase and Kraken ATOM/USD observations, and Cosmos Hub ATOM
-transfer and IBC events. It examines:
-
-- how extreme the event window was relative to a 30-day pre-event baseline;
-- one-minute and five-minute lead-lag relationships across market and on-chain series;
-- robustness when only publicly confirmed exchange addresses are used;
-- sensitivity to adding unconfirmed behavior-based candidates; and
-- whether public data can attribute deliberate action to a wallet or user.
-
-### Scope of the claims
-
-> The evidence is consistent with a pair-specific liquidity or market-microstructure
-> disruption. It does not prove liquidity depletion, a causal link to a particular
-> wallet, deliberate manipulation, or the involvement of a named person. Historical
-> Binance order-book snapshots, internal account identifiers, order identifiers,
-> and deposit-credit timestamps are unavailable.
-
-A blockchain address is a public-ledger identifier, not a natural person or
-beneficial owner. An exchange label indicates only an exact-address association
-supported by a retained public record.
-
-### Publication policy
-
-The GitHub publication unit is an analysis-ready intermediate dataset, not a
-mirror of third-party raw source archives.
-
-| Category | Tracked in Git | Description |
-|---|---:|---|
-| Analysis-ready intermediate data | Yes | Event extract, ATOM transfers, IBC, 30-day five-minute panel, block-time index |
-| Statistical analysis tables | Yes | 360 control windows, empirical tests, lead-lag curves, robustness comparisons |
-| Analysis and validation code | Yes | Acquisition, extraction, aggregation, testing, validation, and figure scripts |
-| Provenance and integrity metadata | Yes | Sources, run records, SHA-256 inventory, and validation manifests |
-| Binance, Coinbase, and Kraken raw data | No | Acquisition scripts and run records are included |
-| Complete Cosmos Hub RPC responses | No | Acquisition/verification scripts and processed manifests are included |
-| Historical Binance order book | No | No event-time historical depth snapshot was available |
-
-Release v0.1.0 contains 411 intermediate data files totaling 55,336,556 bytes.
-See [metadata/file_inventory.csv](metadata/file_inventory.csv) for file-level
-SHA-256 digests and
-[metadata/dataset_summary.json](metadata/dataset_summary.json) for the summary.
-
-### Time coverage and analysis units
-
-All analysis timestamps are UTC.
-
-| Component | Interval or timestamp |
-|---|---|
-| Observed low | 2025-10-10T21:20:37.689043Z |
-| Detailed trade extract | [2025-10-10T21:15:00Z, 21:25:00Z) |
-| Primary event window | [2025-10-10T20:30:00Z, 22:30:00Z) |
-| Detailed Cosmos Hub interval | 9–12 October 2025 |
-| 30-day pre-event baseline | [2025-09-10T00:00:00Z, 2025-10-10T00:00:00Z) |
-| Main control distribution | 360 non-overlapping two-hour windows |
-| Matched-clock sensitivity set | 30 windows at 20:30–22:30 UTC |
-| Lead-lag ranges | ±5 minutes at 1-minute resolution; ±60 minutes at 5-minute resolution |
-
-### Main intermediate artifacts
-
-- [Ten-minute ATOM/USDT trade extract](data/processed/event_window/binance_spot_atomusdt_trades_2025-10-10_2115-2125_utc.csv.gz)
-- [Normalized ATOM transfers](data/processed/cosmoshub/atom_transfers_2025-10-09_2025-10-12.jsonl.gz)
-- [Decoded IBC sends and receives](data/processed/cosmoshub/ibc_transfers_2025-10-09_2025-10-12.jsonl.gz)
-- [Combined event-window flows](data/processed/cosmoshub/event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz)
-- [Exchange-inflow candidate registry](data/processed/cosmoshub/exchange_inflow_candidates_2025-10-09_2025-10-12.json)
-- [Continuous 30-day five-minute on-chain panel](data/processed/cosmoshub/baseline_30d/baseline_5min_2025-09-10_2025-10-10.jsonl.gz)
-- [Compact 30-day block-time index](data/processed/cosmoshub/baseline_30d/block_times_2025-09-10_2025-10-10.jsonl.gz)
-
-See [data/processed/README.md](data/processed/README.md) for the intermediate-data
-contract and [docs/data_dictionary.md](docs/data_dictionary.md) for field definitions.
-
-### Main analysis tables
-
-| File | Contents |
-|---|---|
-| [publication_control_windows.csv](results/publication_control_windows.csv) | 360 non-overlapping two-hour controls |
-| [publication_matched_clock_windows.csv](results/publication_matched_clock_windows.csv) | 30 matched-clock controls |
-| [publication_window_tests.csv](results/publication_window_tests.csv) | Empirical percentiles and plus-one permutation tests |
-| [publication_lead_lag.csv](results/publication_lead_lag.csv) | 26 lead-lag summaries |
-| [publication_lead_lag_curves.csv](results/publication_lead_lag_curves.csv) | All 510 evaluated lag points |
-| [wallet_coordination_candidates.csv](results/wallet_coordination_candidates.csv) | Descriptive pre-event exchange-inflow sender candidates |
-| [flash_sell_sequence.csv](results/flash_sell_sequence.csv) | Sell-aggressor sequence at the final-low microsecond |
-
-The files in results are both manuscript-verification outputs and tidy inputs for
-additional statistical analysis or visualization.
-
-### Quick start
-
-Python 3.11 or later is recommended.
-
-~~~bash
-git clone <repository-url>
-cd atom-flash-crash-research
-
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-
-make validate
-make verify
-~~~
-
-make validate checks tracked files, JSON syntax, gzip/ZIP streams, individual
-file size, local absolute paths, and token-like secrets. make verify independently
-checks the publication tables and wallet-attribution analysis. Neither command
-requires the excluded raw source files.
-
-### Analysis from the intermediate files
-
-Immediately after cloning, users can:
-
-- reaggregate ATOM transfers, IBC activity, and confirmed exchange flows;
-- recalculate control-window tests and inspect lead-lag results;
-- compare the confirmed-address primary analysis with the unconfirmed-candidate sensitivity analysis;
-- reassess address concentration and temporal proximity; and
-- use the included PDF figures and Japanese analysis reports in manuscript workflows.
-
-See [docs/reproducibility.md](docs/reproducibility.md) for the full workflow.
-
-### Full rebuild from raw sources
-
-Raw inputs are downloaded to the Git-ignored data/raw directory. Users must
-review third-party availability, terms, and possible future API changes.
-
-~~~bash
-python scripts/download_binance.py
-python scripts/download_comparison_markets.py
-python scripts/collect_cosmos_study_data.py
-python scripts/collect_cosmos_baseline_indexed.py --start 2025-09-10T00:00:00Z --end-exclusive 2025-10-10T00:00:00Z
-~~~
-
-After acquisition:
-
-~~~bash
-python scripts/build_event_extract.py
-python scripts/extract_cosmos_flows.py
-python scripts/compare_control_windows.py
-python scripts/analyze_publication_extensions.py
-python scripts/analyze_wallet_coordination.py
-~~~
-
-Archive RPC availability may change. Sources and recorded acquisition runs are
-documented in [metadata/source_registry.json](metadata/source_registry.json)
-and [metadata/runs/](metadata/runs/).
-
-### Main reproducible findings
-
-- The ATOM/USDT two-hour event-window price range, trade count, and low-price
-  dislocation relative to ATOM/USDC exceed all 360 pre-event control windows.
-- Inflow to exact-address, publicly confirmed exchange labels is at the 93.9th
-  percentile with plus-one p=0.0637; it is not an upper-tail anomaly at the 5% level.
-- The terminal low was formed by 92 consecutive sell-aggressor executions in the
-  same microsecond, totaling 9,695.33 ATOM.
-- A temporally nearby on-chain deposit is observable, but public data contain no
-  exchange-internal join key connecting it to the sell sequence or a user.
-- Adding unconfirmed candidates does not establish wallet-specific manipulation.
-
-These are descriptive and statistical findings within the dataset. They do not
-establish causality, intent, or wrongdoing.
-
-### Integrity and provenance
-
-- Binance archives were checked against provider .CHECKSUM SHA-256 values.
-- Cosmos Hub acquisition was checked for continuous heights, UTC boundaries,
-  pagination, and transaction counts.
-- Selected blocks and result hashes were cross-checked across independent RPC endpoints.
-- Intermediate files are fixed by the [SHA-256 inventory](metadata/file_inventory.csv).
-- The 36 publication-test rows, 26 lead-lag summaries, and 510 curve rows are independently verified.
-- The absence of historical order-book data and the permitted scope of claims are machine-checked.
-
-Final checks are recorded in
-[publication_additional_verification.json](results/publication_additional_verification.json)
-and [wallet_coordination_verification.json](results/wallet_coordination_verification.json).
-
-### Repository layout
-
-~~~text
-config/          Acquisition, event-window, and baseline configuration
-data/processed/  Analysis-ready intermediate data tracked in Git
-docs/            Data dictionary, reproducibility guide, and ethics guidance
-figures/         Reproducible PDF figures for the manuscript
-metadata/        Sources, acquisition records, labels, and SHA-256 inventory
-outputs/         Japanese analysis reports and analysis workbook
-results/         Aggregates, tests, lead-lag tables, and verification outputs
-scripts/         Acquisition, extraction, analysis, validation, and figure code
-~~~
-
-### Limitations and ethics
-
-- No historical Binance ATOM/USDT order-book snapshot is available; resting
-  depth, cancellations, queue age, and actual liquidity depletion cannot be reconstructed.
-- Public executions contain no user ID, account ID, common taker-order ID,
-  API-key audit information, or liquidation flag.
-- A Cosmos Hub transfer timestamp is not an exchange deposit-credit timestamp.
-- IBC direction is defined from the Cosmos Hub perspective and is not centralized-exchange net flow.
-- Behavior-based candidates are not ownership labels and are used only for sensitivity analysis.
-- Addresses and memos must not be used to identify a person or assert misconduct.
-
-See [docs/ETHICS.md](docs/ETHICS.md) for the complete guidance.
-
-### License and citation
-
-- Code: [MIT License](LICENSE)
-- Author-created documentation, figures, intermediate data, and analysis outputs:
-  [CC BY 4.0](LICENSE-DATA.md)
-- Third-party raw source data: not included and not relicensed
-- Citation metadata: [CITATION.cff](CITATION.cff)
-
-Please include the release version or commit hash when citing the dataset or
-reporting a secondary analysis.
