@@ -83,7 +83,7 @@ def selected_test_table(data: dict[str, Any], metrics: list[str]) -> list[str]:
 def lead_lag_table(rows: list[dict[str, Any]], sample: str, resolution: str) -> list[str]:
     selected = [row for row in rows if row["sample"] == sample and row["resolution"] == resolution]
     lines = [
-        "| x → y | 最大|r|ラグ (分) | r | lag 0 r | 循環シフト p | n |",
+        r"| x → y | 最大\|r\|ラグ (分) | r | lag 0 r | 循環シフト p | n |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for row in selected:

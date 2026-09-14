@@ -25,7 +25,7 @@
 
 ## 1分リード・ラグ（30日＋イベント日）
 
-| x → y | 最大|r|ラグ (分) | r | lag 0 r | 循環シフト p | n |
+| x → y | 最大\|r\|ラグ (分) | r | lag 0 r | 循環シフト p | n |
 |---|---:|---:|---:|---:|---:|
 | spot_usdt_return → spot_usdc_return | 0 | 0.873 | 0.873 | 0.0002 | 44,639 |
 | futures_return → spot_usdt_return | 0 | 0.727 | 0.727 | 0.0002 | 44,639 |
@@ -37,7 +37,7 @@
 
 ## 1分リード・ラグ（イベント局所4時間）
 
-| x → y | 最大|r|ラグ (分) | r | lag 0 r | 循環シフト p | n |
+| x → y | 最大\|r\|ラグ (分) | r | lag 0 r | 循環シフト p | n |
 |---|---:|---:|---:|---:|---:|
 | spot_usdt_return → spot_usdc_return | 0 | 0.881 | 0.881 | 0.0043 | 240 |
 | futures_return → spot_usdt_return | 0 | 0.699 | 0.699 | 0.0043 | 240 |
@@ -47,7 +47,7 @@
 
 ## 5分リード・ラグ（30日＋イベント日）
 
-| x → y | 最大|r|ラグ (分) | r | lag 0 r | 循環シフト p | n |
+| x → y | 最大\|r\|ラグ (分) | r | lag 0 r | 循環シフト p | n |
 |---|---:|---:|---:|---:|---:|
 | confirmed_exchange_in_atom → spot_range_stress | -60 | 0.027 | 0.015 | 0.0602 | 8,916 |
 | confirmed_exchange_out_atom → spot_range_stress | -60 | 0.040 | 0.028 | 0.0004 | 8,916 |
@@ -62,7 +62,7 @@
 
 ## 5分リード・ラグ（イベント局所4時間）
 
-| x → y | 最大|r|ラグ (分) | r | lag 0 r | 循環シフト p | n |
+| x → y | 最大\|r\|ラグ (分) | r | lag 0 r | 循環シフト p | n |
 |---|---:|---:|---:|---:|---:|
 | confirmed_exchange_in_atom → spot_range_stress | 40 | -0.571 | 0.088 | 0.2083 | 40 |
 | confirmed_exchange_out_atom → spot_range_stress | -40 | -0.310 | 0.037 | 0.7917 | 40 |

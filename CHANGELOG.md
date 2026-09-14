@@ -32,6 +32,10 @@ the exact files used; the version label does not imply a separate release asset.
 - Align the wallet narrative with the manuscript's block-header timing,
   one-address scope, ownership limits, counterparty definitions, and descriptive
   post-selection statistics; retain the underlying numerical tables.
+- Clarify the distinction between saved-result consistency checks and independent
+  raw-data verification in both README languages. Escape absolute-correlation
+  bars in Markdown table headers and add a regression test; numerical data and
+  manuscript PDFs are unchanged by this documentation follow-up.
 - Record source/report hashes and explicit public-byte artifact rebinding in a
   packaging provenance map. Preserve raw/code provenance and the exact prior
   public manifest; remove 31 unlisted legacy checkpoints from the release tree

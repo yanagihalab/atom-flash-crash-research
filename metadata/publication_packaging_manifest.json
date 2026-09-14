@@ -4420,19 +4420,26 @@
     },
     "outputs/atom_flash_crash_2025_10_10/publication_additional_analysis.md": {
       "source_path": "outputs/atom_flash_crash_2025_10_10/publication_additional_analysis.md",
-      "source_sha256": "ea5d2dcfcdbcbd8c02bf0bf84d5a464fe84c7e76252881a352085074e543bd9f",
-      "source_size_bytes": 7751,
+      "source_sha256": "e527a6e2fa5654e9c9ae2048f8dde989f181daba89977ab030f709854f8b18ea",
+      "source_size_bytes": 7759,
       "transformation": "path_only_normalization_of_documented_source_wording_revision",
       "scientific_values_preserved": true,
       "artifact_binding_changes": [],
       "path_only_semantic_equality_modulo_listed_bindings": true,
-      "packaged_sha256": "71c023d7d94999186e818f1bdb82bd680e24f5249c3d935aed55208e6f544343",
-      "packaged_size_bytes": 7562,
+      "packaged_sha256": "e7d126c212db5f929244faead2803bc01672c536ceac04c23568806c33e872a9",
+      "packaged_size_bytes": 7570,
       "post_packaging_source_revisions": [
         {
           "kind": "two_line_empirical_tail_interpretation_correction",
           "previous_source_sha256": "c478f7e79c4eaef869c5e80198960bf58ec5819aeddccf6dcb8a7e4fb591333d",
           "previous_packaged_sha256": "70c1076d41e1b1110d6f370f9c15c55dbe9b82a8fac0cf8230a746d2c49179bc",
+          "numeric_tables_unchanged": true
+        },
+        {
+          "date": "2026-09-15",
+          "kind": "escape_absolute_correlation_bars_in_four_markdown_headers",
+          "previous_source_sha256": "ea5d2dcfcdbcbd8c02bf0bf84d5a464fe84c7e76252881a352085074e543bd9f",
+          "previous_packaged_sha256": "71c023d7d94999186e818f1bdb82bd680e24f5249c3d935aed55208e6f544343",
           "numeric_tables_unchanged": true
         }
       ]
@@ -4796,8 +4803,8 @@
     },
     "README.md": {
       "transformation": "inventory_counts_and_explicit_bilingual_documentation_revision",
-      "packaged_sha256": "66de97a704e8cbd6bbee2227fa90b1c74106c9bdaf32bebca38d2bdbfeea5fe4",
-      "packaged_size_bytes": 31589,
+      "packaged_sha256": "5bc2d6cbdef451b20bcff46fdb0dc1ea1c6e2992a9c43e3b96d75d7a5869ffd8",
+      "packaged_size_bytes": 32553,
       "post_packaging_edits": [
         {
           "kind": "bilingual_methods_findings_verification_scope_and_descriptive_tail_wording",
@@ -4807,6 +4814,11 @@
           "date": "2026-09-15",
           "kind": "publish_correction_version_0_1_1_and_concrete_clone_url",
           "previous_packaged_sha256": "8a1aba5397de1d59be700a32469448ec9320853596d22c36f0dbb42b61e72dcf"
+        },
+        {
+          "date": "2026-09-15",
+          "kind": "distinguish_saved_result_consistency_from_independent_raw_recalculation_in_both_languages",
+          "previous_packaged_sha256": "66de97a704e8cbd6bbee2227fa90b1c74106c9bdaf32bebca38d2bdbfeea5fe4"
         }
       ]
     }

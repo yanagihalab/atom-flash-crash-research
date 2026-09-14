@@ -235,7 +235,9 @@ establish causality, intent, or wrongdoing.
   pagination, and transaction counts.
 - Selected blocks and result hashes were cross-checked across independent RPC endpoints.
 - Intermediate files are fixed by the [SHA-256 inventory](metadata/file_inventory.csv).
-- The 36 publication-test rows, 26 lead-lag summaries, and 510 curve rows are independently verified.
+- The 36 publication-test rows are checked for CSV/JSON consistency; the 26 lead-lag summaries are checked against extrema in the 510 saved curve rows.
+- The routine check recalculates ranks and tail probabilities from the 360 controls. For the 30 time-matched controls it checks saved CSV/JSON agreement, without independently recalculating the control distribution or circular-shift nulls.
+- A separate raw-dependent direct-Pearson verifier independently recalculates the circular-shift nulls for the primary exchange-inflow/stress series in the full sample and local four-hour sample only.
 - The absence of historical order-book data and the permitted scope of claims are machine-checked.
 
 Final checks are recorded in
@@ -521,7 +523,9 @@ RPC提供状況により取得元の変更が必要になることがありま�
 - Cosmos Hub取得時には連続ブロック高、UTC境界、ページング及びトランザクション数を確認
 - 独立した複数RPC間で対象ブロックと結果ハッシュを照合
 - 中間ファイルを[SHA-256目録](metadata/file_inventory.csv)で固定
-- 公表用検定36行、リード・ラグ要約26行、曲線510行を独立検証
+- 公表用検定36行のCSV/JSON整合性を確認し、リード・ラグ要約26行を保存済み曲線510行の極値と照合
+- 通常の検査では360対照窓から順位・裾確率を再計算。同時刻30対照については保存済みCSV/JSONの一致を確認し、対照分布や循環シフト帰無分布の独立再計算は行わない
+- 別の原データ依存・直接Pearson検証では、主要な取引所流入／市場ストレス系列の全標本・局所4時間標本に限り、循環シフト帰無分布を独立再計算
 - 履歴板が存在しないことと、許容される主張表現を機械検証
 
 最終検証結果は
