@@ -1,13 +1,13 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
   "chain_id": "cosmoshub-4",
-  "analysis_generated_at_utc": "2026-08-29T06:09:40.637615Z",
+  "analysis_generated_at_utc": "2026-09-14T16:26:38.986005Z",
   "flash_timestamp_utc": "2025-10-10T21:20:37.689043Z",
   "flash_block_height": 27908328,
   "event_window": "[2025-10-10T20:30:00Z, 2025-10-10T22:30:00Z)",
   "source_sha256": {
     "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
-    "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+    "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
     "candidates": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
     "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0"
   },
@@ -27,11 +27,11 @@
     "ibc_net_inbound_atom": -172902.205758
   },
   "four_day_ibc_totals": {
-    "inbound_count": 13303,
-    "inbound_atom": 2787749.875515,
+    "inbound_count": 13293,
+    "inbound_atom": 2787656.772515,
     "outbound_count": 14659,
     "outbound_atom": 2328726.048105,
-    "net_inbound_atom": 459023.82741
+    "net_inbound_atom": 458930.72441
   },
   "confirmed_exchange_addresses": [
     {
@@ -2452,8 +2452,8 @@
     {
       "direction": "inbound",
       "counterparty_chain_hint": "inj",
-      "transfer_count": 558,
-      "amount_atom": 32122.483968
+      "transfer_count": 551,
+      "amount_atom": 32050.005968
     },
     {
       "direction": "outbound",
@@ -2596,8 +2596,8 @@
     {
       "direction": "inbound",
       "counterparty_chain_hint": "mantra",
-      "transfer_count": 268,
-      "amount_atom": 6111.908133
+      "transfer_count": 265,
+      "amount_atom": 6091.283133
     },
     {
       "direction": "outbound",

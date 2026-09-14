@@ -10,21 +10,27 @@
       "status": "verified"
     },
     "ibc_transfers_2025-10-09_2025-10-12.jsonl.gz": {
-      "size_bytes": 4769619,
-      "record_count": 34770,
-      "sha256": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+      "size_bytes": 4846665,
+      "record_count": 34760,
+      "sha256": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
       "status": "verified"
     },
     "event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz": {
-      "size_bytes": 1226538,
+      "size_bytes": 1234953,
       "record_count": 19749,
-      "sha256": "a43a1da3f20150c8140e0b41dca1e00aa609fefa8d879c9c361ff7799af99e0d",
+      "sha256": "e79d62325b9c8fc54b7716495ff859d9c35ec010ba8c42eba3a83288c5b50564",
       "status": "verified"
     },
     "exchange_inflow_candidates_2025-10-09_2025-10-12.json": {
       "size_bytes": 860564,
       "record_count": 356,
       "sha256": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
+      "status": "verified"
+    },
+    "ibc_receive_evidence_2025-10-09_2025-10-12.jsonl.gz": {
+      "size_bytes": 1853334,
+      "record_count": 17013,
+      "sha256": "68bf739214afe88054441f0a69a24876a6273b873e8fe777c7f8912415a125db",
       "status": "verified"
     }
   },
@@ -49,7 +55,7 @@
   },
   "analysis_source_sha256": {
     "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
-    "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+    "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
     "candidates": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
     "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0"
   },

@@ -2,7 +2,7 @@
   "verification_status": "passed",
   "verified_at_utc": "2026-08-29T05:22:37.510099Z",
   "run_manifest": "metadata/runs/20260829T043153730115Z_cosmoshub_study_data.json",
-  "run_manifest_sha256": "a23f5f09369be867714f3e509ecc6016506ab36c60517d5062f593051084599a",
+  "run_manifest_sha256": "2b57b0e499a7cb3d0e11cc1750ae653dd52f94611739833b41a302c0cb72e933",
   "chain_id": "cosmoshub-4",
   "endpoint_count": 3,
   "cross_endpoint_block_hash_match": true,

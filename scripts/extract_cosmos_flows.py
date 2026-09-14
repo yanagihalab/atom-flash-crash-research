@@ -17,6 +17,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Iterator
 
+from ibc_receive_evidence import IBC_INBOUND_POLICY, assess_receives
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 FLASH_TIME = datetime.fromisoformat("2025-10-10T21:20:37.689043+00:00")
@@ -282,6 +284,7 @@ def main() -> None:
     ibc_path = args.output_root / "ibc_transfers_2025-10-09_2025-10-12.jsonl.gz"
     event_path = args.output_root / "event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz"
     candidate_path = args.output_root / "exchange_inflow_candidates_2025-10-09_2025-10-12.json"
+    audit_path = args.output_root / "ibc_receive_evidence_2025-10-09_2025-10-12.jsonl.gz"
 
     address_stats: dict[str, dict[str, Any]] = defaultdict(
         lambda: {
@@ -309,10 +312,13 @@ def main() -> None:
     atom_class_counts: dict[str, int] = defaultdict(int)
     ibc_direction_counts: dict[str, int] = defaultdict(int)
     ibc_atom_direction_counts: dict[str, int] = defaultdict(int)
+    receive_outcomes: dict[str, int] = defaultdict(int)
+    receive_excluded_legacy_atom_count = 0
+    receive_excluded_legacy_atom_uatom = 0
 
     with DeterministicJsonlGzip(atom_path) as atom_output, DeterministicJsonlGzip(ibc_path) as ibc_output, DeterministicJsonlGzip(
         event_path
-    ) as event_output:
+    ) as event_output, DeterministicJsonlGzip(audit_path) as receive_audit:
         for partition in partitions:
             for page_record in jsonl_gzip(Path(partition["tx_search"]["local_path"])):
                 for tx in page_record["response"]["result"].get("txs") or []:
@@ -462,15 +468,31 @@ def main() -> None:
                         if is_event_window:
                             event_output.write({"flow_type": "ibc_transfer", **row})
 
-                    for packet in recv_packets:
-                        if packet["src_port"] != "transfer" or packet["dst_port"] != "transfer" or not packet["packet_data_hex"]:
-                            continue
-                        try:
-                            packet_data = json.loads(bytes.fromhex(packet["packet_data_hex"]).decode("utf-8"))
-                            denom = str(packet_data["denom"])
-                            amount = int(packet_data["amount"])
-                        except (ValueError, KeyError, UnicodeDecodeError, json.JSONDecodeError):
+                    for decision in assess_receives(events):
+                        packet = packet_fields(events[decision["event_ordinal"]])
+                        packet_data = decision["packet_data"]
+                        reason = decision.get("exclusion_reason") or "included_native_atom_receipt"
+                        receive_outcomes[reason] += 1
+                        audit = {"time_utc": time_utc, "height": height, "tx_hash": tx["hash"],
+                                 "tx_index": int(tx["index"]),
+                                 **{k: v for k, v in decision.items() if k not in {"packet_attributes", "packet_data"}},
+                                 **{k: v for k, v in packet.items() if k != "packet_data_hex"}}
+                        if packet_data is None:
                             packet_decode_errors += 1
+                            receive_audit.write(audit)
+                            continue
+                        denom, amount = str(packet_data["denom"]), int(packet_data["amount"])
+                        audit.update(denom=denom, amount_base_units=amount,
+                                     sender=packet_data["sender"], receiver=packet_data["receiver"],
+                                     legacy_atom_candidate=atom_flag("inbound", denom))
+                        receive_audit.write(audit)
+                        if atom_flag("inbound", denom) and not decision["include_in_atom_flow"]:
+                            receive_excluded_legacy_atom_count += 1
+                            receive_excluded_legacy_atom_uatom += amount
+                        # Failed native-return packets are retained in the audit,
+                        # not misrepresented as completed transfers. Other assets
+                        # remain in the packet dataset with explicit status.
+                        if decision["native_atom_trace"] and not decision["include_in_atom_flow"]:
                             continue
                         row = {
                             "direction": "inbound",
@@ -484,8 +506,12 @@ def main() -> None:
                             "counterparty_chain_hint": bech32_prefix(str(packet_data.get("sender", ""))),
                             "denom": denom,
                             "amount_base_units": amount,
-                            "is_atom": atom_flag("inbound", denom),
-                            "amount_atom": amount / 1_000_000 if atom_flag("inbound", denom) else None,
+                            "is_atom": decision["include_in_atom_flow"],
+                            "amount_atom": amount / 1_000_000 if decision["include_in_atom_flow"] else None,
+                            "inbound_extraction_policy": IBC_INBOUND_POLICY,
+                            "application_success": decision["application_success"],
+                            "native_credit_matched": decision["native_credit_matched"],
+                            "immediate_ack_states": decision["immediate_ack_states"],
                             "memo": packet_data.get("memo", ""),
                             "packet_sequence": packet["packet_sequence"],
                             "src_port": packet["src_port"],
@@ -562,6 +588,7 @@ def main() -> None:
         (ibc_path, ibc_output.count),
         (event_path, event_output.count),
         (candidate_path, len(candidates)),
+        (audit_path, receive_audit.count),
     ]:
         artifacts[path.name] = {
             "local_path": path.relative_to(PROJECT_ROOT).as_posix(),
@@ -585,12 +612,18 @@ def main() -> None:
         "atom_transfer_class_counts": dict(sorted(atom_class_counts.items())),
         "ibc_direction_counts": dict(sorted(ibc_direction_counts.items())),
         "ibc_atom_direction_counts": dict(sorted(ibc_atom_direction_counts.items())),
+        "ibc_inbound_extraction_policy": IBC_INBOUND_POLICY,
+        "ibc_receive_outcomes": dict(sorted(receive_outcomes.items())),
+        "excluded_legacy_atom_inbound": {"count": receive_excluded_legacy_atom_count,
+                                         "amount_uatom": receive_excluded_legacy_atom_uatom},
         "exchange_candidate_count": len(candidates),
         "artifacts": artifacts,
         "limitations": [
             "Behavioral exchange candidates are not proof of exchange ownership.",
             "A numeric memo is consistent with shared-account deposit routing but is not unique to exchanges.",
             "IBC chain hints use bech32 address prefixes and may be absent or ambiguous.",
+            "Inbound ATOM requires an exact native-return trace, successful matching application event and native uatom credit; immediate acknowledgement is not mandatory. Rejected packets remain in the receive-evidence audit.",
+            "Outbound ATOM denotes a successful Hub send initiation, not confirmed destination receipt or swap execution.",
             "Association in time does not establish causation for the market-price event.",
         ],
     }

@@ -1,7 +1,7 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
   "chain_id": "cosmoshub-4",
-  "created_at_utc": "2026-08-29T23:06:19.415287Z",
+  "created_at_utc": "2026-09-14T16:50:01.784673+00:00",
   "window": "[2025-09-10T00:00:00+00:00, 2025-10-10T00:00:00+00:00)",
   "first_height": 27456806,
   "end_height_exclusive": 27895335,
@@ -37,9 +37,9 @@
   },
   "five_minute_series": {
     "local_path": "data/processed/cosmoshub/baseline_30d/baseline_5min_2025-09-10_2025-10-10.jsonl.gz",
+    "sha256": "e71a7bfa8d89cfb31aacb2d31dbef537020e61b0ae1185c91a12e15e84003598",
     "record_count": 8640,
-    "sha256": "27d8ff7a4d2661d40659eeb0baa0bbd7a207532afdbc92f28566571d64bc6c43",
-    "size_bytes": 521894
+    "size_bytes": 521880
   },
   "address_query_count": 307,
   "excluded_watchlist_address_count": 49,
@@ -5088,7 +5088,14 @@
       "extracted_event_count": 1975,
       "extracted_amount_uatom": 192831378279,
       "extracted_events_sha256": "61f08fcde591d713ec87eebc1340a01c585c29fc40df644df4b2a16bc47bb98b",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-10/tx_search.jsonl.gz",
+        "sha256": "f9bec821fc06eb42634a627e8b5883e1b64da0c4ae19467b2f9884b6c515bc0e",
+        "size_bytes": 35930024,
+        "acquisition_day_manifest_sha256": "6a09723916ebe69e09e55af2d8ab9337f397e11969ebaa4ad8baa0ff7b01e672"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 362,
@@ -5120,7 +5127,14 @@
       "extracted_event_count": 1427,
       "extracted_amount_uatom": 120617846686,
       "extracted_events_sha256": "513b6b8afe2b8253bcc41b5726e3e298dd4f2d64ac8a2f8e21afff6ae6b7a7a0",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-11/tx_search.jsonl.gz",
+        "sha256": "4044f5df2350812364baca95d06f3d627b5ef63e0b1668097cda92203708af9e",
+        "size_bytes": 29996683,
+        "acquisition_day_manifest_sha256": "4895529731407d7da419433ef554e433516cbbbfc4e6b9078b62ba87a3290a70"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 364,
@@ -5152,7 +5166,14 @@
       "extracted_event_count": 1227,
       "extracted_amount_uatom": 101689863874,
       "extracted_events_sha256": "ced469ddd86c34b0fe053f00fe1b4dd372b825af4db5f2ccfe18dd6054efe9b2",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-12/tx_search.jsonl.gz",
+        "sha256": "70c25253b567d319018ac6d0126a01ae437d94898f75169363a11281199dde25",
+        "size_bytes": 28545646,
+        "acquisition_day_manifest_sha256": "83237b1ac119a8571460974078b65dca00c3d53b14476f4496d8c3a0f2982a41"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 366,
@@ -5184,7 +5205,14 @@
       "extracted_event_count": 1555,
       "extracted_amount_uatom": 114497289943,
       "extracted_events_sha256": "1eced3c1f064668b7cb39feb5738a89746a456798f19a5a58df71462d2c30ed3",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-13/tx_search.jsonl.gz",
+        "sha256": "e4aeba3511ff3459500365da4e027e3b46a26dc214dd0b62a1a66e29429ac4bd",
+        "size_bytes": 51555986,
+        "acquisition_day_manifest_sha256": "10adabb074add1362fd41135e78cf6d2fdbdb9d2e2738cbd8e3bee2555a5ca20"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 368,
@@ -5216,7 +5244,14 @@
       "extracted_event_count": 1530,
       "extracted_amount_uatom": 126545383019,
       "extracted_events_sha256": "860135d8009ff0c31d8ca5895c3eaba3529b834d7d1ae8e9eaa36f8cb3847ba6",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-14/tx_search.jsonl.gz",
+        "sha256": "f3166231025d0470a16f1404a07f915cb47b5447a884ecf29cd7e9586f619eca",
+        "size_bytes": 49952759,
+        "acquisition_day_manifest_sha256": "afe7c9ebf3b3754029bafaad31c55f40f053f287444989a19e0d0e30ba30662a"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 370,
@@ -5248,7 +5283,14 @@
       "extracted_event_count": 1581,
       "extracted_amount_uatom": 297785753040,
       "extracted_events_sha256": "c28da48ac9bb012e5416eac108bcfcaa70a30286484a5198cd50ea0de0173603",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-15/tx_search.jsonl.gz",
+        "sha256": "61549b35e553652da8fd735f1d95452309638276a14aabcd2a14d4717db26f5f",
+        "size_bytes": 34447170,
+        "acquisition_day_manifest_sha256": "1480c59795b77fd3d4037a2f0385e3ad2fe9e5380dda1dbf35dfd2e5bc59653c"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 372,
@@ -5280,7 +5322,14 @@
       "extracted_event_count": 1536,
       "extracted_amount_uatom": 241494779967,
       "extracted_events_sha256": "1f9a77ec3345c57dfc3d3ed0b7d520cc50448f620674c0a48b7d4e32b4aaa8fd",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-16/tx_search.jsonl.gz",
+        "sha256": "1a6e2a5e9f0bbe76a77ee7c66e0e8c81c15b1743d02a80b2761ef93c949ea3cd",
+        "size_bytes": 31462337,
+        "acquisition_day_manifest_sha256": "7c2e44b333b0a7fc2797cbe9e0b666a1e3877bb337c8b848993fd1a44dc8471b"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 374,
@@ -5309,10 +5358,17 @@
       "query_sha256": "bf535776f3ee960ef34ff514c3dfafa3b930b38eeb8ce5b5ab1abe9f566bc515",
       "tx_count": 1955,
       "page_count": 20,
-      "extracted_event_count": 1542,
-      "extracted_amount_uatom": 142603015248,
-      "extracted_events_sha256": "26f3ce54adb61946d858b011c404b7c406d57fd8919ab1473c9e792f564bdaec",
-      "decode_errors": 0
+      "extracted_event_count": 1541,
+      "extracted_amount_uatom": 142598343248,
+      "extracted_events_sha256": "1815fde6cb1928f1572ac9e59bac62e2ad9e7d213ab3812304bb6a05a2e4805f",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-17/tx_search.jsonl.gz",
+        "sha256": "b5a40eafa9828dfd464fa01791651e6b3a7cebf2b4f3952ad76a249f6086101b",
+        "size_bytes": 29470109,
+        "acquisition_day_manifest_sha256": "dd30043973d9f5b523d243b4095900a3bfd76ffa476e514c2450dc4bdb8eda8a"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 376,
@@ -5344,7 +5400,14 @@
       "extracted_event_count": 1814,
       "extracted_amount_uatom": 93664676379,
       "extracted_events_sha256": "a7dd7620ff17b33a17cba2bc747c98e705df4ca1a0fef94aa14c1600206d8ba5",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-18/tx_search.jsonl.gz",
+        "sha256": "74792e13962eb58640fa14aa540d440f8d5baa66f42ab7987fbae35f85894ee5",
+        "size_bytes": 39917871,
+        "acquisition_day_manifest_sha256": "2ddd2956c6823d4903ac4ba8a5d3d744c7398c7e01fd107c1fcbc2fd02f2e19b"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 378,
@@ -5376,7 +5439,14 @@
       "extracted_event_count": 1539,
       "extracted_amount_uatom": 137778464170,
       "extracted_events_sha256": "94571111fb68e4989a2e2efedc203855fdc0e14f8d607d52936f2472d2da0c0e",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-19/tx_search.jsonl.gz",
+        "sha256": "0d0d0d34195585296925b5433456d712eeefd257b6d2003d32f51a4250892776",
+        "size_bytes": 32587007,
+        "acquisition_day_manifest_sha256": "e85a13af2239eb015c51451d2c2ad4d4ce41c79fe4be7f5e76ae06993b32b301"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 380,
@@ -5408,7 +5478,14 @@
       "extracted_event_count": 1415,
       "extracted_amount_uatom": 169106920233,
       "extracted_events_sha256": "a6d9e376eb8d5248a6708db52dc2492812b7abe5b794eea3767b59ca36696e2e",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-20/tx_search.jsonl.gz",
+        "sha256": "67d8574059e99e64c787c4d885d6fdf9015be4a49f5c95a1eb240627339592f9",
+        "size_bytes": 28216436,
+        "acquisition_day_manifest_sha256": "a41e5157e0cd20cace66aecde65121ff3eeb4f955c7e849eda9bb8dd6e163499"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 382,
@@ -5440,7 +5517,14 @@
       "extracted_event_count": 1551,
       "extracted_amount_uatom": 95717481002,
       "extracted_events_sha256": "5e2db972e1a12b99045a8edd2297048d9e4b9d28a98af622d3b24a1dff287a03",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-21/tx_search.jsonl.gz",
+        "sha256": "5c2b41cd758d8d9610d1d54919e74ea1eee6dcbac4a3cf4a788c1662617a8fe3",
+        "size_bytes": 33504382,
+        "acquisition_day_manifest_sha256": "109747aaeee8e83ef673081a166789924d3d0f34b8b17679ebdfaba34d0a638c"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 384,
@@ -5472,7 +5556,14 @@
       "extracted_event_count": 2702,
       "extracted_amount_uatom": 251400623111,
       "extracted_events_sha256": "268433b87a1a1383ae386d83e6c0286b666690a707205fc3ff34999f9456348f",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-22/tx_search.jsonl.gz",
+        "sha256": "b947fee2a4d2c7c13b55c9b75932cf1c3e3e22c22407fcf83b99ad3464c9ed4e",
+        "size_bytes": 49097751,
+        "acquisition_day_manifest_sha256": "436592c51cc663be247d8368ca9e26e61edffd68a31ea4a0c17740a6d8e4cc08"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 386,
@@ -5504,7 +5595,14 @@
       "extracted_event_count": 1491,
       "extracted_amount_uatom": 100790603188,
       "extracted_events_sha256": "d2a9d57e9e95c34c3c5f649531741b1e899a290ef6493f36eea0cdfe8ce9f21f",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-23/tx_search.jsonl.gz",
+        "sha256": "799021743a5e233c7246aed7f43442543b3f6bd8b2a3472f2f72c0b0f0f55835",
+        "size_bytes": 32024216,
+        "acquisition_day_manifest_sha256": "096e2893a062350b21de683c1bf6c16a4d2064eb3380ec42a068848ec1589dc2"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 388,
@@ -5536,7 +5634,14 @@
       "extracted_event_count": 1322,
       "extracted_amount_uatom": 142584141374,
       "extracted_events_sha256": "bdf12e7153d81c6506a1a386704bba05b892c1980e0be6ae0c06504e15c0db01",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-24/tx_search.jsonl.gz",
+        "sha256": "a48504b3dc5ca116f361c631955aafb4248d0fe1e1464e3355197e8e7cd99bfc",
+        "size_bytes": 29257163,
+        "acquisition_day_manifest_sha256": "c0974a63202e3f1520222cbf8a240938ea6dcb048b51e5e79aa26f4df2f990ed"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 390,
@@ -5568,7 +5673,14 @@
       "extracted_event_count": 1513,
       "extracted_amount_uatom": 225667326742,
       "extracted_events_sha256": "5206f91550b9669b7defb9f9705bc943989e6a0a47b913aaf877d539c036718b",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-25/tx_search.jsonl.gz",
+        "sha256": "3aecb24a89e092eadcb401e9f0b1114032b35f2575e37d796759867ab67840c5",
+        "size_bytes": 29883714,
+        "acquisition_day_manifest_sha256": "b993d78cb693e465408e0ace95f0b58e1f65ee1cb3f725b337e6973940d29ebe"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 392,
@@ -5600,7 +5712,14 @@
       "extracted_event_count": 1371,
       "extracted_amount_uatom": 281914359944,
       "extracted_events_sha256": "1c0b2c65e2f2143baf18c551bf6a9561d0bc7aca1c3f74252fbbe0696167197f",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-26/tx_search.jsonl.gz",
+        "sha256": "d55d4adb8b0b435a894a31a50b1745ba18ac6142b061cf1d58c5398da1ae1b8b",
+        "size_bytes": 24085500,
+        "acquisition_day_manifest_sha256": "120654b04fd9aa5ee538255c7c587e5ba36c456083cb6e1223aa70282976b492"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 394,
@@ -5629,10 +5748,17 @@
       "query_sha256": "b32889da6cc6eb2c2ea7b2da333e3ba7168206c36b677b46c407882b0b021a15",
       "tx_count": 1672,
       "page_count": 17,
-      "extracted_event_count": 1452,
-      "extracted_amount_uatom": 114302500346,
-      "extracted_events_sha256": "5f67b3850a84e348ed2c5639b982063c05c7ef5219707ea9a9643dccd5c9ea89",
-      "decode_errors": 0
+      "extracted_event_count": 1451,
+      "extracted_amount_uatom": 114278744271,
+      "extracted_events_sha256": "69187049c797f6841e80b726007edcf6a076654a6cbb044117c8e0175b52618f",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-27/tx_search.jsonl.gz",
+        "sha256": "0c520f6e6974d32f0dd4328ab869ccb1614f462620a9dd75d132fbe271a550fb",
+        "size_bytes": 28674929,
+        "acquisition_day_manifest_sha256": "7ba72f466f169d4609af2300244f79cdc97733228ea720a39ad78cb8877851c9"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 396,
@@ -5664,7 +5790,14 @@
       "extracted_event_count": 1596,
       "extracted_amount_uatom": 95964506270,
       "extracted_events_sha256": "27fb6e37f72bb0a533b39a3f419e4e58d32b815df07b8c3a13266a3235a917b0",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-28/tx_search.jsonl.gz",
+        "sha256": "0b9c661caf0f47b5c009a6c5db451c639f318a4111511355130b6be08c9d4cd7",
+        "size_bytes": 35637434,
+        "acquisition_day_manifest_sha256": "9289d7fdcbdd253f736833a0f2cd2954ee055deed414970baced7bef738327be"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 398,
@@ -5696,7 +5829,14 @@
       "extracted_event_count": 1955,
       "extracted_amount_uatom": 399115847751,
       "extracted_events_sha256": "89f4b95ed4cf2404e6dd5d5fcf2bd967b7a8c163df866ea1fba3500d71491119",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-29/tx_search.jsonl.gz",
+        "sha256": "5725e8b01a2b7e40dee1676357fa6c5cece060f9e4e91ffe6db73de57f8f9192",
+        "size_bytes": 44524418,
+        "acquisition_day_manifest_sha256": "edae4416f9c838aa500a52b8c716ab4345818b86b343475bdefb1761deeefe58"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 400,
@@ -5728,7 +5868,14 @@
       "extracted_event_count": 1928,
       "extracted_amount_uatom": 207379398264,
       "extracted_events_sha256": "c8c3a173723eda0fbadb3bff10a9dd8f4328808228d3803bb5ce9cddfbaa9b19",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-09-30/tx_search.jsonl.gz",
+        "sha256": "92ab5508b2776f4205d2c5df29b3b9f2b712e538c44e3f6194d1a0943d0c4ec6",
+        "size_bytes": 38597266,
+        "acquisition_day_manifest_sha256": "b3f1fbbf68b663b50b3cd22509649ecaf6f3a38148daf6fa6fdbef6eca0d6620"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 402,
@@ -5760,7 +5907,14 @@
       "extracted_event_count": 5719,
       "extracted_amount_uatom": 3337119497716,
       "extracted_events_sha256": "024b573f50b7e00669d98e05cb30821150cc0284b7f8392e69968e47842fed84",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-01/tx_search.jsonl.gz",
+        "sha256": "a533955d98be8efb093958d64ae450cca3079cd402021f438057b217a65aeb05",
+        "size_bytes": 107090809,
+        "acquisition_day_manifest_sha256": "d3a65d575a85915eb5d8fc22e5c4ba7b91fcebd33e714b77f5b03e6f35222d4e"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 404,
@@ -5789,10 +5943,17 @@
       "query_sha256": "94f92a696aa7c39946ba86529ae42a1be4de8126e0c08b5d612f6db71d865d77",
       "tx_count": 3997,
       "page_count": 40,
-      "extracted_event_count": 3585,
-      "extracted_amount_uatom": 1061497256841,
-      "extracted_events_sha256": "968765cc641ea17338644cc7e4f6a90ad0cd84f5b08c82f24540196ad5e68d6c",
-      "decode_errors": 0
+      "extracted_event_count": 3583,
+      "extracted_amount_uatom": 1061484525841,
+      "extracted_events_sha256": "22fc0eaf1840e208eba27272f167f5d99533b8c56bf0e74055142ea7e2d34acc",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-02/tx_search.jsonl.gz",
+        "sha256": "d27d4658468f8ea0b8fcf53db46bff61e637568bc8fa100b386451852dc1d60f",
+        "size_bytes": 67479519,
+        "acquisition_day_manifest_sha256": "9f087b3e645da9ab1466e5e110ee315ec69e5033ee0350349abdf3df6c5c0f22"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 406,
@@ -5821,10 +5982,17 @@
       "query_sha256": "54d516587fda8df7361b861c103bea79280f3a2fea5233a36598bae58a9a264f",
       "tx_count": 2559,
       "page_count": 26,
-      "extracted_event_count": 2079,
-      "extracted_amount_uatom": 297617885979,
-      "extracted_events_sha256": "d96b6e75417d7df64335b9f4999178ba07647eaffe4463fe6b087aa3f2fa156b",
-      "decode_errors": 0
+      "extracted_event_count": 2078,
+      "extracted_amount_uatom": 297611515979,
+      "extracted_events_sha256": "f0be561e5f313d9b9816e08d1110acb84367b75edc6579025f748ccb4d949b7e",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-03/tx_search.jsonl.gz",
+        "sha256": "3b4d8fa1603fba52debd0848c767e0b4e9cdfea93aa55e63ad51d8731e4b0eda",
+        "size_bytes": 39284605,
+        "acquisition_day_manifest_sha256": "2108ba6a671b9701b488e287a4b48e41f9bc12f6a0553043e189febe6007a645"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 408,
@@ -5853,10 +6021,17 @@
       "query_sha256": "9542e7afc8f5ebdacde8d1b1996306f200f5a19b1bcb272a3a0069ffe06201f7",
       "tx_count": 2577,
       "page_count": 26,
-      "extracted_event_count": 2025,
-      "extracted_amount_uatom": 161534497336,
-      "extracted_events_sha256": "cb298eaecb474b3516a6e02dfbb0d77075c9dcf8c75f19785023c0094fbce7e7",
-      "decode_errors": 0
+      "extracted_event_count": 2024,
+      "extracted_amount_uatom": 161528125336,
+      "extracted_events_sha256": "cbcd41c80ffcb4ba4d2a148a7c0da040bd945d2e76dbdb2e84a538d50f131d58",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-04/tx_search.jsonl.gz",
+        "sha256": "3eee9b41017d4ff4854bc19344f6740ecbeaf6bcd5bc84f1b407568ba71715c4",
+        "size_bytes": 43951598,
+        "acquisition_day_manifest_sha256": "b289222570cfd98c95e27495b37283d9af0036c82117298baf9afcd9499e3e4b"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 410,
@@ -5885,10 +6060,17 @@
       "query_sha256": "41f7e819aa3f3b1496e27316b4bed4553be6ecb38ff3a5fcc4816261960b3678",
       "tx_count": 2595,
       "page_count": 26,
-      "extracted_event_count": 2062,
-      "extracted_amount_uatom": 192722253465,
-      "extracted_events_sha256": "43bfd6de02615906a6d299781952667d508a14b835bb1b3a4d68c97e7cb0be2d",
-      "decode_errors": 0
+      "extracted_event_count": 2061,
+      "extracted_amount_uatom": 192715881465,
+      "extracted_events_sha256": "1c53bed51cc48f323c28c6130e3c3c54e8b9dcde1effbc6ee85ecf15000daccc",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-05/tx_search.jsonl.gz",
+        "sha256": "3b54aea8ce428abf235dd9e8b4668c167d9c77a2b6da4fb92c93382da7c85a48",
+        "size_bytes": 43126535,
+        "acquisition_day_manifest_sha256": "fe75915b4dfdd12261f0607134486b219ea1ceed391e8ddd88528e9ed485df2e"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 412,
@@ -5917,10 +6099,17 @@
       "query_sha256": "aaddecad01168ad3f3335d0ffe7ce5bbf75430ed8c8805bd9dc0e756c4b5d881",
       "tx_count": 2867,
       "page_count": 29,
-      "extracted_event_count": 2477,
-      "extracted_amount_uatom": 523817764107,
-      "extracted_events_sha256": "d9f1440a203523c40ad52ff6c001034b17779484063d3d67cb678d831970e681",
-      "decode_errors": 0
+      "extracted_event_count": 2466,
+      "extracted_amount_uatom": 523671766107,
+      "extracted_events_sha256": "a1d5c5b1ae0341b3cf2ef5077acbf3972e4115b4b922166364c06b6864049b8c",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-06/tx_search.jsonl.gz",
+        "sha256": "bf5ffa8a18f352a34e6799b5e6cba01dc39117e523e90f27d23a926fb94db4f5",
+        "size_bytes": 44685091,
+        "acquisition_day_manifest_sha256": "4037942e0094680c2566194cd93b8889aa39a8bca086b0aa7dd28e2234d2bccd"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 414,
@@ -5952,7 +6141,14 @@
       "extracted_event_count": 2235,
       "extracted_amount_uatom": 259139966079,
       "extracted_events_sha256": "ef3ce907b380239af13470ea86497c959ad5a4fd639147c1e4be7ec8502618e2",
-      "decode_errors": 0
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-07/tx_search.jsonl.gz",
+        "sha256": "771a4d17433c60cad27226c7479615d369d5ece7d73e413b1fdd113bcb782470",
+        "size_bytes": 44722280,
+        "acquisition_day_manifest_sha256": "7f32da2ad1965fb1dcb3d8684e32378d02b695cfb9441565cbb275c1670df8ba"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 416,
@@ -5981,10 +6177,17 @@
       "query_sha256": "026eae897a9163ebb560fd91c65b3094e37d85e5984ad6175db54e520d34c74c",
       "tx_count": 1934,
       "page_count": 20,
-      "extracted_event_count": 1575,
-      "extracted_amount_uatom": 213653224189,
-      "extracted_events_sha256": "a6c688b9a2dcec6ec7d91faac8a08974c7b7969ce4c8814a611408ad03f93dcd",
-      "decode_errors": 0
+      "extracted_event_count": 1574,
+      "extracted_amount_uatom": 213653124189,
+      "extracted_events_sha256": "90a941650a2b4ab10f8c279585712d09db7c1b26a16e04db3b7aa4e86b23db23",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-08/tx_search.jsonl.gz",
+        "sha256": "6848993db662607e9e4f374d055415dcdecaad51291b5e66095b913b4bc7ba3e",
+        "size_bytes": 30539455,
+        "acquisition_day_manifest_sha256": "e2bc62b1cf90e84ccc42a69b01df08b5e6aaf33f6e89a6f5d86275cf19d12c52"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
     {
       "index": 418,
@@ -6013,16 +6216,44 @@
       "query_sha256": "062ce641088dce44cb448e63f5336b41a43df65c0f7ca0397b02f6ee21fdf7f0",
       "tx_count": 1925,
       "page_count": 20,
-      "extracted_event_count": 1544,
-      "extracted_amount_uatom": 387860685653,
-      "extracted_events_sha256": "791fcc6b5c7387cb28f54eeeb842ccf63920b1283816c16ad42effa3c7c30f06",
-      "decode_errors": 0
+      "extracted_event_count": 1543,
+      "extracted_amount_uatom": 387853389653,
+      "extracted_events_sha256": "bfb6aaba8a131f304129f7112483e8d7243abe4bf9249c08a4ad3631d254c7b5",
+      "decode_errors": 0,
+      "raw_transactions": {
+        "local_path": "data/raw/cosmoshub/cosmoshub-4/baseline_ibc_reaudit_2026-09-15/2025-10-09/tx_search.jsonl.gz",
+        "sha256": "f736955833dc51f0e1067422fedf63c8292819c8c613997c1be11495ffd76fcd",
+        "size_bytes": 26775619,
+        "acquisition_day_manifest_sha256": "6c0555cc9a43e08bede0e4849590f2f7071561d83a613fb35f437ce287863f53"
+      },
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     }
   ],
   "limitations": [
-    "The compact baseline retains block-time metadata, extracted five-minute aggregates, query counts, and event digests rather than duplicating full tx_search responses.",
+    "Only inbound IBC queries were re-collected and re-extracted under the success/native-credit policy; direct-bank and outbound values are preserved from the prior baseline.",
+    "Inbound measures native Hub receipt, including forwarding credits with deferred ACK, not final destination delivery. Outbound measures Hub send initiation.",
     "Direct flows are collected only for public-label addresses and the pre-specified behavioral high/medium registry.",
     "Large-flow watchlist addresses are excluded from the 30-day baseline because they are not exchange-flow candidates; their event-centered four-day records remain separately retained.",
     "Behavioral candidate status is not evidence of exchange ownership."
-  ]
+  ],
+  "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2",
+  "prior_baseline_snapshot": {
+    "local_path": "data/processed/cosmoshub/baseline_30d/baseline_indexed_manifest_before_success_v2.json",
+    "relative_path": "baseline_indexed_manifest_before_success_v2.json",
+    "sha256": "7d9e475becf957a9f22b53de6284ef2be33774b3fb05fbfd0be8017479a33e34"
+  },
+  "ibc_receive_policy_audit": {
+    "local_path": "data/processed/cosmoshub/baseline_30d/ibc_receive_policy_audit.json",
+    "sha256": "afc12911efad20c472e64289129bd99fddf19159f7e7bfda5de05b8c578a0b0f"
+  },
+  "ibc_receive_evidence": {
+    "local_path": "data/processed/cosmoshub/baseline_30d/ibc_receive_evidence.jsonl.gz",
+    "sha256": "2ef8c85713e217b1a0f751855c535b5400f524d4b2c70b7b1c82dc8bed9e554b",
+    "record_count": 73409
+  },
+  "ibc_raw_transaction_index": {
+    "local_path": "data/processed/cosmoshub/baseline_30d/ibc_raw_transaction_index.jsonl.gz",
+    "sha256": "53792efa4f43e54842a5592235de75990e70826b144b24d526f1bef6faf0e3f3",
+    "record_count": 77526
+  }
 }

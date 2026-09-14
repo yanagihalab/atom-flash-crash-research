@@ -1,6 +1,6 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
-  "generated_at_utc": "2026-08-30T05:12:58.110721Z",
+  "generated_at_utc": "2026-09-14T16:52:35.981287Z",
   "event_window": {
     "start_utc": "2025-10-10T20:30:00Z",
     "end_utc": "2025-10-10T22:30:00Z"
@@ -196,7 +196,7 @@
       "all_360": {
         "event_value": 277987.972547,
         "control_count": 360,
-        "control_mean": 28023.375528319444,
+        "control_mean": 28022.782008666665,
         "control_median": 10723.1499705,
         "control_p05_empirical": 1964.6684089999999,
         "control_p95_empirical": 101330.373507,
@@ -208,7 +208,7 @@
       "matched_clock_30": {
         "event_value": 277987.972547,
         "control_count": 30,
-        "control_mean": 51032.05203786667,
+        "control_mean": 51031.2601687,
         "control_median": 13891.6295695,
         "control_p05_empirical": 5199.860095,
         "control_p95_empirical": 42477.944008,
@@ -248,7 +248,7 @@
       "all_360": {
         "event_value": 728878.1508520001,
         "control_count": 360,
-        "control_mean": 68465.29273291111,
+        "control_mean": 68464.69921325833,
         "control_median": 23655.8408455,
         "control_p05_empirical": 5837.375764,
         "control_p95_empirical": 160932.402643,
@@ -260,10 +260,10 @@
       "matched_clock_30": {
         "event_value": 728878.1508520001,
         "control_count": 30,
-        "control_mean": 128576.70098626667,
+        "control_mean": 128575.9091171,
         "control_median": 25172.714539,
         "control_p05_empirical": 13737.315628,
-        "control_p95_empirical": 217814.206915,
+        "control_p95_empirical": 217790.45084,
         "event_percentile_empirical": 96.66666666666667,
         "test_direction": "upper",
         "permutation_exceedance_count": 1,
@@ -274,9 +274,9 @@
       "all_360": {
         "event_value": -172902.20575800008,
         "control_count": 360,
-        "control_mean": -12418.541676272222,
+        "control_mean": -12419.135195924999,
         "control_median": -312.5331540000001,
-        "control_p05_empirical": -42636.434010000004,
+        "control_p05_empirical": -42776.05201000001,
         "control_p95_empirical": 31725.195401,
         "event_percentile_empirical": 1.6666666666666667,
         "test_direction": "two_sided_median",
@@ -286,9 +286,9 @@
       "matched_clock_30": {
         "event_value": -172902.20575800008,
         "control_count": 30,
-        "control_mean": -26512.596910533335,
+        "control_mean": -26513.3887797,
         "control_median": -1970.2478690000007,
-        "control_p05_empirical": -168803.251095,
+        "control_p05_empirical": -168827.00717,
         "control_p95_empirical": 13532.749211,
         "event_percentile_empirical": 3.3333333333333335,
         "test_direction": "two_sided_median",
@@ -2402,13 +2402,13 @@
       "confirmed_exchange_in_atom": 9707.49583,
       "confirmed_exchange_out_atom": 9689.277618,
       "unconfirmed_behavioral_in_atom": 43701.184452,
-      "ibc_inbound_atom": 1949.604597,
+      "ibc_inbound_atom": 1944.932597,
       "ibc_outbound_atom": 7620.718771,
       "confirmed_exchange_gross_atom": 19396.773448,
       "confirmed_exchange_net_in_atom": 18.218211999999767,
       "all_behavioral_candidate_in_atom": 53408.680282,
-      "ibc_gross_atom": 9570.323368,
-      "ibc_net_inbound_atom": -5671.114174,
+      "ibc_gross_atom": 9565.651367999999,
+      "ibc_net_inbound_atom": -5675.786174,
       "binance_usdt_range_pct_of_open": 0.9513274336283221,
       "binance_usdt_base_volume_atom": 68666.34,
       "binance_usdt_quote_volume": 309575.7137,
@@ -5218,13 +5218,13 @@
       "confirmed_exchange_in_atom": 78637.137822,
       "confirmed_exchange_out_atom": 77396.948401,
       "unconfirmed_behavioral_in_atom": 155579.779577,
-      "ibc_inbound_atom": 21359.052639,
+      "ibc_inbound_atom": 21335.296564,
       "ibc_outbound_atom": 197020.913687,
       "confirmed_exchange_gross_atom": 156034.08622300002,
       "confirmed_exchange_net_in_atom": 1240.1894210000028,
       "all_behavioral_candidate_in_atom": 234216.91739900003,
-      "ibc_gross_atom": 218379.966326,
-      "ibc_net_inbound_atom": -175661.861048,
+      "ibc_gross_atom": 218356.21025099998,
+      "ibc_net_inbound_atom": -175685.617123,
       "binance_usdt_range_pct_of_open": 1.3245033112582847,
       "binance_usdt_base_volume_atom": 134234.98,
       "binance_usdt_quote_volume": 550241.98454,
@@ -6318,13 +6318,13 @@
       "confirmed_exchange_in_atom": 132000.230912,
       "confirmed_exchange_out_atom": 126003.964726,
       "unconfirmed_behavioral_in_atom": 325266.445878,
-      "ibc_inbound_atom": 140234.149413,
+      "ibc_inbound_atom": 140227.784413,
       "ibc_outbound_atom": 24229.346192999998,
       "confirmed_exchange_gross_atom": 258004.195638,
       "confirmed_exchange_net_in_atom": 5996.2661859999935,
       "all_behavioral_candidate_in_atom": 457266.67679,
-      "ibc_gross_atom": 164463.495606,
-      "ibc_net_inbound_atom": 116004.80322,
+      "ibc_gross_atom": 164457.130606,
+      "ibc_net_inbound_atom": 115998.43821999998,
       "binance_usdt_range_pct_of_open": 1.812907904278467,
       "binance_usdt_base_volume_atom": 303686.17,
       "binance_usdt_quote_volume": 1260840.05257,
@@ -6384,13 +6384,13 @@
       "confirmed_exchange_in_atom": 66263.552066,
       "confirmed_exchange_out_atom": 67178.965424,
       "unconfirmed_behavioral_in_atom": 33576.508694,
-      "ibc_inbound_atom": 23774.471319,
+      "ibc_inbound_atom": 23768.105319,
       "ibc_outbound_atom": 41564.760129,
       "confirmed_exchange_gross_atom": 133442.51749,
       "confirmed_exchange_net_in_atom": -915.4133579999907,
       "all_behavioral_candidate_in_atom": 99840.06076,
-      "ibc_gross_atom": 65339.231448000006,
-      "ibc_net_inbound_atom": -17790.288810000002,
+      "ibc_gross_atom": 65332.865448,
+      "ibc_net_inbound_atom": -17796.654810000004,
       "binance_usdt_range_pct_of_open": 0.8074091664687677,
       "binance_usdt_base_volume_atom": 203151.9,
       "binance_usdt_quote_volume": 858087.25029,
@@ -6582,13 +6582,13 @@
       "confirmed_exchange_in_atom": 42874.739835,
       "confirmed_exchange_out_atom": 48427.822711,
       "unconfirmed_behavioral_in_atom": 55033.068062,
-      "ibc_inbound_atom": 19949.985322,
+      "ibc_inbound_atom": 19943.615322,
       "ibc_outbound_atom": 25104.830141000002,
       "confirmed_exchange_gross_atom": 91302.562546,
       "confirmed_exchange_net_in_atom": -5553.082876,
       "all_behavioral_candidate_in_atom": 97907.80789699999,
-      "ibc_gross_atom": 45054.815463000006,
-      "ibc_net_inbound_atom": -5154.844819000002,
+      "ibc_gross_atom": 45048.445463000004,
+      "ibc_net_inbound_atom": -5161.214819000001,
       "binance_usdt_range_pct_of_open": 2.109411219286029,
       "binance_usdt_base_volume_atom": 132850.15,
       "binance_usdt_quote_volume": 566992.14792,
@@ -6846,13 +6846,13 @@
       "confirmed_exchange_in_atom": 38388.37209,
       "confirmed_exchange_out_atom": 37129.191424,
       "unconfirmed_behavioral_in_atom": 110192.04127,
-      "ibc_inbound_atom": 26100.570715,
+      "ibc_inbound_atom": 26094.198715,
       "ibc_outbound_atom": 26107.176071,
       "confirmed_exchange_gross_atom": 75517.563514,
       "confirmed_exchange_net_in_atom": 1259.1806660000002,
       "all_behavioral_candidate_in_atom": 148580.41336,
-      "ibc_gross_atom": 52207.746786,
-      "ibc_net_inbound_atom": -6.605356000000029,
+      "ibc_gross_atom": 52201.374786,
+      "ibc_net_inbound_atom": -12.977356000003056,
       "binance_usdt_range_pct_of_open": 1.4018691588785164,
       "binance_usdt_base_volume_atom": 100670.53,
       "binance_usdt_quote_volume": 429085.96717,
@@ -7110,13 +7110,13 @@
       "confirmed_exchange_in_atom": 19667.232219,
       "confirmed_exchange_out_atom": 24603.557299,
       "unconfirmed_behavioral_in_atom": 92578.977908,
-      "ibc_inbound_atom": 3534.170104,
+      "ibc_inbound_atom": 3527.798104,
       "ibc_outbound_atom": 2848.646104,
       "confirmed_exchange_gross_atom": 44270.789518000005,
       "confirmed_exchange_net_in_atom": -4936.325079999999,
       "all_behavioral_candidate_in_atom": 112246.210127,
-      "ibc_gross_atom": 6382.816208,
-      "ibc_net_inbound_atom": 685.5239999999999,
+      "ibc_gross_atom": 6376.444208,
+      "ibc_net_inbound_atom": 679.152,
       "binance_usdt_range_pct_of_open": 0.8220502901353918,
       "binance_usdt_base_volume_atom": 58521.3,
       "binance_usdt_quote_volume": 241735.48704,
@@ -7374,13 +7374,13 @@
       "confirmed_exchange_in_atom": 14994.453088,
       "confirmed_exchange_out_atom": 15146.495719999999,
       "unconfirmed_behavioral_in_atom": 127714.904148,
-      "ibc_inbound_atom": 28393.708903000002,
+      "ibc_inbound_atom": 28387.328903,
       "ibc_outbound_atom": 38100.293628,
       "confirmed_exchange_gross_atom": 30140.948808,
       "confirmed_exchange_net_in_atom": -152.04263199999878,
       "all_behavioral_candidate_in_atom": 142709.357236,
-      "ibc_gross_atom": 66494.002531,
-      "ibc_net_inbound_atom": -9706.584724999997,
+      "ibc_gross_atom": 66487.622531,
+      "ibc_net_inbound_atom": -9712.964724999998,
       "binance_usdt_range_pct_of_open": 1.591128254580517,
       "binance_usdt_base_volume_atom": 211253.04,
       "binance_usdt_quote_volume": 875196.08598,
@@ -7440,13 +7440,13 @@
       "confirmed_exchange_in_atom": 45339.406081,
       "confirmed_exchange_out_atom": 48168.993566,
       "unconfirmed_behavioral_in_atom": 65329.201061,
-      "ibc_inbound_atom": 42031.809371,
+      "ibc_inbound_atom": 41892.191371,
       "ibc_outbound_atom": 84668.24338100001,
       "confirmed_exchange_gross_atom": 93508.399647,
       "confirmed_exchange_net_in_atom": -2829.5874849999964,
       "all_behavioral_candidate_in_atom": 110668.607142,
-      "ibc_gross_atom": 126700.05275200002,
-      "ibc_net_inbound_atom": -42636.434010000004,
+      "ibc_gross_atom": 126560.434752,
+      "ibc_net_inbound_atom": -42776.05201000001,
       "binance_usdt_range_pct_of_open": 1.0832932113625404,
       "binance_usdt_base_volume_atom": 175938.42,
       "binance_usdt_quote_volume": 733177.47175,
@@ -8056,13 +8056,13 @@
       "confirmed_exchange_in_atom": 85534.403556,
       "confirmed_exchange_out_atom": 83148.414411,
       "unconfirmed_behavioral_in_atom": 218348.608948,
-      "ibc_inbound_atom": 31154.475574,
+      "ibc_inbound_atom": 31154.375574,
       "ibc_outbound_atom": 16648.843806,
       "confirmed_exchange_gross_atom": 168682.817967,
       "confirmed_exchange_net_in_atom": 2385.9891449999996,
       "all_behavioral_candidate_in_atom": 303883.012504,
-      "ibc_gross_atom": 47803.31938,
-      "ibc_net_inbound_atom": 14505.631768,
+      "ibc_gross_atom": 47803.21938,
+      "ibc_net_inbound_atom": 14505.531768,
       "binance_usdt_range_pct_of_open": 1.390243902439034,
       "binance_usdt_base_volume_atom": 160864.16,
       "binance_usdt_quote_volume": 662260.53767,
@@ -8166,13 +8166,13 @@
       "confirmed_exchange_in_atom": 89676.378769,
       "confirmed_exchange_out_atom": 90740.112771,
       "unconfirmed_behavioral_in_atom": 244323.500922,
-      "ibc_inbound_atom": 14072.542047,
+      "ibc_inbound_atom": 14065.246047,
       "ibc_outbound_atom": 20590.508965999998,
       "confirmed_exchange_gross_atom": 180416.49154000002,
       "confirmed_exchange_net_in_atom": -1063.7340019999974,
       "all_behavioral_candidate_in_atom": 333999.879691,
-      "ibc_gross_atom": 34663.051013,
-      "ibc_net_inbound_atom": -6517.966918999997,
+      "ibc_gross_atom": 34655.755013,
+      "ibc_net_inbound_atom": -6525.262918999997,
       "binance_usdt_range_pct_of_open": 1.7253774263120074,
       "binance_usdt_base_volume_atom": 99954.33,
       "binance_usdt_quote_volume": 414354.2145,
@@ -8806,13 +8806,13 @@
       "confirmed_exchange_in_atom": 53572.208988,
       "confirmed_exchange_out_atom": 52632.307612,
       "unconfirmed_behavioral_in_atom": 193902.770827,
-      "ibc_inbound_atom": 24505.47791,
+      "ibc_inbound_atom": 24481.721835,
       "ibc_outbound_atom": 193308.729005,
       "confirmed_exchange_gross_atom": 106204.5166,
       "confirmed_exchange_net_in_atom": 939.9013760000016,
       "all_behavioral_candidate_in_atom": 247474.979815,
-      "ibc_gross_atom": 217814.206915,
-      "ibc_net_inbound_atom": -168803.251095,
+      "ibc_gross_atom": 217790.45084,
+      "ibc_net_inbound_atom": -168827.00717,
       "binance_usdt_range_pct_of_open": 1.8119490695396634,
       "binance_usdt_base_volume_atom": 144379.62,
       "binance_usdt_quote_volume": 594050.18721,
@@ -9278,7 +9278,7 @@
         "max_abs_correlation": 0.11593484380895275,
         "lag_zero_correlation": 0.07406322227499461,
         "paired_observations_at_best_lag": 235,
-        "circular_shift_max_lag_p": 0.36086956521739133,
+        "circular_shift_max_lag_p": 0.41739130434782606,
         "circular_shift_count": 229
       },
       {
@@ -9306,7 +9306,7 @@
         "max_abs_correlation": 0.027352189855455556,
         "lag_zero_correlation": 0.015228144456182499,
         "paired_observations_at_best_lag": 8916,
-        "circular_shift_max_lag_p": 0.0619876024795041,
+        "circular_shift_max_lag_p": 0.060187962407518496,
         "circular_shift_count": 5000
       },
       {
@@ -9320,7 +9320,7 @@
         "max_abs_correlation": 0.0400131015133667,
         "lag_zero_correlation": 0.02807041665607226,
         "paired_observations_at_best_lag": 8916,
-        "circular_shift_max_lag_p": 0.0001999600079984003,
+        "circular_shift_max_lag_p": 0.0003999200159968006,
         "circular_shift_count": 5000
       },
       {
@@ -9334,7 +9334,7 @@
         "max_abs_correlation": 0.02787603669027659,
         "lag_zero_correlation": 0.017217801404288295,
         "paired_observations_at_best_lag": 8923,
-        "circular_shift_max_lag_p": 0.1855628874225155,
+        "circular_shift_max_lag_p": 0.1859628074385123,
         "circular_shift_count": 5000
       },
       {
@@ -9348,7 +9348,7 @@
         "max_abs_correlation": 0.02970426440394896,
         "lag_zero_correlation": 0.018846612804728786,
         "paired_observations_at_best_lag": 8916,
-        "circular_shift_max_lag_p": 0.2975404919016197,
+        "circular_shift_max_lag_p": 0.2969406118776245,
         "circular_shift_count": 5000
       },
       {
@@ -9362,7 +9362,7 @@
         "max_abs_correlation": 0.025167074303413223,
         "lag_zero_correlation": 0.015676531242324637,
         "paired_observations_at_best_lag": 8923,
-        "circular_shift_max_lag_p": 0.42071585682863427,
+        "circular_shift_max_lag_p": 0.41991601679664065,
         "circular_shift_count": 5000
       },
       {
@@ -9373,10 +9373,10 @@
         "y": "spot_range_stress",
         "lag_convention": "positive lag means x leads y",
         "max_abs_correlation_lag_minutes": -60,
-        "max_abs_correlation": 0.041533349160342924,
-        "lag_zero_correlation": 0.02688467407060888,
+        "max_abs_correlation": 0.041517873773728314,
+        "lag_zero_correlation": 0.026874662141383676,
         "paired_observations_at_best_lag": 8916,
-        "circular_shift_max_lag_p": 0.0033993201359728054,
+        "circular_shift_max_lag_p": 0.004799040191961607,
         "circular_shift_count": 5000
       },
       {
@@ -9390,7 +9390,7 @@
         "max_abs_correlation": 0.04278165763960304,
         "lag_zero_correlation": 0.03384526091610979,
         "paired_observations_at_best_lag": 8924,
-        "circular_shift_max_lag_p": 0.014197160567886422,
+        "circular_shift_max_lag_p": 0.014597080583883223,
         "circular_shift_count": 5000
       },
       {
@@ -9401,10 +9401,10 @@
         "y": "spot_return",
         "lag_convention": "positive lag means x leads y",
         "max_abs_correlation_lag_minutes": -5,
-        "max_abs_correlation": 0.06597456875951058,
-        "lag_zero_correlation": 0.06337255176349203,
+        "max_abs_correlation": 0.06597707279210453,
+        "lag_zero_correlation": 0.06337007891103763,
         "paired_observations_at_best_lag": 8927,
-        "circular_shift_max_lag_p": 0.002999400119976005,
+        "circular_shift_max_lag_p": 0.0027994401119776045,
         "circular_shift_count": 5000
       },
       {
@@ -9418,7 +9418,7 @@
         "max_abs_correlation": -0.5710132540515529,
         "lag_zero_correlation": 0.08827341633882696,
         "paired_observations_at_best_lag": 40,
-        "circular_shift_max_lag_p": 0.041666666666666664,
+        "circular_shift_max_lag_p": 0.20833333333333334,
         "circular_shift_count": 23
       },
       {
@@ -9432,7 +9432,7 @@
         "max_abs_correlation": -0.3103185610089964,
         "lag_zero_correlation": 0.03675022515090423,
         "paired_observations_at_best_lag": 40,
-        "circular_shift_max_lag_p": 0.041666666666666664,
+        "circular_shift_max_lag_p": 0.7916666666666666,
         "circular_shift_count": 23
       },
       {
@@ -9446,7 +9446,7 @@
         "max_abs_correlation": -0.5058765246019289,
         "lag_zero_correlation": -0.006575234704802903,
         "paired_observations_at_best_lag": 39,
-        "circular_shift_max_lag_p": 0.041666666666666664,
+        "circular_shift_max_lag_p": 0.7083333333333334,
         "circular_shift_count": 23
       },
       {
@@ -9460,7 +9460,7 @@
         "max_abs_correlation": -0.521983800467452,
         "lag_zero_correlation": 0.0013255652131714377,
         "paired_observations_at_best_lag": 39,
-        "circular_shift_max_lag_p": 0.041666666666666664,
+        "circular_shift_max_lag_p": 0.7083333333333334,
         "circular_shift_count": 23
       },
       {
@@ -9474,7 +9474,7 @@
         "max_abs_correlation": 0.24295512426409227,
         "lag_zero_correlation": 0.008503758647086258,
         "paired_observations_at_best_lag": 40,
-        "circular_shift_max_lag_p": 0.041666666666666664,
+        "circular_shift_max_lag_p": 0.6666666666666666,
         "circular_shift_count": 23
       },
       {
@@ -9488,7 +9488,7 @@
         "max_abs_correlation": -0.38333889262117726,
         "lag_zero_correlation": -0.0031527486671052585,
         "paired_observations_at_best_lag": 41,
-        "circular_shift_max_lag_p": 0.625,
+        "circular_shift_max_lag_p": 0.875,
         "circular_shift_count": 23
       },
       {
@@ -9502,7 +9502,7 @@
         "max_abs_correlation": -0.3023672561225258,
         "lag_zero_correlation": 0.0710325850444147,
         "paired_observations_at_best_lag": 41,
-        "circular_shift_max_lag_p": 0.875,
+        "circular_shift_max_lag_p": 1.0,
         "circular_shift_count": 23
       },
       {
@@ -9516,7 +9516,7 @@
         "max_abs_correlation": 0.3228757263838946,
         "lag_zero_correlation": 0.13072284819044733,
         "paired_observations_at_best_lag": 42,
-        "circular_shift_max_lag_p": 0.041666666666666664,
+        "circular_shift_max_lag_p": 0.4166666666666667,
         "circular_shift_count": 23
       }
     ],
@@ -12114,7 +12114,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -12,
         "lag_minutes": -60,
-        "correlation": 0.041533349160342924,
+        "correlation": 0.041517873773728314,
         "paired_observations": 8916
       },
       {
@@ -12125,7 +12125,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -11,
         "lag_minutes": -55,
-        "correlation": 0.035931752549917394,
+        "correlation": 0.035917168678208655,
         "paired_observations": 8917
       },
       {
@@ -12136,7 +12136,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -10,
         "lag_minutes": -50,
-        "correlation": 0.03436198633550965,
+        "correlation": 0.03434836530694082,
         "paired_observations": 8918
       },
       {
@@ -12147,7 +12147,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -9,
         "lag_minutes": -45,
-        "correlation": 0.033352411599782604,
+        "correlation": 0.033340542078802646,
         "paired_observations": 8919
       },
       {
@@ -12158,7 +12158,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -8,
         "lag_minutes": -40,
-        "correlation": 0.033298003000505366,
+        "correlation": 0.03328520182040426,
         "paired_observations": 8920
       },
       {
@@ -12169,7 +12169,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -7,
         "lag_minutes": -35,
-        "correlation": 0.03182686474485637,
+        "correlation": 0.031816098879456675,
         "paired_observations": 8921
       },
       {
@@ -12180,7 +12180,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -6,
         "lag_minutes": -30,
-        "correlation": 0.028071059513083356,
+        "correlation": 0.02806253461309265,
         "paired_observations": 8922
       },
       {
@@ -12191,7 +12191,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -5,
         "lag_minutes": -25,
-        "correlation": 0.025962879064674753,
+        "correlation": 0.02595585463826537,
         "paired_observations": 8923
       },
       {
@@ -12202,7 +12202,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -4,
         "lag_minutes": -20,
-        "correlation": 0.030025545111259957,
+        "correlation": 0.030014386162482327,
         "paired_observations": 8924
       },
       {
@@ -12213,7 +12213,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -3,
         "lag_minutes": -15,
-        "correlation": 0.023993195574344362,
+        "correlation": 0.02398603186386174,
         "paired_observations": 8925
       },
       {
@@ -12224,7 +12224,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -2,
         "lag_minutes": -10,
-        "correlation": 0.026194092573562082,
+        "correlation": 0.026186101926444383,
         "paired_observations": 8926
       },
       {
@@ -12235,7 +12235,7 @@
         "y": "spot_range_stress",
         "lag_intervals": -1,
         "lag_minutes": -5,
-        "correlation": 0.02749791661912031,
+        "correlation": 0.02748794789598953,
         "paired_observations": 8927
       },
       {
@@ -12246,7 +12246,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 0,
         "lag_minutes": 0,
-        "correlation": 0.02688467407060888,
+        "correlation": 0.026874662141383676,
         "paired_observations": 8928
       },
       {
@@ -12257,7 +12257,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 1,
         "lag_minutes": 5,
-        "correlation": 0.025060566205264406,
+        "correlation": 0.025051530317967644,
         "paired_observations": 8927
       },
       {
@@ -12268,7 +12268,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 2,
         "lag_minutes": 10,
-        "correlation": 0.01342761998289591,
+        "correlation": 0.013423552061369286,
         "paired_observations": 8926
       },
       {
@@ -12279,7 +12279,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 3,
         "lag_minutes": 15,
-        "correlation": 0.023246198993918464,
+        "correlation": 0.023239028945802872,
         "paired_observations": 8925
       },
       {
@@ -12290,7 +12290,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 4,
         "lag_minutes": 20,
-        "correlation": 0.014526974045632824,
+        "correlation": 0.014522057277257564,
         "paired_observations": 8924
       },
       {
@@ -12301,7 +12301,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 5,
         "lag_minutes": 25,
-        "correlation": 0.018406892744842814,
+        "correlation": 0.018400272090308704,
         "paired_observations": 8923
       },
       {
@@ -12312,7 +12312,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 6,
         "lag_minutes": 30,
-        "correlation": 0.013424306926772083,
+        "correlation": 0.013418920238411139,
         "paired_observations": 8922
       },
       {
@@ -12323,7 +12323,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 7,
         "lag_minutes": 35,
-        "correlation": 0.002312620491178425,
+        "correlation": 0.002313021619838311,
         "paired_observations": 8921
       },
       {
@@ -12334,7 +12334,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 8,
         "lag_minutes": 40,
-        "correlation": 0.0039200228498966405,
+        "correlation": 0.00391879225850067,
         "paired_observations": 8920
       },
       {
@@ -12345,7 +12345,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 9,
         "lag_minutes": 45,
-        "correlation": 0.011238176693130174,
+        "correlation": 0.011233968294169356,
         "paired_observations": 8919
       },
       {
@@ -12356,7 +12356,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 10,
         "lag_minutes": 50,
-        "correlation": 0.005780083296703848,
+        "correlation": 0.005775660850573467,
         "paired_observations": 8918
       },
       {
@@ -12367,7 +12367,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 11,
         "lag_minutes": 55,
-        "correlation": 0.014488139738446358,
+        "correlation": 0.014482559509022167,
         "paired_observations": 8917
       },
       {
@@ -12378,7 +12378,7 @@
         "y": "spot_range_stress",
         "lag_intervals": 12,
         "lag_minutes": 60,
-        "correlation": 0.01602451622996063,
+        "correlation": 0.016017859904978057,
         "paired_observations": 8916
       },
       {
@@ -12664,7 +12664,7 @@
         "y": "spot_return",
         "lag_intervals": -12,
         "lag_minutes": -60,
-        "correlation": 0.006649240573070573,
+        "correlation": 0.006648060698092237,
         "paired_observations": 8916
       },
       {
@@ -12675,7 +12675,7 @@
         "y": "spot_return",
         "lag_intervals": -11,
         "lag_minutes": -55,
-        "correlation": -3.063098834970336e-05,
+        "correlation": -3.0178637497983386e-05,
         "paired_observations": 8917
       },
       {
@@ -12686,7 +12686,7 @@
         "y": "spot_return",
         "lag_intervals": -10,
         "lag_minutes": -50,
-        "correlation": -0.018572444029987947,
+        "correlation": -0.018574028665753684,
         "paired_observations": 8918
       },
       {
@@ -12697,7 +12697,7 @@
         "y": "spot_return",
         "lag_intervals": -9,
         "lag_minutes": -45,
-        "correlation": -0.019192947000759093,
+        "correlation": -0.01919593584949094,
         "paired_observations": 8919
       },
       {
@@ -12708,7 +12708,7 @@
         "y": "spot_return",
         "lag_intervals": -8,
         "lag_minutes": -40,
-        "correlation": -0.006172464097191199,
+        "correlation": -0.006173514066376794,
         "paired_observations": 8920
       },
       {
@@ -12719,7 +12719,7 @@
         "y": "spot_return",
         "lag_intervals": -7,
         "lag_minutes": -35,
-        "correlation": 0.03185154047250603,
+        "correlation": 0.03185227710945302,
         "paired_observations": 8921
       },
       {
@@ -12730,7 +12730,7 @@
         "y": "spot_return",
         "lag_intervals": -6,
         "lag_minutes": -30,
-        "correlation": 0.05129215728510926,
+        "correlation": 0.05129603263225805,
         "paired_observations": 8922
       },
       {
@@ -12741,7 +12741,7 @@
         "y": "spot_return",
         "lag_intervals": -5,
         "lag_minutes": -25,
-        "correlation": 0.04443362067580584,
+        "correlation": 0.04443185977922847,
         "paired_observations": 8923
       },
       {
@@ -12752,7 +12752,7 @@
         "y": "spot_return",
         "lag_intervals": -4,
         "lag_minutes": -20,
-        "correlation": 0.014540501373799477,
+        "correlation": 0.014540059812545227,
         "paired_observations": 8924
       },
       {
@@ -12763,7 +12763,7 @@
         "y": "spot_return",
         "lag_intervals": -3,
         "lag_minutes": -15,
-        "correlation": 0.024535799846630797,
+        "correlation": 0.024536335863415328,
         "paired_observations": 8925
       },
       {
@@ -12774,7 +12774,7 @@
         "y": "spot_return",
         "lag_intervals": -2,
         "lag_minutes": -10,
-        "correlation": 0.009205806016637303,
+        "correlation": 0.009206816417435431,
         "paired_observations": 8926
       },
       {
@@ -12785,7 +12785,7 @@
         "y": "spot_return",
         "lag_intervals": -1,
         "lag_minutes": -5,
-        "correlation": 0.06597456875951058,
+        "correlation": 0.06597707279210453,
         "paired_observations": 8927
       },
       {
@@ -12796,7 +12796,7 @@
         "y": "spot_return",
         "lag_intervals": 0,
         "lag_minutes": 0,
-        "correlation": 0.06337255176349203,
+        "correlation": 0.06337007891103763,
         "paired_observations": 8928
       },
       {
@@ -12807,7 +12807,7 @@
         "y": "spot_return",
         "lag_intervals": 1,
         "lag_minutes": 5,
-        "correlation": 0.005408245365073495,
+        "correlation": 0.005405280057566731,
         "paired_observations": 8927
       },
       {
@@ -12818,7 +12818,7 @@
         "y": "spot_return",
         "lag_intervals": 2,
         "lag_minutes": 10,
-        "correlation": -0.005548282335628666,
+        "correlation": -0.00555485236589929,
         "paired_observations": 8926
       },
       {
@@ -12829,7 +12829,7 @@
         "y": "spot_return",
         "lag_intervals": 3,
         "lag_minutes": 15,
-        "correlation": 0.01831308519906875,
+        "correlation": 0.018312016818147203,
         "paired_observations": 8925
       },
       {
@@ -12840,7 +12840,7 @@
         "y": "spot_return",
         "lag_intervals": 4,
         "lag_minutes": 20,
-        "correlation": 0.017304524520449026,
+        "correlation": 0.0173033986903174,
         "paired_observations": 8924
       },
       {
@@ -12851,7 +12851,7 @@
         "y": "spot_return",
         "lag_intervals": 5,
         "lag_minutes": 25,
-        "correlation": 0.01010814659206796,
+        "correlation": 0.010104635116446827,
         "paired_observations": 8923
       },
       {
@@ -12862,7 +12862,7 @@
         "y": "spot_return",
         "lag_intervals": 6,
         "lag_minutes": 30,
-        "correlation": -0.019505101162674475,
+        "correlation": -0.019529702745998155,
         "paired_observations": 8922
       },
       {
@@ -12873,7 +12873,7 @@
         "y": "spot_return",
         "lag_intervals": 7,
         "lag_minutes": 35,
-        "correlation": -0.012722803187272097,
+        "correlation": -0.012722477415514188,
         "paired_observations": 8921
       },
       {
@@ -12884,7 +12884,7 @@
         "y": "spot_return",
         "lag_intervals": 8,
         "lag_minutes": 40,
-        "correlation": -0.00015177928203081997,
+        "correlation": -0.00014302807312932254,
         "paired_observations": 8920
       },
       {
@@ -12895,7 +12895,7 @@
         "y": "spot_return",
         "lag_intervals": 9,
         "lag_minutes": 45,
-        "correlation": -0.007938246068143735,
+        "correlation": -0.007941239533468909,
         "paired_observations": 8919
       },
       {
@@ -12906,7 +12906,7 @@
         "y": "spot_return",
         "lag_intervals": 10,
         "lag_minutes": 50,
-        "correlation": -0.021302039053803123,
+        "correlation": -0.021301823297296896,
         "paired_observations": 8918
       },
       {
@@ -12917,7 +12917,7 @@
         "y": "spot_return",
         "lag_intervals": 11,
         "lag_minutes": 55,
-        "correlation": -0.018981738548021244,
+        "correlation": -0.0189774389003043,
         "paired_observations": 8917
       },
       {
@@ -12928,7 +12928,7 @@
         "y": "spot_return",
         "lag_intervals": 12,
         "lag_minutes": 60,
-        "correlation": -0.006011497326326963,
+        "correlation": -0.006011410178642371,
         "paired_observations": 8916
       },
       {
@@ -15142,9 +15142,11 @@
   "source_provenance": {
     "baseline_chain": {
       "path": "data/processed/cosmoshub/baseline_30d/baseline_5min_2025-09-10_2025-10-10.jsonl.gz",
-      "sha256": "27d8ff7a4d2661d40659eeb0baa0bbd7a207532afdbc92f28566571d64bc6c43"
+      "sha256": "e71a7bfa8d89cfb31aacb2d31dbef537020e61b0ae1185c91a12e15e84003598",
+      "manifest_sha256": "24c5add85894e579977e56397b3f496ef2bc46cc68e7053649fa810f80eaaa68",
+      "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2"
     },
-    "event_chain_combined_sha256": "941e901ca53c1495accaff9f47d3fa911d4407e8d117d5ac062a8e3e89337926",
+    "event_chain_combined_sha256": "c65d2fb1764c679799fe9d7cda66174394be7de1a459819ecc24fb98b33f0f29",
     "market_file_count": 155,
     "market_files_combined_sha256": "3c859707c219ebe3afd54c4cadb781799e7ddde5c89483d1cfa6af4818dc2f46"
   },

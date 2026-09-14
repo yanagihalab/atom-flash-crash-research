@@ -106,6 +106,42 @@ channel endpoints, packet sequence and timeout, sender, receiver, denom, amount,
 prefixes. IBC inbound/outbound describes Cosmos Hub packet direction and is not
 centralized-exchange net flow.
 
+### Successful native-ATOM receipt policy
+
+The receipt policy is `native-atom-receipt-success-v2`. A relay transaction with
+`tx_result.code=0` is not sufficient to establish a successful ICS-20 receipt.
+An inbound row contributes to ATOM flow only when all of the following agree:
+
+- The packet denom is exactly `src_port/src_channel/uatom`, identifying a native
+  ATOM return, rather than merely ending in `/uatom`.
+- A `fungible_token_packet` event in the same message reports `success=true`
+  with the matching denom, amount, sender, and application receiver.
+- A corresponding native `uatom` bank credit matches the amount, message, and
+  application receiver. A success event or credit cannot validate two packets.
+
+Packet-forward middleware (PFM) can derive an intermediate Cosmos Hub receiver
+from the destination channel and sender. The packet's `receiver` is therefore
+not necessarily the credited Hub address. The receipt-evidence audit records
+`application_receiver` and `packet_forwarding` separately. A missing immediate
+acknowledgement is not a failure: successful PFM native credits may have deferred
+ACKs. An explicit application error or error ACK is not counted as a receipt.
+
+Inbound records expose `inbound_extraction_policy`, `application_success`,
+`native_credit_matched`, and `immediate_ack_states`. `is_atom=true` on an inbound
+record denotes eligibility under this policy; it is not a wallet-ownership
+label. Rejected native-return packets remain auditable in
+`ibc_receive_evidence_2025-10-09_2025-10-12.jsonl.gz`, rather than being presented
+as completed native transfers. Other assets may remain in the packet table with
+`is_atom=false`.
+
+Outbound ATOM measures successful **Hub send initiation**. It does not establish
+remote receipt, final settlement, a DEX swap, or a centralized-exchange trade.
+Gross inbound/outbound activity can include forwarding and is not unique capital.
+
+日本語：取引全体の成功とIBC受信成功を区別し、正確なnative ATOMの返送denom、
+同一メッセージの受信成功イベント、対応するnative残高への受領を確認します。
+PFMの遅延ACKを失敗扱いせず、流出は宛先決済ではなくHubでの送信開始として扱います。
+
 `data/processed/cosmoshub/event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz`
 is an exact subset of the two four-day flow tables with an added `flow_type`.
 The independent multiset and checksum checks are recorded in
@@ -178,9 +214,55 @@ flow tables.
 `baseline_indexed_manifest.json` records the validated RPC endpoints, height
 boundaries, SHA-256 values, query counts, page counts, page-source provenance,
 query hashes, extracted-event counts/amounts/digests, and decoding errors. Full
-30-day `tx_search` response bodies are not duplicated. The exact 2025-10-09 UTC
-overlap is independently reconciled against the retained full-transaction data
-in `results/cosmos_baseline_30d_verification.json`.
+30-day raw receive transaction objects are retained **locally** for the receipt
+re-audit, but are excluded from Git. Legacy direct-bank/outbound query checkpoints
+remain compact aggregates and event digests. The exact 2025-10-09 UTC overlap is
+independently reconciled against the published four-day transfer tables, derived
+from retained full-transaction data, in
+`results/cosmos_baseline_30d_verification.json`.
+
+Corrected baseline manifests identify `ibc_inbound_extraction_policy`, the
+30 distinct daily inbound-query policies, and the series SHA-256. The migration
+audit additionally retains the prior manifest, day-level legacy-digest replay,
+receipt inclusion/exclusion evidence, and confirmation that non-inbound metrics
+were preserved. Do not certify a legacy aggregate-only receive panel by adding
+a policy string: the corresponding raw receipt evidence must be checked.
+
+The complete corrected bundle contains these additional artifacts:
+
+- `ibc_raw_transaction_index.jsonl.gz`: compact transaction identity, day, height,
+  transaction position/code, and source daily-query index. This is not the raw
+  transaction or its RPC response. It checks daily completeness and global
+  uniqueness and connects successful indexed transactions to receipt evidence.
+- `ibc_receive_evidence.jsonl.gz`: packet-level eligibility, native-return trace,
+  application-success/native-credit event identifiers, and exclusion reasons.
+  Its counts, amounts, event digests, and five-minute buckets are independently
+  reconciled with all 30 inbound checkpoints.
+- `ibc_receive_policy_audit.json`: day-level replay and exclusion audit, the
+  prior-snapshot binding, raw-index integrity, and
+  `preserved_non_inbound_checkpoints` (341 unchanged gzip SHA-256 values).
+  `raw_acquisition_manifest` identifies the completed local raw acquisition by
+  SHA-256; daily raw provenance also records `acquisition_day_manifest_sha256`.
+  These acquisition-time hashes are checked against the retained raw files by
+  `rebuild_baseline_ibc_receipts.py`, not by an offline compact-bundle check.
+- `baseline_indexed_manifest_before_success_v2.json`: the retained prior
+  manifest. Historical paths inside it are provenance, not current input paths.
+
+`verify_cosmos_baseline_indexed.py` requires all four artifacts and their SHA-256
+bindings, exactly 371 unique queries including 30 distinct inbound days, all
+8,640 buckets, unchanged non-inbound checkpoints, and local current-artifact
+paths. It runs from this complete public bundle without full raw RPC files.
+It does not repeat raw decoding or native-credit extraction; that stronger
+verification occurs during the raw-dependent rebuild. Audit `extraction_code`
+hashes describe the code actually used for extraction; they are not replaced by
+the hashes of subsequently adapted public scripts. Any path-only packaging
+records original and packaged hashes separately and preserves original source
+provenance.
+
+日本語：公開版の完全なbundleだけで、30日・371クエリ、取引索引、受信証跡、
+341本の不変checkpoint、8,640区間とSHA256の整合性を再検証できます。
+取得時manifest／日別manifestのSHA照合と原RPCからの再抽出は別のraw依存検証です。
+抽出コードのSHAは実際の実行時点の証跡として保持します。
 
 ## Publication extension outputs
 
@@ -189,7 +271,11 @@ in `results/cosmos_baseline_30d_verification.json`.
 `matched_clock_30` is the same-clock sensitivity distribution. Core fields are
 the event value, control mean/median/empirical 5th and 95th percentiles, event
 empirical percentile, prespecified tail direction, exceedance count, and the
-plus-one randomization p-value.
+plus-one empirical tail probability. Serial dependence and overlapping comparison
+sets prevent assuming strict exchangeability; this quantity describes rarity
+within the baseline rather than a calibrated randomization test. The legacy
+field name `permutation_p_exact_plus_one` is retained for schema compatibility.
+Circular-shift p-values below use a separate, explicitly defined null.
 
 `results/publication_lead_lag.csv` reports the maximum absolute correlation and
 its lag, the zero-lag correlation, paired observation count, and a circular-shift
@@ -198,6 +284,38 @@ lag. Positive lag means x leads y. One-minute lags cover ±5 minutes; five-minut
 lags cover ±60 minutes. Nonnegative flow/activity variables use `log1p`; signed
 net flows use a median-scaled `asinh`; full-sample series are de-seasoned by UTC
 minute or five-minute slot median.
+
+The full lead-lag sample contains **31 UTC days**, 10 September through
+10 October 2025 inclusive; the pre-event baseline itself contains 30 days.
+The local sensitivity sample is 19:30--23:30 UTC on the event day. For every
+circular shift, the null repeats the same lag-trimmed, finite-pair Pearson
+correlation and maximum-absolute-correlation search used for the observation.
+Missing observations retain their original time positions. The fixed seed is
+`20251010`; the full sample uses 5,000 eligible shifts, while the local five-minute
+sample exhausts its 23 eligible shifts. A local p-value need not equal the
+plus-one resolution floor. These checks do not establish exchangeability or
+causal direction.
+
+`results/publication_circular_shift_verification.json`, generated by the optional
+raw-dependent verifier, independently reconstructs the primary five-minute
+exchange-inflow/stress series and checks every shift using direct Pearson
+calculations, without the analysis implementation or its FFT shortcut. It
+records input hashes, exceedance counts, correlations, p-values, and comparison
+with both the publication JSON and CSV.
+
+### Figure membership and interpretation
+
+Event-minute figures use the same half-open interval as the statistics:
+`[20:30:00, 22:30:00)` UTC, exactly **120 distinct consecutive one-minute bars**.
+The tick at 22:30 is an axis boundary, not an included 22:30 bar. The sell-sweep
+plot assigns each executed price to its own interval between the previous and
+current cumulative quantity, including the first interval starting at zero.
+
+The ATOM/USDT versus ATOM/USDC discount compares nominal one-minute lows; the two
+low-price executions need not be synchronous. It is not an executable arbitrage
+spread or a contemporaneous USD conversion. The CCIX USD 2.87 comparison is a
+daily reference-rate low, not necessarily the reference quote at the terminal
+Binance execution timestamp.
 
 Public-label addresses are the primary exchange-flow definition. Behavioral
 high/medium candidates are used only in sensitivity analysis. The large-flow

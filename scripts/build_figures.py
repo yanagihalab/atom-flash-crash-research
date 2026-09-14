@@ -5,6 +5,8 @@ from __future__ import annotations
 
 import json
 import zipfile
+from decimal import Decimal
+from itertools import accumulate
 from pathlib import Path
 
 import matplotlib.dates as mdates
@@ -49,6 +51,16 @@ def configure() -> None:
     )
 
 
+def select_event_minutes(frame: pd.DataFrame, source: str) -> pd.DataFrame:
+    """Use the same half-open, complete 120-minute window as the statistics."""
+    selected = frame[(frame["time"] >= EVENT_START) & (frame["time"] < EVENT_END)]
+    selected = selected.sort_values("time").copy()
+    expected = pd.date_range(EVENT_START, EVENT_END, freq="min", inclusive="left")
+    if len(expected) != 120 or not pd.DatetimeIndex(selected["time"]).equals(expected):
+        raise ValueError(f"{source}: expected exactly 120 distinct consecutive event-minute bars")
+    return selected
+
+
 def read_binance_kline(symbol: str) -> pd.DataFrame:
     archive = (
         ROOT
@@ -77,7 +89,7 @@ def read_binance_kline(symbol: str) -> pd.DataFrame:
     frame["time"] = pd.to_datetime(frame["open_time"], unit="us", utc=True)
     for column in ("open", "high", "low", "close", "volume"):
         frame[column] = pd.to_numeric(frame[column], errors="coerce")
-    return frame[(frame["time"] >= EVENT_START) & (frame["time"] <= EVENT_END)].copy()
+    return select_event_minutes(frame, symbol)
 
 
 def read_coinbase() -> pd.DataFrame:
@@ -85,7 +97,7 @@ def read_coinbase() -> pd.DataFrame:
     rows = json.loads(path.read_text(encoding="utf-8"))
     frame = pd.DataFrame(rows, columns=["epoch", "low", "high", "open", "close", "volume"])
     frame["time"] = pd.to_datetime(frame["epoch"], unit="s", utc=True)
-    return frame[(frame["time"] >= EVENT_START) & (frame["time"] <= EVENT_END)].copy()
+    return select_event_minutes(frame, "Coinbase ATOM/USD")
 
 
 def save_event_prices() -> None:
@@ -127,22 +139,45 @@ def save_event_prices() -> None:
     ax2.axvline(EVENT_LOW, color="black", linewidth=0.8, linestyle="--")
     ax2.set_ylabel("USDT discount\nrelative to USDC (%)")
     ax2.set_xlabel("UTC on 10 October 2025")
+    ax2.set_xlim(EVENT_START, EVENT_END)
     ax2.set_ylim(-2, 103)
     ax2.grid(True, linewidth=0.35, alpha=0.35)
-    ax2.xaxis.set_major_locator(mdates.MinuteLocator(interval=20))
+    ax2.xaxis.set_major_locator(mdates.MinuteLocator(byminute=[10, 30, 50]))
     ax2.xaxis.set_major_formatter(mdates.DateFormatter("%H:%M", tz=mdates.UTC))
     fig.savefig(FIGURES / "event_market_prices.pdf", bbox_inches="tight")
     plt.close(fig)
 
 
 def save_sell_sweep() -> None:
-    frame = pd.read_csv(ROOT / "results/flash_sell_sequence.csv")
+    frame = pd.read_csv(
+        ROOT / "results/flash_sell_sequence.csv", dtype={"price": str, "quantity_atom": str}
+    )
     frame = frame.sort_values("aggregate_trade_id").reset_index(drop=True)
-    frame["cum_qty"] = frame["quantity_atom"].cumsum()
+    quantities = [Decimal(value) for value in frame["quantity_atom"]]
+    prices = [Decimal(value) for value in frame["price"]]
+    exact_edges = list(accumulate(quantities, initial=Decimal("0")))
+    low_indices = [index for index, price in enumerate(prices) if price == Decimal("0.001")]
+    # Guard the price/quantity alignment that Table 2 reports: the final two
+    # fills occupy the entire 7,164.152--9,695.330 ATOM interval at 0.001 USDT.
+    if (
+        len(frame) != 71
+        or low_indices != [69, 70]
+        or exact_edges[69] != Decimal("7164.152")
+        or exact_edges[-1] != Decimal("9695.330")
+        or sum((quantities[index] for index in low_indices), Decimal("0"))
+        != Decimal("2531.178")
+    ):
+        raise ValueError("Sell-sweep data no longer match the audited minimum-price quantity interval")
+    edges = np.asarray([float(value) for value in exact_edges])
+    frame["price"] = [float(value) for value in prices]
+    frame["quantity_atom"] = [float(value) for value in quantities]
+    frame["cum_qty"] = edges[1:]
     sizes = 10 + 55 * np.sqrt(frame["quantity_atom"] / frame["quantity_atom"].max())
 
     fig, ax = plt.subplots(figsize=(7.05, 3.25), constrained_layout=True)
-    ax.step(frame["cum_qty"], frame["price"], where="post", color=RED, linewidth=1.2)
+    # Each execution price belongs to [previous cumulative quantity, current
+    # cumulative quantity]; explicit edges include the first interval from zero.
+    ax.stairs(frame["price"].to_numpy(), edges, baseline=None, color=RED, linewidth=1.2)
     ax.scatter(
         frame["cum_qty"],
         frame["price"],
@@ -180,9 +215,9 @@ def save_event_percentiles() -> None:
         ("binance_usdt_range_pct_of_open", "USDT price range", False),
         ("binance_usdt_trade_count", "USDT trade count", False),
         ("max_usdt_vs_usdc_low_discount_pct", "USDT-USDC low discount", False),
-        ("confirmed_exchange_in_atom", "Confirmed exchange inflow", False),
-        ("confirmed_exchange_out_atom", "Confirmed exchange outflow", False),
-        ("all_behavioral_candidate_in_atom", "Confirmed + unconfirmed inflow", True),
+        ("confirmed_exchange_in_atom", "Exact-match exchange inflow", False),
+        ("confirmed_exchange_out_atom", "Exact-match exchange outflow", False),
+        ("all_behavioral_candidate_in_atom", "Exact-match + unconfirmed inflow", True),
         ("ibc_inbound_atom", "IBC inbound", False),
         ("ibc_outbound_atom", "IBC outbound", False),
     ]
@@ -226,7 +261,7 @@ def save_lead_lag() -> None:
     ax2.plot(chain["lag_minutes"], chain["correlation"], color=BLUE, marker="o", markersize=2.4)
     ax2.axvline(0, color="black", linewidth=0.7, linestyle="--")
     ax2.axhline(0, color="0.55", linewidth=0.5)
-    ax2.set_title("(b) Confirmed inflow vs. price-range stress (5 min)")
+    ax2.set_title("(b) Exact-match inflow vs. log-range stress (5 min)")
     ax2.set_xlabel("Lag (min); positive: inflow leads")
     ax2.set_ylabel("Correlation")
     ax2.set_xticks(np.arange(-60, 61, 20))

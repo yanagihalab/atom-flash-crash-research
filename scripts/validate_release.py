@@ -50,13 +50,14 @@ def parse_args() -> argparse.Namespace:
 
 def iter_public_files() -> list[Path]:
     completed = subprocess.run(
-        ["git", "ls-files", "-z"],
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
         cwd=PROJECT_ROOT,
         check=True,
         capture_output=True,
     )
-    relatives = [Path(value.decode("utf-8")) for value in completed.stdout.split(b"\0") if value]
-    return sorted(PROJECT_ROOT / relative for relative in relatives if (PROJECT_ROOT / relative).is_file())
+    relatives = {Path(value.decode("utf-8")) for value in completed.stdout.split(b"\0") if value}
+    return sorted(PROJECT_ROOT / relative for relative in relatives
+                  if (PROJECT_ROOT / relative).is_file() or (PROJECT_ROOT / relative).is_symlink())
 
 
 def validate_text(path: Path, errors: list[str]) -> None:
@@ -110,6 +111,9 @@ def main() -> None:
     largest = (0, "")
     for path in files:
         relative = path.relative_to(PROJECT_ROOT)
+        if path.is_symlink():
+            errors.append(f"public file must not be a symlink: {relative}")
+            continue
         size = path.stat().st_size
         total += size
         if size > largest[0]:
@@ -121,16 +125,16 @@ def main() -> None:
         validate_json(path, errors)
         validate_archives(path, args.deep, errors)
 
-    tracked_raw = [path for path in files if path.relative_to(PROJECT_ROOT).parts[:2] == ("data", "raw")]
-    if tracked_raw:
-        errors.append(f"raw source data must not be tracked in Git ({len(tracked_raw)} file(s))")
+    included_raw = [path for path in files if path.relative_to(PROJECT_ROOT).parts[:2] == ("data", "raw")]
+    if included_raw:
+        errors.append(f"raw source data must not be included in the public file set ({len(included_raw)} file(s))")
     if errors:
         for error in errors:
             print(f"ERROR: {error}")
         raise SystemExit(f"Release validation failed with {len(errors)} error(s)")
 
     print("PASS: public release validation")
-    print(f"tracked Git files: {len(files)} files, {total} bytes")
+    print(f"public files (tracked and non-ignored untracked): {len(files)} files, {total} bytes")
     print(f"largest Git file: {largest[1]} ({largest[0]} bytes)")
     print(f"deep archive validation: {'enabled' if args.deep else 'disabled'}")
 

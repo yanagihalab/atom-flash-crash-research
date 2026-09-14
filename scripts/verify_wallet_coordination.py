@@ -65,8 +65,15 @@ def main() -> None:
     parser.add_argument("--checkpoint", type=Path, default=processed / "baseline_30d" / "query_checkpoints" / "0165.jsonl.gz")
     parser.add_argument("--trades", type=Path, default=daily / "trades" / "ATOMUSDT" / "ATOMUSDT-trades-2025-10-10.zip")
     parser.add_argument("--agg-trades", type=Path, default=daily / "aggTrades" / "ATOMUSDT" / "ATOMUSDT-aggTrades-2025-10-10.zip")
-    parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "results" / "wallet_coordination_verification.json")
+    parser.add_argument("--processed-only", action="store_true", help="Check processed on-chain inputs only; explicitly skip raw market hashes and trade-sequence checks")
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
+    full_output = PROJECT_ROOT / "results" / "wallet_coordination_verification.json"
+    if args.output is None:
+        args.output = (PROJECT_ROOT / "results" / "wallet_coordination_processed_verification.json"
+                       if args.processed_only else full_output)
+    if args.processed_only and args.output.resolve() == full_output.resolve():
+        parser.error("processed-only verification must not overwrite the full verification report")
 
     analysis = json.loads(args.analysis.read_text(encoding="utf-8"))
     labels_doc = json.loads(args.labels.read_text(encoding="utf-8"))
@@ -90,48 +97,53 @@ def main() -> None:
         "ibc_transfers": sha256_file(args.ibc_transfers),
         "labels": sha256_file(args.labels),
         "binance_30d_checkpoint": sha256_file(args.checkpoint),
-        "binance_trades": sha256_file(args.trades),
-        "binance_agg_trades": sha256_file(args.agg_trades),
     }
-    check("source_hashes", analysis["source_sha256"] == expected_hashes, expected_hashes)
+    if args.processed_only:
+        check("processed_source_hashes", all(analysis["source_sha256"].get(key) == value
+                                             for key, value in expected_hashes.items()), expected_hashes)
+    else:
+        expected_hashes.update({"binance_trades": sha256_file(args.trades),
+                                "binance_agg_trades": sha256_file(args.agg_trades)})
+        check("source_hashes", analysis["source_sha256"] == expected_hashes, expected_hashes)
 
-    exact_raw = []
-    for row in zipped_csv(args.trades):
-        timestamp = market_time(row[4])
-        if timestamp < FLASH_TIME:
-            continue
-        if timestamp > FLASH_TIME:
-            break
-        exact_raw.append(row)
-    market = analysis["market_side_order_episode"]
-    raw_quantity = sum(float(row[2]) for row in exact_raw)
-    raw_quote = sum(float(row[3]) for row in exact_raw)
-    check(
-        "exact_low_raw_trade_sequence",
-        len(exact_raw) == market["raw_trade_count"] == 92
-        and int(exact_raw[0][0]) == market["first_trade_id"]
-        and int(exact_raw[-1][0]) == market["last_trade_id"]
-        and close(raw_quantity, market["aggressive_sell_quantity_atom"])
-        and close(raw_quote, market["execution_quote_usdt"])
-        and all(row[5].lower() == "true" for row in exact_raw),
-        {"rows": len(exact_raw), "quantity_atom": raw_quantity, "quote_usdt": raw_quote},
-    )
+    if not args.processed_only:
+        exact_raw = []
+        for row in zipped_csv(args.trades):
+            timestamp = market_time(row[4])
+            if timestamp < FLASH_TIME:
+                continue
+            if timestamp > FLASH_TIME:
+                break
+            exact_raw.append(row)
+        market = analysis["market_side_order_episode"]
+        raw_quantity = sum(float(row[2]) for row in exact_raw)
+        raw_quote = sum(float(row[3]) for row in exact_raw)
+        check(
+            "exact_low_raw_trade_sequence",
+            len(exact_raw) == market["raw_trade_count"] == 92
+            and int(exact_raw[0][0]) == market["first_trade_id"]
+            and int(exact_raw[-1][0]) == market["last_trade_id"]
+            and close(raw_quantity, market["aggressive_sell_quantity_atom"])
+            and close(raw_quote, market["execution_quote_usdt"])
+            and all(row[5].lower() == "true" for row in exact_raw),
+            {"rows": len(exact_raw), "quantity_atom": raw_quantity, "quote_usdt": raw_quote},
+        )
 
-    exact_agg = []
-    for row in zipped_csv(args.agg_trades):
-        timestamp = market_time(row[5])
-        if timestamp < FLASH_TIME:
-            continue
-        if timestamp > FLASH_TIME:
-            break
-        exact_agg.append(row)
-    check(
-        "exact_low_aggregate_trade_sequence",
-        len(exact_agg) == market["aggregate_trade_row_count"] == 71
-        and all(row[6].lower() == "true" for row in exact_agg)
-        and close(min(float(row[1]) for row in exact_agg), 0.001),
-        {"rows": len(exact_agg), "minimum_price": min(float(row[1]) for row in exact_agg)},
-    )
+        exact_agg = []
+        for row in zipped_csv(args.agg_trades):
+            timestamp = market_time(row[5])
+            if timestamp < FLASH_TIME:
+                continue
+            if timestamp > FLASH_TIME:
+                break
+            exact_agg.append(row)
+        check(
+            "exact_low_aggregate_trade_sequence",
+            len(exact_agg) == market["aggregate_trade_row_count"] == 71
+            and all(row[6].lower() == "true" for row in exact_agg)
+            and close(min(float(row[1]) for row in exact_agg), 0.001),
+            {"rows": len(exact_agg), "minimum_price": min(float(row[1]) for row in exact_agg)},
+        )
 
     nearest = max((row for row in deposits if row["_time"] < FLASH_TIME), key=lambda row: row["_time"])
     reported_nearest = analysis["nearest_pre_low_binance_inflow"]
@@ -239,6 +251,13 @@ def main() -> None:
     result = {
         "study_id": analysis["study_id"],
         "verification_status": "PASS" if passed else "FAIL",
+        "verification_mode": "processed_only" if args.processed_only else "full_raw_and_processed",
+        "verification_scope": ("Processed on-chain source hashes, reported wallet metrics and claim guardrails; not raw market provenance or market trade sequences."
+                               if args.processed_only else "Raw market source hashes and trade sequences, processed on-chain source hashes, reported wallet metrics and claim guardrails."),
+        "skipped_checks": (["raw_market_source_hashes", "exact_low_raw_trade_sequence", "exact_low_aggregate_trade_sequence"]
+                           if args.processed_only else []),
+        "analysis_sha256": sha256_file(args.analysis),
+        "verified_source_sha256": expected_hashes,
         "check_count": len(checks),
         "checks": checks,
     }

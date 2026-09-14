@@ -1,0 +1,285 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "verification_status": "PASS",
+  "generated_at_utc": "2026-09-14T16:53:07.064753Z",
+  "method": "Independent raw reconstruction; explicitly indexed, finite-pair, lag-trimmed Pearson for observations and every circular shift; no analysis/FFT imports",
+  "rng_seed": 20251010,
+  "lag_minutes": [
+    -60,
+    -55,
+    -50,
+    -45,
+    -40,
+    -35,
+    -30,
+    -25,
+    -20,
+    -15,
+    -10,
+    -5,
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60
+  ],
+  "scope": "Primary exact-match exchange inflows versus spot range stress, full 31-day sample and local 4-hour sample only",
+  "checks": [
+    {
+      "analysis_id": "5m_30d_plus_event_day_confirmed_exchange_in_atom_to_spot_range_stress",
+      "passed": true,
+      "independent": {
+        "analysis_id": "5m_30d_plus_event_day_confirmed_exchange_in_atom_to_spot_range_stress",
+        "time_bin_count": 8928,
+        "max_abs_correlation": 0.027352189855455542,
+        "max_abs_correlation_lag_minutes": -60,
+        "lag_zero_correlation": 0.015228144456182492,
+        "circular_shift_count": 5000,
+        "null_exceedance_count": 300,
+        "circular_shift_max_lag_p": 0.060187962407518496,
+        "closest_null_distance_from_observed_abs_r": 6.856465049921365e-05,
+        "shift_offsets_sha256": "32afa1b92f9839433dcb1efdf54527596742096dcab208483cae311c3e368476",
+        "elapsed_seconds": 3.6654045839968603
+      },
+      "reported_json": {
+        "analysis_id": "5m_30d_plus_event_day_confirmed_exchange_in_atom_to_spot_range_stress",
+        "resolution": "5m",
+        "sample": "30d_plus_event_day",
+        "x": "confirmed_exchange_in_atom",
+        "y": "spot_range_stress",
+        "lag_convention": "positive lag means x leads y",
+        "max_abs_correlation_lag_minutes": -60,
+        "max_abs_correlation": 0.027352189855455556,
+        "lag_zero_correlation": 0.015228144456182499,
+        "paired_observations_at_best_lag": 8916,
+        "circular_shift_max_lag_p": 0.060187962407518496,
+        "circular_shift_count": 5000
+      },
+      "reported_csv": {
+        "analysis_id": "5m_30d_plus_event_day_confirmed_exchange_in_atom_to_spot_range_stress",
+        "resolution": "5m",
+        "sample": "30d_plus_event_day",
+        "x": "confirmed_exchange_in_atom",
+        "y": "spot_range_stress",
+        "lag_convention": "positive lag means x leads y",
+        "max_abs_correlation_lag_minutes": "-60",
+        "max_abs_correlation": "0.027352189855455556",
+        "lag_zero_correlation": "0.015228144456182499",
+        "paired_observations_at_best_lag": "8916",
+        "circular_shift_max_lag_p": "0.060187962407518496",
+        "circular_shift_count": "5000"
+      },
+      "differences": {
+        "json": [],
+        "csv": []
+      }
+    },
+    {
+      "analysis_id": "5m_event_local_4h_confirmed_exchange_in_atom_to_spot_range_stress",
+      "passed": true,
+      "independent": {
+        "analysis_id": "5m_event_local_4h_confirmed_exchange_in_atom_to_spot_range_stress",
+        "time_bin_count": 48,
+        "max_abs_correlation": -0.5710132540515529,
+        "max_abs_correlation_lag_minutes": 40,
+        "lag_zero_correlation": 0.08827341633882699,
+        "circular_shift_count": 23,
+        "null_exceedance_count": 4,
+        "circular_shift_max_lag_p": 0.20833333333333334,
+        "closest_null_distance_from_observed_abs_r": 0.0007966028266968017,
+        "shift_offsets_sha256": "60f9cc5d4c87e8fa9b68fb714ff9f086d5978527285ade231f5103e944fd564a",
+        "elapsed_seconds": 0.0038924580003367737
+      },
+      "reported_json": {
+        "analysis_id": "5m_event_local_4h_confirmed_exchange_in_atom_to_spot_range_stress",
+        "resolution": "5m",
+        "sample": "event_local_4h",
+        "x": "confirmed_exchange_in_atom",
+        "y": "spot_range_stress",
+        "lag_convention": "positive lag means x leads y",
+        "max_abs_correlation_lag_minutes": 40,
+        "max_abs_correlation": -0.5710132540515529,
+        "lag_zero_correlation": 0.08827341633882696,
+        "paired_observations_at_best_lag": 40,
+        "circular_shift_max_lag_p": 0.20833333333333334,
+        "circular_shift_count": 23
+      },
+      "reported_csv": {
+        "analysis_id": "5m_event_local_4h_confirmed_exchange_in_atom_to_spot_range_stress",
+        "resolution": "5m",
+        "sample": "event_local_4h",
+        "x": "confirmed_exchange_in_atom",
+        "y": "spot_range_stress",
+        "lag_convention": "positive lag means x leads y",
+        "max_abs_correlation_lag_minutes": "40",
+        "max_abs_correlation": "-0.5710132540515529",
+        "lag_zero_correlation": "0.08827341633882696",
+        "paired_observations_at_best_lag": "40",
+        "circular_shift_max_lag_p": "0.20833333333333334",
+        "circular_shift_count": "23"
+      },
+      "differences": {
+        "json": [],
+        "csv": []
+      }
+    }
+  ],
+  "input_sha256": [
+    {
+      "path": "data/processed/cosmoshub/baseline_30d/baseline_5min_2025-09-10_2025-10-10.jsonl.gz",
+      "sha256": "e71a7bfa8d89cfb31aacb2d31dbef537020e61b0ae1185c91a12e15e84003598"
+    },
+    {
+      "path": "data/processed/cosmoshub/atom_transfers_2025-10-09_2025-10-12.jsonl.gz",
+      "sha256": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7"
+    },
+    {
+      "path": "metadata/exchange_address_labels.json",
+      "sha256": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-10.zip",
+      "sha256": "02bd610e4fbfca6f1b609e4f8fef38af027bdb42ca5ddc58feaff0ba8b118d5e"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-11.zip",
+      "sha256": "3ace68c100840a4b2ce6a39026da41f0a7f198d4d1ccf3c83a26cdca0fe7de69"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-12.zip",
+      "sha256": "23624a739c916be45c242a6dae43ccf703a833dc0c04a50efb2876bed443e98c"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-13.zip",
+      "sha256": "a3d82673e8838023efcd4631f65e26c2b20f8f945fee9ba6ea0b2c3c978f2499"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-14.zip",
+      "sha256": "8a2b33f5451af0a76a835fd4f5636c254517b5eca9385b0fca97dee015c5921a"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-15.zip",
+      "sha256": "3671d5a0f8b13542e6d621f88ca56d36f5ef76b28acd2b2e8a7e892b161bbd85"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-16.zip",
+      "sha256": "97eaec7fd3bbafca3c25f369dd6d85d48dc2b8ae68933dc0667b465f2a7d0cbd"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-17.zip",
+      "sha256": "46b1926e5145c2fdfdefae4d75d12d07fba9df15408c418a1cfbabd34ba23689"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-18.zip",
+      "sha256": "ddcfcf540cddb6f0398d204e3ab486bb6b3d409bbd1b240f7251b4bd54e57dde"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-19.zip",
+      "sha256": "9361adbd7a12148bfc972510f629d18bd7572ece3f1381023435214d95dc714d"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-20.zip",
+      "sha256": "237664a5251196559235ab0fb9cc58f2f13d05a5029a5aefa552203fb3cc752a"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-21.zip",
+      "sha256": "4b2c493ec8455bbf4bfd9f8bf1ae3de43608277c86f1ac786a6edae1b8f5cb4a"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-22.zip",
+      "sha256": "2250e310bc6f170ee6b3be79850862105ae4d213fef0318876de6229dcbaee42"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-23.zip",
+      "sha256": "30fbfaa5dcb7c76b69c0621be06bd77cc501baab051417da55fa098fd2340cf5"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-24.zip",
+      "sha256": "b8673b3eceea885540221bc3b01ec3fdd8e5db56a0479d3e8829672d1e3fe694"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-25.zip",
+      "sha256": "3439c1d24bb931a93b46439bf91030bf06db5b388e0888e60a4d9a96a4096826"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-26.zip",
+      "sha256": "b27a1d02d375545eb6f9da8693975b2d95278045b8c4029b99e4b07684870219"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-27.zip",
+      "sha256": "63b282f30024953694fa4621b6c65646e9d375bcae6f68d1b4455a62c636d22c"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-28.zip",
+      "sha256": "6117fff62fc4f242d78e8865e5ee3740e4cb2eeacd97ff5c6c52dab5605714da"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-29.zip",
+      "sha256": "735902f0206c4a8dd7b86878a895156930d74abdcc41321f488b5b48dda9864d"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-09-30.zip",
+      "sha256": "c4ebe665764a1e2e4b13fe675633cf15bea7dfe2b1efbee0326eb2e12d7092f4"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-01.zip",
+      "sha256": "a21344199952a1e8981b004a22ddb2c316074b2316dc51085a5cefeb4bc3ef00"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-02.zip",
+      "sha256": "7e6051492dcea3fd0de377aa03eb1f5848a23e7e862ac5f7a7dde7a9caa04f5a"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-03.zip",
+      "sha256": "933dbef32962b5eb93d21292d6d178c92479bebf1708a368c2519bfddf557d88"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-04.zip",
+      "sha256": "72c32e7cdab6b2551b486e5745f9c33836f956196b1b5dd6d25a23076d091e24"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-05.zip",
+      "sha256": "3c214bd0aea139c1669c17fcc2ea1f091111b90450c680e47bf3c1df77b22cf3"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-06.zip",
+      "sha256": "0beac775b8738fd736e4e8b727264129245c6e37182d709b8489dfd887a7a97f"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-07.zip",
+      "sha256": "b731947d882aa5b1a5af56b54ced13f3975268d86a38e67f48c80265b54f4683"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-08.zip",
+      "sha256": "7df0d721d965befd3319a20c772ff1464bdd5658b48428e0211e93f7cb9ce4db"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-09.zip",
+      "sha256": "84f3af9943ee0d19b555ab8dbffcdd837b949966077efb284b18c1555ab5ddcc"
+    },
+    {
+      "path": "data/raw/binance/spot/daily/klines/ATOMUSDT/1m/ATOMUSDT-1m-2025-10-10.zip",
+      "sha256": "c302ce64f2ce9c5aaaf163be75f90b97c1ff77ab4ee46cd7e69a1603563dcd84"
+    },
+    {
+      "path": "results/publication_additional_analysis.json",
+      "sha256": "b8d7a7269cedf36eead0dfa7aedff6a970951ba9fb1897d6d3cdf8b531f09ed9"
+    },
+    {
+      "path": "results/publication_lead_lag.csv",
+      "sha256": "542111e568814bdf252dcd57f9e6332fe23c89de960247c26783fa8482340e0d"
+    },
+    {
+      "path": "scripts/verify_publication_circular_shift.py",
+      "sha256": "fd4d4cc54b73f5270e8c58f5753e4b9a880e9c916fba3ce0437e9c1cdf4d524a"
+    }
+  ]
+}

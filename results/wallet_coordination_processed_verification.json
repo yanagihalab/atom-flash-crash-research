@@ -1,0 +1,102 @@
+{
+  "study_id": "atom_flash_crash_2025_10_10",
+  "verification_status": "PASS",
+  "verification_mode": "processed_only",
+  "verification_scope": "Processed on-chain source hashes, reported wallet metrics and claim guardrails; not raw market provenance or market trade sequences.",
+  "skipped_checks": [
+    "raw_market_source_hashes",
+    "exact_low_raw_trade_sequence",
+    "exact_low_aggregate_trade_sequence"
+  ],
+  "analysis_sha256": "ad35cb9eb0e58f913d3918c7e34b3e24544f0dc47a85b01eed773a869e071f05",
+  "verified_source_sha256": {
+    "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+    "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
+    "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
+    "binance_30d_checkpoint": "a3e3b2aca0f978b633e4fdba067fd9607366792e1a6a850ff4ffd6d9a1ef2126"
+  },
+  "check_count": 9,
+  "checks": [
+    {
+      "check": "processed_source_hashes",
+      "passed": true,
+      "detail": {
+        "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+        "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
+        "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
+        "binance_30d_checkpoint": "a3e3b2aca0f978b633e4fdba067fd9607366792e1a6a850ff4ffd6d9a1ef2126"
+      }
+    },
+    {
+      "check": "nearest_pre_low_binance_transfer",
+      "passed": true,
+      "detail": {
+        "tx_hash": "0DF333AAA3B832D92E0F0FC920D1DC51170CA192BAA2BC407F4158B1939CD153",
+        "sender": "cosmos1qml5yxnfgdhcywp2w2lpvuj9fazzeylg2gdaeq",
+        "amount_atom": 2000.0
+      }
+    },
+    {
+      "check": "pre2h_sender_concentration",
+      "passed": true,
+      "detail": {
+        "amount_atom": 51647.00060100001,
+        "senders": 47,
+        "top_sender": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+        "hhi": 0.231353653205681
+      }
+    },
+    {
+      "check": "binance_30d_baseline_30m_120m",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "nearest_sender_service_fingerprint",
+      "passed": true,
+      "detail": {
+        "binance_deposits": 59,
+        "memo_count": 10,
+        "kucoin_funding_atom": 1085802.916922
+      }
+    },
+    {
+      "check": "top_sender_ibc_fingerprint",
+      "passed": true,
+      "detail": {
+        "address": "cosmos1ze3f954mtj30st8dw2qhylfvvtdv5q6x0e4k4q",
+        "ibc_matches": 893
+      }
+    },
+    {
+      "check": "material_common_source_filter",
+      "passed": true,
+      "detail": {
+        "rows": 6
+      }
+    },
+    {
+      "check": "claim_guardrails",
+      "passed": true,
+      "detail": {
+        "one_aggressive_sell_order_episode": "strongly_supported_but_order_id_not_public",
+        "one_or_more_specific_binance_accounts_caused_final_wick": "plausible_but_not_publicly_attributable",
+        "nearest_cosmos_sender_was_the_selling_account": "not_supported",
+        "abnormally_large_binance_preloading_in_prior_30m_or_2h": "not_supported",
+        "abnormally_concentrated_binance_preloading_in_prior_2h": "not_supported",
+        "coordinated_wallet_manipulation_or_deliberate_intent": "not_established",
+        "named_natural_person_or_beneficial_owner": "not_identifiable_from_public_data"
+      }
+    },
+    {
+      "check": "required_nonpublic_join_fields",
+      "passed": true,
+      "detail": [
+        "Binance taker order ID, account/subaccount ID, order type, clientOrderId, IP/API-key audit trail, and liquidation flag",
+        "Binance deposit-credit timestamp and mapping from the hashed memo cluster to the internal account",
+        "Historical ATOM/USDT order-book snapshots immediately before 21:20:37.689043 UTC",
+        "Cross-venue account records linking Cosmos transfers to sell orders and withdrawals"
+      ]
+    }
+  ]
+}

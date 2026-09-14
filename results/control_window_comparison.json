@@ -1,6 +1,6 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
-  "generated_at_utc": "2026-08-29T06:19:30.603935Z",
+  "generated_at_utc": "2026-09-14T16:26:47.460889Z",
   "window_length_hours": 2,
   "primary_control_definition": "Previous UTC day, identical 20:30-22:30 clock time",
   "sensitivity_control_definition": "Same-clock windows on three non-event dates plus 36 non-overlapping two-hour bins on those dates",
@@ -661,9 +661,9 @@
       "ibc_inbound_atom": {
         "event": 277987.972547,
         "control_count": 36,
-        "control_mean": 54139.65024941667,
+        "control_mean": 54137.26736052778,
         "control_median": 29893.617345,
-        "control_p95_empirical": 192860.572805,
+        "control_p95_empirical": 192829.510805,
         "event_percentile_empirical": 100.0,
         "event_to_control_median_ratio": 9.299241685566574
       },
@@ -679,7 +679,7 @@
       "ibc_net_inbound_atom": {
         "event": -172902.205758,
         "control_count": 36,
-        "control_mean": 18529.373656166666,
+        "control_mean": 18526.990767277777,
         "control_median": 7784.810091,
         "control_p95_empirical": 110314.850204,
         "event_percentile_empirical": 0.0,
@@ -823,12 +823,12 @@
           "confirmed_exchange_in_atom": 89676.378769,
           "confirmed_exchange_out_count": 24,
           "confirmed_exchange_out_atom": 90740.112771,
-          "ibc_inbound_count": 76,
-          "ibc_inbound_atom": 14072.542047,
+          "ibc_inbound_count": 75,
+          "ibc_inbound_atom": 14065.246047,
           "ibc_outbound_count": 124,
           "ibc_outbound_atom": 20590.508966,
           "confirmed_exchange_net_in_atom": -1063.734002,
-          "ibc_net_inbound_atom": -6517.966919
+          "ibc_net_inbound_atom": -6525.262919
         },
         "market": {
           "binance_atomusdt": {
@@ -2475,12 +2475,12 @@
           "confirmed_exchange_in_atom": 120699.534105,
           "confirmed_exchange_out_count": 35,
           "confirmed_exchange_out_atom": 134547.121573,
-          "ibc_inbound_count": 544,
-          "ibc_inbound_atom": 192860.572805,
+          "ibc_inbound_count": 541,
+          "ibc_inbound_atom": 192829.510805,
           "ibc_outbound_count": 478,
           "ibc_outbound_atom": 121608.992469,
           "confirmed_exchange_net_in_atom": -13847.587468,
-          "ibc_net_inbound_atom": 71251.580336
+          "ibc_net_inbound_atom": 71220.518336
         },
         "market": {
           "binance_atomusdt": {
@@ -2593,12 +2593,12 @@
           "confirmed_exchange_in_atom": 110214.253706,
           "confirmed_exchange_out_count": 50,
           "confirmed_exchange_out_atom": 119604.601617,
-          "ibc_inbound_count": 445,
-          "ibc_inbound_atom": 57051.872186,
+          "ibc_inbound_count": 441,
+          "ibc_inbound_atom": 57010.456186,
           "ibc_outbound_count": 404,
           "ibc_outbound_atom": 43795.551923,
           "confirmed_exchange_net_in_atom": -9390.347911,
-          "ibc_net_inbound_atom": 13256.320263
+          "ibc_net_inbound_atom": 13214.904263
         },
         "market": {
           "binance_atomusdt": {
@@ -3655,12 +3655,12 @@
           "confirmed_exchange_in_atom": 202937.885409,
           "confirmed_exchange_out_count": 21,
           "confirmed_exchange_out_atom": 203284.923159,
-          "ibc_inbound_count": 268,
-          "ibc_inbound_atom": 24326.322525,
+          "ibc_inbound_count": 267,
+          "ibc_inbound_atom": 24320.312525,
           "ibc_outbound_count": 288,
           "ibc_outbound_atom": 18498.612218,
           "confirmed_exchange_net_in_atom": -347.03775,
-          "ibc_net_inbound_atom": 5827.710307
+          "ibc_net_inbound_atom": 5821.700307
         },
         "market": {
           "binance_atomusdt": {
@@ -5060,7 +5060,7 @@
   },
   "source_sha256": {
     "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
-    "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+    "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
     "candidates": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107",
     "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
     "market": {

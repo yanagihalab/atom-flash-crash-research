@@ -2,6 +2,11 @@
   "study_id": "atom_flash_crash_2025_10_10",
   "verification_status": "PASS",
   "baseline_manifest": "data/processed/cosmoshub/baseline_30d/baseline_indexed_manifest.json",
+  "verified_inputs": {
+    "manifest_sha256": "24c5add85894e579977e56397b3f496ef2bc46cc68e7053649fa810f80eaaa68",
+    "series_sha256": "e71a7bfa8d89cfb31aacb2d31dbef537020e61b0ae1185c91a12e15e84003598",
+    "block_times_sha256": "008e785fe2b79085e746582498eb1789112a82c70d2db627c44b10838e0d8405"
+  },
   "checks": [
     {
       "check": "block_sha256",
@@ -11,7 +16,7 @@
     {
       "check": "series_sha256",
       "passed": true,
-      "detail": "27d8ff7a4d2661d40659eeb0baa0bbd7a207532afdbc92f28566571d64bc6c43"
+      "detail": "e71a7bfa8d89cfb31aacb2d31dbef537020e61b0ae1185c91a12e15e84003598"
     },
     {
       "check": "block_height_continuity",
@@ -31,10 +36,19 @@
       }
     },
     {
+      "check": "block_baseline_date_bounds",
+      "passed": true,
+      "detail": {
+        "required_start_inclusive": "2025-09-10T00:00:00+00:00",
+        "required_end_exclusive": "2025-10-10T00:00:00+00:00"
+      }
+    },
+    {
       "check": "five_minute_continuity",
       "passed": true,
       "detail": {
         "actual_rows": 8640,
+        "unique_timestamps": 8640,
         "expected_rows": 8640,
         "missing": 0
       }
@@ -44,6 +58,27 @@
       "passed": true,
       "detail": {
         "nonfinite_values": 0
+      }
+    },
+    {
+      "check": "ibc_inbound_success_policy",
+      "passed": true,
+      "detail": {
+        "required_policy": "native-atom-receipt-success-v2",
+        "query_count": 30,
+        "note": "Legacy aggregate-only receive checkpoints cannot certify application success; re-audit raw receives before certification."
+      }
+    },
+    {
+      "check": "ibc_receive_required_bundle_integrity",
+      "passed": true,
+      "detail": {
+        "day_count": 30,
+        "raw_transaction_count": 77526,
+        "receipt_evidence_count": 73409,
+        "excluded_count": 20,
+        "excluded_uatom": 213667075,
+        "scope": "Compact evidence/index/checkpoint verification; full raw extraction and raw-file hashing occur in rebuild_baseline_ibc_receipts.py."
       }
     },
     {
@@ -108,10 +143,10 @@
             "expected_uatom": 647890659941
           },
           "ibc_inbound": {
-            "actual_count": 1544,
-            "actual_uatom": 387860685653,
-            "expected_count": 1544,
-            "expected_uatom": 387860685653
+            "actual_count": 1543,
+            "actual_uatom": 387853389653,
+            "expected_count": 1543,
+            "expected_uatom": 387853389653
           },
           "ibc_outbound": {
             "actual_count": 2107,

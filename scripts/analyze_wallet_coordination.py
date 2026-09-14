@@ -596,11 +596,11 @@ def main() -> None:
     args.output.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     with args.candidates_csv.open("w", newline="", encoding="utf-8") as stream:
         fields = list(candidates[0])
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(candidates)
     with args.sell_sequence_csv.open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(sell_sequence[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(sell_sequence[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(sell_sequence)
     print(

@@ -1,11 +1,11 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
-  "generated_at_utc": "2026-08-29T23:44:12.637861Z",
+  "generated_at_utc": "2026-09-14T16:27:28.847707Z",
   "research_question": "Do public data support that a specific user or wallet deliberately engineered the ATOM/USDT flash crash?",
   "scope_guardrail": "Addresses and memo clusters are pseudonymous flow identifiers. The analysis does not identify a natural person, beneficial owner, Binance account, intent, or wrongdoing.",
   "source_sha256": {
     "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
-    "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+    "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
     "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
     "binance_30d_checkpoint": "a3e3b2aca0f978b633e4fdba067fd9607366792e1a6a850ff4ffd6d9a1ef2126",
     "binance_trades": "cf86e3df7df98989698d1a57f79cbe6d91dbc593df97a6e1bb1ce2dc5e4b06d3",

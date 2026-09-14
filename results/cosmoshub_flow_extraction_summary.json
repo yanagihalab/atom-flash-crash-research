@@ -1,10 +1,10 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
   "chain_id": "cosmoshub-4",
-  "started_at_utc": "2026-08-29T06:09:04.124932Z",
-  "finished_at_utc": "2026-08-29T06:09:32.710983Z",
+  "started_at_utc": "2026-09-14T15:21:53.151993Z",
+  "finished_at_utc": "2026-09-14T15:22:12.236689Z",
   "source_run_manifest": "metadata/runs/20260829T043153730115Z_cosmoshub_study_data.json",
-  "source_run_manifest_sha256": "a23f5f09369be867714f3e509ecc6016506ab36c60517d5062f593051084599a",
+  "source_run_manifest_sha256": "2b57b0e499a7cb3d0e11cc1750ae653dd52f94611739833b41a302c0cb72e933",
   "transactions_scanned": 161755,
   "successful_transactions_scanned": 160310,
   "protobuf_decode_errors": 0,
@@ -19,12 +19,22 @@
     "wrapped_or_group": 10034
   },
   "ibc_direction_counts": {
-    "inbound": 17013,
+    "inbound": 17003,
     "outbound": 17757
   },
   "ibc_atom_direction_counts": {
-    "inbound": 13303,
+    "inbound": 13293,
     "outbound": 14659
+  },
+  "ibc_inbound_extraction_policy": "native-atom-receipt-success-v2",
+  "ibc_receive_outcomes": {
+    "application_error": 131,
+    "included_native_atom_receipt": 13293,
+    "not_native_atom_return_trace": 3589
+  },
+  "excluded_legacy_atom_inbound": {
+    "count": 10,
+    "amount_uatom": 93103000
   },
   "exchange_candidate_count": 356,
   "artifacts": {
@@ -36,27 +46,35 @@
     },
     "ibc_transfers_2025-10-09_2025-10-12.jsonl.gz": {
       "local_path": "data/processed/cosmoshub/ibc_transfers_2025-10-09_2025-10-12.jsonl.gz",
-      "record_count": 34770,
-      "size_bytes": 4769619,
-      "sha256": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412"
+      "record_count": 34760,
+      "size_bytes": 4846665,
+      "sha256": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36"
     },
     "event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz": {
       "local_path": "data/processed/cosmoshub/event_window_flows_2025-10-10_2030-2230_utc.jsonl.gz",
       "record_count": 19749,
-      "size_bytes": 1226538,
-      "sha256": "a43a1da3f20150c8140e0b41dca1e00aa609fefa8d879c9c361ff7799af99e0d"
+      "size_bytes": 1234953,
+      "sha256": "e79d62325b9c8fc54b7716495ff859d9c35ec010ba8c42eba3a83288c5b50564"
     },
     "exchange_inflow_candidates_2025-10-09_2025-10-12.json": {
       "local_path": "data/processed/cosmoshub/exchange_inflow_candidates_2025-10-09_2025-10-12.json",
       "record_count": 356,
       "size_bytes": 860564,
       "sha256": "6678d0cc3f213542382ca7d5454942eb8413ecdc304f6bf93eab136590a5d107"
+    },
+    "ibc_receive_evidence_2025-10-09_2025-10-12.jsonl.gz": {
+      "local_path": "data/processed/cosmoshub/ibc_receive_evidence_2025-10-09_2025-10-12.jsonl.gz",
+      "record_count": 17013,
+      "size_bytes": 1853334,
+      "sha256": "68bf739214afe88054441f0a69a24876a6273b873e8fe777c7f8912415a125db"
     }
   },
   "limitations": [
     "Behavioral exchange candidates are not proof of exchange ownership.",
     "A numeric memo is consistent with shared-account deposit routing but is not unique to exchanges.",
     "IBC chain hints use bech32 address prefixes and may be absent or ambiguous.",
+    "Inbound ATOM requires an exact native-return trace, successful matching application event and native uatom credit; immediate acknowledgement is not mandatory. Rejected packets remain in the receive-evidence audit.",
+    "Outbound ATOM denotes a successful Hub send initiation, not confirmed destination receipt or swap execution.",
     "Association in time does not establish causation for the market-price event."
   ]
 }

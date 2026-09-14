@@ -29,6 +29,7 @@ from extract_cosmos_flows import (
     parse_coins,
     parse_msg_index,
 )
+from ibc_receive_evidence import IBC_INBOUND_POLICY, assess_receives
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -227,26 +228,17 @@ def ibc_events(tx: dict[str, Any], direction: str) -> tuple[list[dict[str, Any]]
                     }
                 )
     else:
-        for ordinal, event in enumerate(events):
-            if event["type"] != "recv_packet":
-                continue
-            packet = packet_fields(event)
-            if packet["src_port"] != "transfer" or packet["dst_port"] != "transfer" or not packet["packet_data_hex"]:
-                continue
-            try:
-                packet_data = json.loads(bytes.fromhex(packet["packet_data_hex"]).decode("utf-8"))
-                denom = str(packet_data["denom"])
-                amount = int(packet_data["amount"])
-            except (ValueError, KeyError, UnicodeDecodeError, json.JSONDecodeError):
+        for decision in assess_receives(events):
+            if decision["packet_data"] is None:
                 decode_errors += 1
                 continue
-            if atom_flag("inbound", denom):
+            if decision["include_in_atom_flow"]:
                 extracted.append(
                     {
                         "height": int(tx["height"]),
                         "tx_hash": tx["hash"],
-                        "event_ordinal": ordinal,
-                        "amount_uatom": amount,
+                        "event_ordinal": decision["event_ordinal"],
+                        "amount_uatom": int(decision["packet_data"]["amount"]),
                     }
                 )
     return extracted, decode_errors
@@ -258,10 +250,20 @@ def process_search_task(
     validated_rpcs: list[str],
     block_times: dict[int, datetime],
     start_time: datetime,
+    raw_cache_root: Path | None = None,
 ) -> dict[str, Any]:
     txs, total, pages, page_sources, attempted = search_all(
         preferred_rpc, validated_rpcs, task["query"], task["index"]
     )
+    raw_provenance = None
+    if task["kind"] == "ibc_in":
+        if raw_cache_root is None:
+            raise RuntimeError("IBC receive collection requires a raw-cache directory")
+        raw_path = raw_cache_root / f"{task['index']:04d}.jsonl.gz"
+        write_deterministic_jsonl_gzip(raw_path, [{"query": task["query"], "label": task["label"],
+                                                 "total_count": total, "page_source_counts": dict(page_sources)},
+                                                *({"tx": tx} for tx in txs)])
+        raw_provenance = {"local_path": str(raw_path), "sha256": sha256_file(raw_path), "tx_count": len(txs)}
     digest = hashlib.sha256()
     partial: dict[int, Counter[str]] = defaultdict(Counter)
     event_count = 0
@@ -295,7 +297,7 @@ def process_search_task(
             amount_uatom += amount
             canonical = {"metric": metric, **event}
             digest.update(json.dumps(canonical, sort_keys=True, separators=(",", ":")).encode("utf-8") + b"\n")
-    return {
+    result = {
         "index": task["index"],
         "label": task["label"],
         "preferred_rpc": preferred_rpc,
@@ -310,6 +312,9 @@ def process_search_task(
         "decode_errors": decode_errors,
         "partial": {bucket: dict(values) for bucket, values in partial.items()},
     }
+    if task["kind"] == "ibc_in":
+        result.update(ibc_inbound_extraction_policy=IBC_INBOUND_POLICY, raw_transactions=raw_provenance)
+    return result
 
 
 def write_deterministic_jsonl_gzip(path: Path, rows: list[dict[str, Any]]) -> None:
@@ -331,6 +336,9 @@ def main() -> None:
     parser.add_argument("--workers", type=int, help="Legacy override for both block and query workers")
     parser.add_argument("--block-workers", type=int, default=3)
     parser.add_argument("--query-workers", type=int, default=1)
+    parser.add_argument("--raw-cache-root", type=Path,
+                        default=PROJECT_ROOT / "data/raw/cosmoshub/cosmoshub-4/baseline_indexed_queries",
+                        help="Retain complete transaction objects for new IBC receive queries")
     parser.add_argument(
         "--include-watchlist",
         action="store_true",
@@ -512,6 +520,7 @@ def main() -> None:
                 or result.get("label") != task["label"]
                 or result.get("query_sha256") != expected_query_sha
                 or not isinstance(result.get("partial"), dict)
+                or (task["kind"] == "ibc_in" and result.get("ibc_inbound_extraction_policy") != IBC_INBOUND_POLICY)
             ):
                 return None
             return result
@@ -539,7 +548,7 @@ def main() -> None:
         print(f"verified query checkpoints: {completed}/{len(eligible_tasks)}", flush=True)
 
     def submit(executor: concurrent.futures.ThreadPoolExecutor, rpc: str, task: dict[str, Any]):
-        return executor.submit(process_search_task, task, rpc, validated_rpcs, block_times, start_time)
+        return executor.submit(process_search_task, task, rpc, validated_rpcs, block_times, start_time, args.raw_cache_root)
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
         inflight: dict[concurrent.futures.Future[Any], str] = {}
@@ -621,8 +630,10 @@ def main() -> None:
         "query_page_source_counts": dict(page_source_counts),
         "protobuf_or_packet_decode_errors": sum(item["decode_errors"] for item in summaries),
         "query_summaries": summaries,
+        "ibc_inbound_extraction_policy": IBC_INBOUND_POLICY,
         "limitations": [
-            "The compact baseline retains block-time metadata, extracted five-minute aggregates, query counts, and event digests rather than duplicating full tx_search responses.",
+            "New IBC receive queries retain full transaction objects and apply application-success plus native-credit filtering. Legacy direct-bank/outbound queries retain aggregates and event digests only.",
+            "Outbound ATOM measures Hub send initiation, not remote receipt; inbound ATOM measures successful native Hub receipt, including forwarding middleware receipts with deferred acknowledgement.",
             "Direct flows are collected only for public-label addresses and the pre-specified behavioral high/medium registry.",
             "Large-flow watchlist addresses are excluded from the 30-day baseline because they are not exchange-flow candidates; their event-centered four-day records remain separately retained.",
             "Behavioral candidate status is not evidence of exchange ownership.",

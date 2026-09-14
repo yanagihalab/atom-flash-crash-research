@@ -1,6 +1,18 @@
 {
   "study_id": "atom_flash_crash_2025_10_10",
   "verification_status": "PASS",
+  "verification_mode": "full_raw_and_processed",
+  "verification_scope": "Raw market source hashes and trade sequences, processed on-chain source hashes, reported wallet metrics and claim guardrails.",
+  "skipped_checks": [],
+  "analysis_sha256": "ad35cb9eb0e58f913d3918c7e34b3e24544f0dc47a85b01eed773a869e071f05",
+  "verified_source_sha256": {
+    "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
+    "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
+    "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
+    "binance_30d_checkpoint": "a3e3b2aca0f978b633e4fdba067fd9607366792e1a6a850ff4ffd6d9a1ef2126",
+    "binance_trades": "cf86e3df7df98989698d1a57f79cbe6d91dbc593df97a6e1bb1ce2dc5e4b06d3",
+    "binance_agg_trades": "8316d809ddb26e441889d63ac0601f42fcfb7e3704181032c3940371adddf5d0"
+  },
   "check_count": 11,
   "checks": [
     {
@@ -8,7 +20,7 @@
       "passed": true,
       "detail": {
         "atom_transfers": "64ebe47a1c93d0d0b5a1dd35a1423185da4c4ef1c50849e09bfe1c8726a3a8b7",
-        "ibc_transfers": "393ef26e13270f7c038c95384bcc11e46282306434653f6910ea0033b76ba412",
+        "ibc_transfers": "d32b57afd95c07a5ac8dfd4106b69a8419af96f6c883166548c52f2431517b36",
         "labels": "50dd8ef280b0d336d108f326f48af8e01159dd547330b25ad072bdb2f76d9ae0",
         "binance_30d_checkpoint": "a3e3b2aca0f978b633e4fdba067fd9607366792e1a6a850ff4ffd6d9a1ef2126",
         "binance_trades": "cf86e3df7df98989698d1a57f79cbe6d91dbc593df97a6e1bb1ce2dc5e4b06d3",

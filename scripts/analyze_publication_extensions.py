@@ -19,6 +19,8 @@ from typing import Any, Iterable
 
 import numpy as np
 
+from ibc_receive_evidence import IBC_INBOUND_POLICY
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW = PROJECT_ROOT / "data" / "raw"
@@ -136,15 +138,30 @@ def load_market(start: date, end_inclusive: date) -> tuple[dict[str, dict[int, d
 
 
 def load_baseline_chain(path: Path) -> tuple[dict[datetime, dict[str, float | int]], dict[str, str]]:
+    manifest_path = path.parent / "baseline_indexed_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("ibc_inbound_extraction_policy") != IBC_INBOUND_POLICY:
+        raise RuntimeError("IBC baseline has not been rebuilt with successful native-ATOM receipt verification")
+    inbound_queries = [row for row in manifest.get("query_summaries", []) if row.get("label", "").startswith("ibc_in:")]
+    expected_days = {f"ibc_in:{(BASELINE_START + timedelta(days=index)).date()}" for index in range(30)}
+    if (len(inbound_queries) != 30 or {row["label"] for row in inbound_queries} != expected_days
+            or any(row.get("ibc_inbound_extraction_policy") != IBC_INBOUND_POLICY for row in inbound_queries)):
+        raise RuntimeError("IBC baseline requires 30 distinct, policy-verified daily inbound queries")
+    series_sha256 = sha256_file(path)
+    if manifest["five_minute_series"]["sha256"] != series_sha256:
+        raise RuntimeError("IBC baseline series does not match its verified manifest")
     rows: dict[datetime, dict[str, float | int]] = {}
     with gzip.open(path, "rt", encoding="utf-8") as stream:
         for line in stream:
             row = json.loads(line)
             rows[parse_time(row["bucket_start_utc"])] = row
     expected = int((BASELINE_END - BASELINE_START).total_seconds() // 300)
-    if len(rows) != expected or min(rows) != BASELINE_START or max(rows) != BASELINE_END - timedelta(minutes=5):
+    expected_times = {BASELINE_START + timedelta(minutes=5 * index) for index in range(expected)}
+    if set(rows) != expected_times:
         raise RuntimeError("30-day chain baseline is incomplete")
-    return rows, {"path": path.relative_to(PROJECT_ROOT).as_posix(), "sha256": sha256_file(path)}
+    return rows, {"path": path.relative_to(PROJECT_ROOT).as_posix(), "sha256": series_sha256,
+                  "manifest_sha256": sha256_file(manifest_path),
+                  "ibc_inbound_extraction_policy": IBC_INBOUND_POLICY}
 
 
 def empty_chain_bucket(timestamp: datetime) -> dict[str, float | int]:
@@ -211,6 +228,12 @@ def load_event_day_chain() -> tuple[dict[datetime, dict[str, float | int]], list
             timestamp = parse_time(row["time_utc"])
             if timestamp.date() != date(2025, 10, 10) or not row["is_atom"]:
                 continue
+            if row["direction"] == "inbound" and (
+                row.get("inbound_extraction_policy") != IBC_INBOUND_POLICY
+                or row.get("application_success") is not True
+                or row.get("native_credit_matched") is not True
+            ):
+                raise RuntimeError("Event-day IBC receipt lacks successful native-credit verification")
             metric = "ibc_inbound" if row["direction"] == "inbound" else "ibc_outbound"
             add(timestamp, metric, int(row["amount_base_units"]))
     for row in rows.values():
@@ -318,7 +341,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fields = list(rows[0]) if rows else []
     with path.open("w", encoding="utf-8", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -380,20 +403,99 @@ def lag_correlation(x: np.ndarray, y: np.ndarray, lag: int) -> tuple[float, int]
     return float(np.corrcoef(left, right)[0, 1]), len(left)
 
 
-def circular_shift_pvalue(x: np.ndarray, y: np.ndarray, lags: list[int], observed: float) -> tuple[float, int]:
-    valid = np.isfinite(x) & np.isfinite(y)
-    x, y = x[valid], y[valid]
-    if len(x) < 30 or np.std(x) == 0 or np.std(y) == 0 or not math.isfinite(observed):
-        return math.nan, 0
-    x = (x - np.mean(x)) / np.std(x)
-    y = (y - np.mean(y)) / np.std(y)
-    circular = np.fft.ifft(np.conj(np.fft.fft(x)) * np.fft.fft(y)).real / len(x)
+def _circular_shift_offsets(length: int, lags: list[int]) -> np.ndarray:
     max_lag = max(abs(lag) for lag in lags)
-    available = np.arange(max_lag + 1, len(x) - max_lag)
+    available = np.arange(max_lag + 1, length - max_lag)
     rng = np.random.default_rng(RNG_SEED)
-    shifts = available if len(available) <= 5000 else np.sort(rng.choice(available, size=5000, replace=False))
-    lag_array = np.asarray(lags, dtype=int)
-    null = np.asarray([np.max(np.abs(circular[(shift + lag_array) % len(x)])) for shift in shifts])
+    return available if len(available) <= 5000 else np.sort(rng.choice(available, size=5000, replace=False))
+
+
+def _shifted_lag_correlations(
+    x: np.ndarray, y: np.ndarray, lags: list[int], shifts: np.ndarray
+) -> np.ndarray:
+    """Match lag_correlation(x, np.roll(y, -shift), lag), without closing gaps.
+
+    FFTs obtain the six finite-pair moment sums for all circular offsets.
+    Removing each lag's boundary terms then gives the same non-circular,
+    pairwise-complete Pearson statistic used for the observed lag curve.
+    """
+    x, y = np.asarray(x, dtype=float), np.asarray(y, dtype=float)
+    if x.ndim != 1 or y.ndim != 1 or len(x) != len(y):
+        raise ValueError("Circular-shift inputs must be equally sized one-dimensional arrays")
+    if not lags or any(abs(lag) >= len(x) for lag in lags):
+        raise ValueError("Lags must be nonempty and smaller than the time-series length")
+    shifts = np.asarray(shifts, dtype=int)
+    result = np.full((len(shifts), len(lags)), np.nan)
+    masks = [np.isfinite(values) for values in (x, y)]
+    if any(mask.sum() < 10 or np.std(values[mask]) == 0 for values, mask in zip((x, y), masks)):
+        return result
+
+    # Global affine scaling only improves numerical conditioning: the moment
+    # formula below still re-centers and re-scales every lag's finite pairs.
+    scaled = []
+    for values, mask in zip((x, y), masks):
+        standardized = np.zeros(len(values))
+        standardized[mask] = (values[mask] - np.mean(values[mask])) / np.std(values[mask])
+        scaled.append(standardized)
+    mx, my = (mask.astype(float) for mask in masks)
+    sx, sy = scaled
+    left_moments, right_moments = (mx, sx, sx * sx), (my, sy, sy * sy)
+    left_fft = [np.fft.fft(values) for values in left_moments]
+    right_fft = [np.fft.fft(values) for values in right_moments]
+    moment_pairs = ((0, 0), (1, 0), (0, 1), (2, 0), (0, 2), (1, 1))
+    circular_sums = [
+        np.fft.ifft(np.conj(left_fft[left]) * right_fft[right]).real
+        for left, right in moment_pairs
+    ]
+    circular_sums[0] = np.rint(circular_sums[0])
+    length = len(x)
+    for column, lag in enumerate(lags):
+        offsets = (shifts + lag) % length
+        excluded = np.arange(length - lag, length) if lag > 0 else np.arange(-lag)
+        moments = [values[offsets].copy() for values in circular_sums]
+        if len(excluded):
+            right_indices = (offsets[:, None] + excluded[None, :]) % length
+            for index, (left, right) in enumerate(moment_pairs):
+                moments[index] -= np.sum(
+                    left_moments[left][excluded][None, :] * right_moments[right][right_indices], axis=1
+                )
+        count, sum_x, sum_y, sum_x2, sum_y2, sum_xy = moments
+        eligible = count >= 10
+        divisor = np.maximum(count, 1)
+        var_x = sum_x2 - sum_x * sum_x / divisor
+        var_y = sum_y2 - sum_y * sum_y / divisor
+        numerator = sum_xy - sum_x * sum_y / divisor
+        # A nearly constant finite-pair subset can suffer cancellation in the
+        # FFT moment formula. Recompute those cases using the direct statistic.
+        tolerance_x = 128 * np.finfo(float).eps * np.maximum(1, np.abs(sum_x2))
+        tolerance_y = 128 * np.finfo(float).eps * np.maximum(1, np.abs(sum_y2))
+        stable = eligible & (var_x > tolerance_x) & (var_y > tolerance_y)
+        result[stable, column] = np.clip(
+            numerator[stable] / np.sqrt(var_x[stable] * var_y[stable]), -1, 1
+        )
+        for index in np.flatnonzero(eligible & ~stable):
+            result[index, column] = lag_correlation(x, np.roll(y, -int(shifts[index])), lag)[0]
+    return result
+
+
+def circular_shift_pvalue(x: np.ndarray, y: np.ndarray, lags: list[int], observed: float) -> tuple[float, int]:
+    if len(x) < 30 or not math.isfinite(observed):
+        return math.nan, 0
+    shifts = _circular_shift_offsets(len(x), lags)
+    if not len(shifts):
+        return math.nan, 0
+    correlations = _shifted_lag_correlations(x, y, lags, shifts)
+    finite = np.isfinite(correlations)
+    # Do not silently drop untestable shifts and thereby change the null sample.
+    if not finite.any(axis=1).all():
+        return math.nan, int(len(shifts))
+    null = np.max(np.where(finite, np.abs(correlations), -np.inf), axis=1)
+    # Preserve >= tie handling despite harmless FFT rounding near the observed
+    # maximum; the observed statistic itself was calculated directly.
+    for index in np.flatnonzero(np.isclose(null, abs(observed), rtol=5e-12, atol=5e-14)):
+        shifted = np.roll(y, -int(shifts[index]))
+        values = [lag_correlation(x, shifted, lag)[0] for lag in lags]
+        null[index] = max(abs(value) for value in values if math.isfinite(value))
     return float((1 + np.sum(null >= abs(observed))) / (len(null) + 1)), int(len(null))
 
 

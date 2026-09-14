@@ -54,7 +54,7 @@ mirror of third-party raw source archives.
 | Complete Cosmos Hub RPC responses | No | Acquisition/verification scripts and processed manifests are included |
 | Historical Binance order book | No | No event-time historical depth snapshot was available |
 
-Release v0.1.0 contains 411 intermediate data files totaling 55,336,556 bytes.
+The corrected dataset (v0.1.1, 15 September 2026) contains 385 intermediate data files totaling 67,614,461 bytes.
 See [metadata/file_inventory.csv](metadata/file_inventory.csv) for file-level
 SHA-256 digests and
 [metadata/dataset_summary.json](metadata/dataset_summary.json) for the summary.
@@ -72,7 +72,14 @@ All analysis timestamps are UTC.
 | 30-day pre-event baseline | [2025-09-10T00:00:00Z, 2025-10-10T00:00:00Z) |
 | Main control distribution | 360 non-overlapping two-hour windows |
 | Matched-clock sensitivity set | 30 windows at 20:30–22:30 UTC |
+| Full lead-lag sample | 31 UTC days, 10 September–10 October 2025 inclusive |
 | Lead-lag ranges | ±5 minutes at 1-minute resolution; ±60 minutes at 5-minute resolution |
+
+The event's one-minute figures contain exactly 120 bars in the half-open
+20:30–22:30 UTC interval. Each circular-shift null uses the same lag-trimmed,
+finite-pair Pearson statistic as the observed series, without closing missing
+time gaps: 5,000 shifts for the full sample and all 23 eligible shifts for the
+local four-hour five-minute sample.
 
 ### Main intermediate artifacts
 
@@ -83,9 +90,23 @@ All analysis timestamps are UTC.
 - [Exchange-inflow candidate registry](data/processed/cosmoshub/exchange_inflow_candidates_2025-10-09_2025-10-12.json)
 - [Continuous 30-day five-minute on-chain panel](data/processed/cosmoshub/baseline_30d/baseline_5min_2025-09-10_2025-10-10.jsonl.gz)
 - [Compact 30-day block-time index](data/processed/cosmoshub/baseline_30d/block_times_2025-09-10_2025-10-10.jsonl.gz)
+- [Thirty-day receipt-policy audit](data/processed/cosmoshub/baseline_30d/ibc_receive_policy_audit.json)
+- [Compact receipt evidence](data/processed/cosmoshub/baseline_30d/ibc_receive_evidence.jsonl.gz) and [transaction index](data/processed/cosmoshub/baseline_30d/ibc_raw_transaction_index.jsonl.gz)
 
 See [data/processed/README.md](data/processed/README.md) for the intermediate-data
 contract and [docs/data_dictionary.md](docs/data_dictionary.md) for field definitions.
+
+IBC inbound flow follows `native-atom-receipt-success-v2`: a successful relay
+transaction alone is insufficient. An exact native-ATOM return trace, matching
+application-success event and native credit are required. Valid packet-forward
+middleware (PFM) credits with deferred acknowledgements remain included. Outbound
+flow measures successful Hub send initiation, not final remote settlement.
+
+Reacquiring and re-auditing all 30 baseline days excluded 20 legacy candidates:
+18 application failures and two non-native return traces, leaving 57,303 eligible
+native receipts. The four-day detailed data separately exclude 10 failed receipts;
+these intervals overlap and their exclusion counts must not be added. The event
+window's 1,113 native receipts are unchanged, including 583 with deferred ACKs.
 
 ### Main analysis tables
 
@@ -93,7 +114,7 @@ contract and [docs/data_dictionary.md](docs/data_dictionary.md) for field defini
 |---|---|
 | [publication_control_windows.csv](results/publication_control_windows.csv) | 360 non-overlapping two-hour controls |
 | [publication_matched_clock_windows.csv](results/publication_matched_clock_windows.csv) | 30 matched-clock controls |
-| [publication_window_tests.csv](results/publication_window_tests.csv) | Empirical percentiles and plus-one permutation tests |
+| [publication_window_tests.csv](results/publication_window_tests.csv) | Empirical percentiles and plus-one empirical tail probabilities |
 | [publication_lead_lag.csv](results/publication_lead_lag.csv) | 26 lead-lag summaries |
 | [publication_lead_lag_curves.csv](results/publication_lead_lag_curves.csv) | All 510 evaluated lag points |
 | [wallet_coordination_candidates.csv](results/wallet_coordination_candidates.csv) | Descriptive pre-event exchange-inflow sender candidates |
@@ -107,7 +128,7 @@ additional statistical analysis or visualization.
 Python 3.11 or later is recommended.
 
 ~~~bash
-git clone <repository-url>
+git clone https://github.com/yanagihalab/atom-flash-crash-research.git
 cd atom-flash-crash-research
 
 python3 -m venv .venv
@@ -118,10 +139,23 @@ make validate
 make verify
 ~~~
 
-make validate checks tracked files, JSON syntax, gzip/ZIP streams, individual
-file size, local absolute paths, and token-like secrets. make verify independently
-checks the publication tables and wallet-attribution analysis. Neither command
-requires the excluded raw source files.
+`make validate` checks tracked and non-ignored untracked files, JSON syntax,
+gzip/ZIP streams, individual file size, local absolute paths, and token-like secrets.
+`make verify` checks the saved publication tables and runs explicit processed-only
+wallet verification, including processed-source hashes and reported wallet metrics.
+Neither command requires the excluded raw files. The processed-only report records
+that raw market hashes, 92 raw fills and 71 aggregate-trade rows are not rechecked.
+
+The complete 30-day compact bundle and four-day flows can also be checked offline:
+
+~~~bash
+python scripts/verify_cosmos_flows.py
+python scripts/verify_cosmos_baseline_indexed.py
+~~~
+
+`make verify-raw` separately requires locally acquired raw market files and includes
+full wallet and independent direct-Pearson circular-shift verification. It does
+not silently fall back to processed-only verification when raw inputs are missing.
 
 ### Analysis from the intermediate files
 
@@ -144,10 +178,9 @@ review third-party availability, terms, and possible future API changes.
 python scripts/download_binance.py
 python scripts/download_comparison_markets.py
 python scripts/collect_cosmos_study_data.py
-python scripts/collect_cosmos_baseline_indexed.py --start 2025-09-10T00:00:00Z --end-exclusive 2025-10-10T00:00:00Z
 ~~~
 
-After acquisition:
+After acquisition, using the verified published 30-day bundle:
 
 ~~~bash
 python scripts/build_event_extract.py
@@ -157,20 +190,39 @@ python scripts/analyze_publication_extensions.py
 python scripts/analyze_wallet_coordination.py
 ~~~
 
+These default downloads do not alone recreate the extended 30-day market inputs;
+use the baseline acquisition configuration described in
+[docs/reproducibility.md](docs/reproducibility.md). The indexed collector alone
+does not produce the full v2 audit/evidence/snapshot bundle. Raw receipt re-extraction
+from a preserved legacy baseline uses the separate migration procedure in that
+guide. Do not overwrite or certify a baseline by adding only a policy string.
+
 Archive RPC availability may change. Sources and recorded acquisition runs are
 documented in [metadata/source_registry.json](metadata/source_registry.json)
 and [metadata/runs/](metadata/runs/).
 
 ### Main reproducible findings
 
+For window comparisons, `p` denotes a descriptive plus-one empirical tail
+probability. Serial dependence and overlapping comparison sets preclude assuming
+strict exchangeability. Circular-shift p-values use a separate, explicitly defined null.
+
 - The ATOM/USDT two-hour event-window price range, trade count, and low-price
   dislocation relative to ATOM/USDC exceed all 360 pre-event control windows.
 - Inflow to exact-address, publicly confirmed exchange labels is at the 93.9th
-  percentile with plus-one p=0.0637; it is not an upper-tail anomaly at the 5% level.
+  percentile with plus-one p=0.0637; its descriptive tail probability exceeds 0.05.
+- Correcting baseline IBC receipts leaves all reported IBC event percentiles and
+  plus-one p-values unchanged. Inbound activity remains at the 98.6th percentile
+  (p=0.0166) among 360 controls; its 30 matched-clock controls give p=0.0645.
+- The primary full-sample five-minute exchange-inflow/stress test has r=0.0274
+  at lag −60 minutes and corrected max-lag p=0.0602. The local four-hour sensitivity
+  test has p=0.2083; neither result establishes causal direction.
 - The terminal low was formed by 92 consecutive sell-aggressor executions in the
   same microsecond, totaling 9,695.33 ATOM.
 - A temporally nearby on-chain deposit is observable, but public data contain no
   exchange-internal join key connecting it to the sell sequence or a user.
+- The nearest pre-low sender's 10 distinct memo clusters refer specifically to
+  its 59 Binance-bound transfers, not to all of that sender's outgoing transfers.
 - Adding unconfirmed candidates does not establish wallet-specific manipulation.
 
 These are descriptive and statistical findings within the dataset. They do not
@@ -189,6 +241,12 @@ establish causality, intent, or wrongdoing.
 Final checks are recorded in
 [publication_additional_verification.json](results/publication_additional_verification.json)
 and [wallet_coordination_verification.json](results/wallet_coordination_verification.json).
+The separate [processed-only wallet report](results/wallet_coordination_processed_verification.json)
+states its narrower scope. [Direct-Pearson verification](results/publication_circular_shift_verification.json)
+records the retained-raw check of all primary shifts. The
+[packaging provenance map](metadata/publication_packaging_manifest.json) retains
+original source/report hashes and explicit public-artifact SHA rebinding; original
+raw and extraction-code provenance is not replaced by later packaging hashes.
 
 ### Repository layout
 
@@ -274,7 +332,7 @@ GitHubで公開するデータ単位は、原データではなく、集約・�
 | Cosmos Hub完全RPC応答 | 非収録 | 再取得・検証スクリプトと処理済みマニフェストのみ収録 |
 | Binance履歴板 | 非収録 | イベント時点の履歴order-book snapshotは取得できていない |
 
-リリースv0.1.0の中間データは411ファイル、55,336,556 bytesです。
+訂正版データ（v0.1.1、2026年9月15日）の中間データは385ファイル、67,614,461 bytesです。
 ファイル一覧とSHA-256は
 [metadata/file_inventory.csv](metadata/file_inventory.csv)、
 集計値は[metadata/dataset_summary.json](metadata/dataset_summary.json)にあります。
@@ -292,7 +350,12 @@ GitHubで公開するデータ単位は、原データではなく、集約・�
 | 30日平時対照 | [2025-09-10T00:00:00Z, 2025-10-10T00:00:00Z) |
 | 主対照分布 | 非重複2時間窓360個 |
 | 同時刻感度分析 | 20:30–22:30 UTCの30窓 |
+| 全期間リード・ラグ標本 | 2025年9月10日から10月10日当日までの31日 |
 | リード・ラグ | 1分系列±5分、5分系列±60分 |
+
+イベント図の1分足は20:30–22:30 UTCの半開区間120本です。循環シフトの帰無統計も、
+観測値と同じラグ端除外・有限ペアのPearson相関で計算し、欠測による時間の隙間を
+詰めません。全期間は5,000シフト、局所4時間の5分系列は適格な全23シフトを用います。
 
 ### 主な中間ファイル
 
@@ -315,10 +378,22 @@ GitHubで公開するデータ単位は、原データではなく、集約・�
   30日間・8,640行の連続5分系列です。
 - [30日ブロック時刻索引](data/processed/cosmoshub/baseline_30d/block_times_2025-09-10_2025-10-10.jsonl.gz)
   高さ、UTC時刻、ブロックハッシュ及びトランザクション数を収録します。
+- [30日受信ポリシー監査](data/processed/cosmoshub/baseline_30d/ibc_receive_policy_audit.json)
+- [受信証跡](data/processed/cosmoshub/baseline_30d/ibc_receive_evidence.jsonl.gz)と[compact取引索引](data/processed/cosmoshub/baseline_30d/ibc_raw_transaction_index.jsonl.gz)
 
 中間データ全体の説明は
 [data/processed/README.md](data/processed/README.md)、
 列定義は[docs/data_dictionary.md](docs/data_dictionary.md)を参照してください。
+
+IBC流入は`native-atom-receipt-success-v2`で定義し、リレー取引全体の成功だけでは
+受信とみなしません。正確なnative ATOM返送trace、対応するアプリケーション成功イベント、
+native creditを確認します。PFMの遅延ACKを伴う成功受領は維持し、流出は宛先決済完了
+ではなくHubでの送信開始を表します。
+
+平時対照30日分を再取得・再監査し、旧候補からアプリケーション失敗18件と非native
+返送trace 2件の計20件を除外しました。適格なnative受信は57,303件です。
+4日間の詳細データでは別途失敗受信10件を除外していますが、期間が重なるため両者を
+単純合計しません。イベント窓の1,113受信は変わらず、遅延ACKの583件も維持しています。
 
 ### 主な分析用テーブル
 
@@ -326,7 +401,7 @@ GitHubで公開するデータ単位は、原データではなく、集約・�
 |---|---|
 | [publication_control_windows.csv](results/publication_control_windows.csv) | 360個の非重複2時間対照窓 |
 | [publication_matched_clock_windows.csv](results/publication_matched_clock_windows.csv) | 同一UTC時刻の30対照窓 |
-| [publication_window_tests.csv](results/publication_window_tests.csv) | 経験的パーセンタイルとplus-one置換検定 |
+| [publication_window_tests.csv](results/publication_window_tests.csv) | 経験的パーセンタイルとプラス1補正経験的裾確率 |
 | [publication_lead_lag.csv](results/publication_lead_lag.csv) | 26組のリード・ラグ要約 |
 | [publication_lead_lag_curves.csv](results/publication_lead_lag_curves.csv) | 全510ラグ点の相関曲線 |
 | [wallet_coordination_candidates.csv](results/wallet_coordination_candidates.csv) | イベント前取引所流入送信元の記述的候補表 |
@@ -340,7 +415,7 @@ resultsディレクトリは論文記載値の検証用出力であると同時�
 Python 3.11以降を使用します。
 
 ~~~bash
-git clone <repository-url>
+git clone https://github.com/yanagihalab/atom-flash-crash-research.git
 cd atom-flash-crash-research
 
 python3 -m venv .venv
@@ -351,19 +426,25 @@ make validate
 make verify
 ~~~
 
-make validateはGit追跡ファイル、JSON構文、gzip/ZIPストリーム、単一ファイルサイズ、
-ローカル絶対パス及び秘密情報らしい文字列を検査します。make verifyは公表用検定表と
-ウォレット帰属分析の整合性を再計算します。これらの検証に原データは不要です。
+`make validate`はGit追跡済み及び除外されていない未追跡ファイル、JSON構文、gzip/ZIP、
+単一ファイルサイズ、ローカル絶対パス及び秘密情報らしい文字列を検査します。
+`make verify`は保存済みの公表用検定表と、明示的なprocessed-onlyモードによる
+中間データのSHA・ウォレット指標を検査します。原データは不要ですが、市場原ファイルの
+SHA、92約定及び71集約約定の原データ照合を省略したことを別レポートに記録します。
 
 個別に実行する場合は次のとおりです。
 
 ~~~bash
 python scripts/validate_release.py --deep
 python scripts/verify_cosmos_flows.py
-python scripts/verify_control_windows.py
+python scripts/verify_cosmos_baseline_indexed.py
 python scripts/verify_publication_extensions.py
-python scripts/verify_wallet_coordination.py
+python scripts/verify_wallet_coordination.py --processed-only
 ~~~
+
+30日対照は完全なcompact bundleでオフライン検証できます。原市場データも用いた
+検証は別の`make verify-raw`で実行し、walletのfull検証と独立した直接Pearson循環シフト
+検証を含みます。原データ不足をprocessed-onlyへ自動的に切り替えてPASSとはしません。
 
 ### 中間データを使った分析
 
@@ -387,10 +468,9 @@ Git clone直後に、次の処理が可能です。
 python scripts/download_binance.py
 python scripts/download_comparison_markets.py
 python scripts/collect_cosmos_study_data.py
-python scripts/collect_cosmos_baseline_indexed.py --start 2025-09-10T00:00:00Z --end-exclusive 2025-10-10T00:00:00Z
 ~~~
 
-取得後、次の分析を再生成できます。
+取得後、公開済みの検証済み30日bundleを用いて次の分析を再生成できます。
 
 ~~~bash
 python scripts/build_event_extract.py
@@ -400,20 +480,36 @@ python scripts/analyze_publication_extensions.py
 python scripts/analyze_wallet_coordination.py
 ~~~
 
+既定の取得コマンドだけでは拡張30日分の市場原データは揃いません。
+[docs/reproducibility.md](docs/reproducibility.md)のbaseline設定を用いてください。
+indexed collector単体は完全なv2監査・証跡・旧manifest bundleを作成しません。
+旧対照を保持したraw受信再抽出には同ガイドの移行手順を用い、ポリシー名の追記だけで
+対照を認証したり、既存データを上書きしたりしないでください。
+
 RPC提供状況により取得元の変更が必要になることがあります。取得元と実行記録は
 [metadata/source_registry.json](metadata/source_registry.json)及び
 [metadata/runs/](metadata/runs/)に記録しています。
 
 ### 再現対象となる主要結果
 
+窓比較の`p`は記述的なプラス1補正経験的裾確率です。系列依存や比較集合の重複により
+厳密な交換可能性は仮定しません。循環シフトp値は別の明示的な帰無分布に基づきます。
+
 - ATOM/USDTのイベント2時間窓における値幅、約定数及びATOM/USDCとの安値乖離は、
   直前30日の360対照窓すべてを上回りました。
 - 公開情報との完全一致で確認した取引所アドレスへのイベント窓流入は
-  93.9パーセンタイル、plus-one p=0.0637であり、5%水準の上側異常ではありません。
+  93.9パーセンタイル、plus-one p=0.0637であり、記述的な裾確率は0.05を上回ります。
+- IBC受信訂正後も、報告したIBCのイベント順位とplus-one p値はすべて不変です。
+  流入は360窓に対して98.6パーセンタイル（p=0.0166）、同時刻30窓ではp=0.0645です。
+- 全期間5分の主要な取引所流入／市場ストレス検定は、ラグ−60分でr=0.0274、
+  訂正したmax-lag p=0.0602です。局所4時間の感度分析はp=0.2083であり、
+  いずれも因果方向を確定する結果ではありません。
 - 最終安値は、同一マイクロ秒の連続92約定、合計9,695.33 ATOMの売り主導系列で
   形成されました。
 - 直前のオンチェーン入金との時間的近接は観測できますが、取引所内部の対応キーが
   ないため、売り系列と同一利用者又は注文へ結び付けられません。
+- 直前送信元の10種類のメモclusterは、その送信元のBinance宛て59送金に限定した数であり、
+  全送金先への出金を合算した数ではありません。
 - 未確認候補を加えても、特定ウォレットによる操作という帰属結論は支持されません。
 
 これらはデータセット内で再現される記述的・統計的結果であり、因果関係や不正行為を
@@ -431,6 +527,10 @@ RPC提供状況により取得元の変更が必要になることがありま�
 最終検証結果は
 [publication_additional_verification.json](results/publication_additional_verification.json)及び
 [wallet_coordination_verification.json](results/wallet_coordination_verification.json)にあります。
+限定的な検証範囲は別の[processed-onlyレポート](results/wallet_coordination_processed_verification.json)に、
+主要な全シフトの保持原データ照合は[直接Pearson検証](results/publication_circular_shift_verification.json)に記録しています。
+[公開整形の来歴mapping](metadata/publication_packaging_manifest.json)には元source/report SHAと
+公開artifactへの再束縛を保存し、rawや原実行コードの証跡を後日の公開整形SHAで置き換えません。
 
 ### ディレクトリ構成
 
